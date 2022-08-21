@@ -1,0 +1,112 @@
+ .u-section-1 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/static/images/stay_sharp/tormek_t-4_bushcraft.jpg');
+  background-position: 50% 50%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 100vh;
+}
+
+.u-section-1 .u-text-1 {
+  font-weight: normal;
+  font-size: 4.5rem;
+  margin: 108px 209px 0 193px;
+}
+
+.u-section-1 .u-text-2 {
+  margin: 108px 129px 60px 193px;
+}
+
+.u-section-1 .u-text-3 {
+  width: 401px;
+  margin: 24px auto 60px;
+}
+
+.u-section-1 .u-text-4 {
+  margin: 78px 381px 0 445px;
+}
+
+.u-section-1 .u-btn-1 {
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  background-image: none;
+  margin: 34px 475px 60px auto;
+}
+
+@media (max-width: 1399px) {
+  .u-section-1 .u-text-1 {
+    width: 818px;
+    font-weight: 700;
+    font-size: 6rem;
+    margin-top: 148px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .u-section-1 .u-text-2 {
+    width: 858px;
+    margin: 69px auto 0;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-top: 53px;
+    margin-bottom: 0;
+  }
+
+  .u-section-1 .u-text-4 {
+    width: 314px;
+    margin-top: 69px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: 40px;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 1199px) {
+   .u-section-1 {
+    background-position: 50% 50%;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-text-1 {
+    width: 768px;
+  }
+
+  .u-section-1 .u-text-2 {
+    width: 768px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-text-1 {
+    width: 767px;
+    font-size: 3.75rem;
+  }
+
+  .u-section-1 .u-text-2 {
+    width: 767px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-text-1 {
+    width: 375px;
+    font-size: 3rem;
+  }
+
+  .u-section-1 .u-text-2 {
+    width: 375px;
+  }
+
+  .u-section-1 .u-text-3 {
+    width: 295px;
+  }
+}
