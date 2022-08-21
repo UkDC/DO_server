@@ -1,721 +1,1 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html style="font-size: 16px;" lang="ru">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <title>Calculation</title>
-    <link rel="stylesheet" href="{% static 'css/stay_sharp/nicepage.css' %}" media="screen">
-    <link rel="stylesheet" href="{% static 'css/stay_sharp/Calculation.css' %}" media="screen">
-    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/jquery.js' %}"
-    "="" defer=""></script>
-    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/nicepage.js' %}"
-    "="" defer=""></script>
-    <meta name="generator" content="Nicepage 4.16.0, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-
-
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "Site1",
-		"logo": "/images/default-logo.png"
-}</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Calculation">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-</head>
-<body class="u-body u-overlap u-overlap-contrast u-stick-footer u-xxl-mode" data-lang="ru">
-<header class="u-clearfix u-header u-sticky u-sticky-0046 u-header" id="section1-1">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-            <img src="{% static 'images/stay_sharp/default-logo.png' %}" class="u-logo-image u-logo-image-1">
-        </a>
-        <nav class="u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xl u-align-right-xs u-menu u-menu-one-level u-offcanvas u-menu-1"
-             data-responsive-from="LG">
-            <div class="menu-collapse"
-                 style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
-                <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                   href="#section1"
-                   data-lang-en="{&quot;content&quot;:&quot;<svg class=\&quot;u-svg-link\&quot; viewBox=\&quot;0 0 24 24\&quot;><use xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xlink:href=\&quot;#menu-hamburger\&quot;></use></svg><svg class=\&quot;u-svg-content\&quot; version=\&quot;1.1\&quot; id=\&quot;menu-hamburger\&quot; viewBox=\&quot;0 0 16 16\&quot; x=\&quot;0px\&quot; y=\&quot;0px\&quot; xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;>    <g>        <rect y=\&quot;1\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;7\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;13\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>    </g></svg>&quot;,&quot;href&quot;:&quot;#section1&quot;}">
-                    <svg class="u-svg-link" viewBox="0 0 24 24">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
-                    </svg>
-                    <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
-                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                        <g>
-                            <rect y="1" width="16" height="2"></rect>
-                            <rect y="7" width="16" height="2"></rect>
-                            <rect y="13" width="16" height="2"></rect>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-            <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'main' %}"
-                            data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}"
-                            style="padding: 10px 0px;">Main</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'calculation' %}#carousel_7650" data-page-id="317024594"
-                            data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}"
-                            style="padding: 10px 0px;">FeedBack</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'calculation' %}"
-                            data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}"
-                            style="padding: 10px 0px;">Calculation</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'drawing' %}" style="padding: 10px 0px;">Drawing</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'login' %}"
-                            data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}"
-                            style="padding: 10px 0px;">Login</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="u-custom-menu u-nav-container-collapse">
-                <div class="u-container-style u-hover-feature u-inner-container-layout u-opacity u-opacity-90 u-palette-3-light-2 u-shape-round u-sidenav u-sidenav-1">
-                    <div class="u-inner-container-layout u-sidenav-overflow">
-                        <ul class="u-align-center-xxl u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-menu-dropdown u-nav u-popupmenu-items u-spacing-0 u-text-active-palette-1-base u-unstyled u-nav-2">
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'main' %}"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}">Main</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="{% url 'calculation' %}l#carousel_7650"
-                                                      data-page-id="317024594"
-                                                      data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'calculation' %}"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}">Calculation</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'drawing' %}">Drawing</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>
-                            </li>
-                        </ul>
-                        <div class="u-menu-close u-menu-close-1"></div>
-                    </div>
-                </div>
-                <div class="u-menu-overlay u-opacity u-opacity-45 u-palette-1-base"></div>
-            </div>
-        </nav>
-    </div>
-</header>
-<section class="skrollable u-border-2 u-border-palette-3-base u-clearfix u-image u-parallax u-shading u-section-1"
-         id="sec-5637" data-image-width="1553" data-image-height="1000">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width-xs u-expanded-width-xxl u-gutter-14 u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-                <div class="u-layout-row">
-                    <div class="u-size-30">
-                        <div class="u-layout-col">
-                            <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
-                                <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-1">
-                                    <h4 class="u-align-center u-text u-text-palette-3-light-1 u-text-1">
-                        <span style="font-weight: 700;">For proposing an optimal grinding angle, we need to <span
-                                style="font-weight: 700;"></span>kn​​ow something about your kni​fe<span
-                                style="font-weight: 400;"></span>
-                        </span>
-                                    </h4>
-                                    <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-4-light-1 u-text-2">
-                                        Step 1</h5>
-                                    <div class="u-form u-form-1">
-                                        <form action="#step1" method="POST"
-                                              class="u-clearfix u-form-spacing-0 u-form-vertical u-inner-form"
-                                              source="custom" name="step1" style="padding: 26px;">
-                                            <div class="u-form-group u-form-select u-label-top u-form-group-1">
-                                                <label for="select-0ded"
-                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-1">Brend</label>
-                                                <div class="u-form-select-wrapper">
-                                                    <select id="select-0ded" name="brend"
-                                                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                                                        <option value="Item 1">Item 1</option>
-                                                        <option value="Item 2">Item 2</option>
-                                                        <option value="Item 3">Item 3</option>
-                                                    </select>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"
-                                                         version="1" class="u-caret">
-                                                        <path fill="currentColor" d="M4 8L0 4h8z"></path>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="u-form-group u-form-select u-label-top u-form-group-2">
-                                                <label for="select-fc7c"
-                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-2">Series</label>
-                                                <div class="u-form-select-wrapper">
-                                                    <select id="select-fc7c" name="series"
-                                                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                                                        <option value="Item 1">Item 1</option>
-                                                        <option value="Item 2">Item 2</option>
-                                                        <option value="Item 3">Item 3</option>
-                                                    </select>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"
-                                                         version="1" class="u-caret">
-                                                        <path fill="currentColor" d="M4 8L0 4h8z"></path>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="u-form-group u-form-select u-label-top u-form-group-3">
-                                                <label for="select-5a8a"
-                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-3">Steel
-                                                    grade</label>
-                                                <div class="u-form-select-wrapper">
-                                                    <select id="select-5a8a" name="steel"
-                                                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                                                        <option value="Item 1">Item 1</option>
-                                                        <option value="Item 2">Item 2</option>
-                                                        <option value="Item 3">Item 3</option>
-                                                    </select>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"
-                                                         version="1" class="u-caret">
-                                                        <path fill="currentColor" d="M4 8L0 4h8z"></path>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="u-align-center u-form-group u-form-submit u-label-top u-form-group-4">
-                                                <a href="#"
-                                                   class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-4-light-1 u-border-palette-3-light-1 u-btn u-btn-submit u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-hover-palette-4-light-1 u-text-palette-3-light-1 u-btn-1">Enter</a>
-                                                <input type="submit" value="submit" class="u-form-control-hidden">
-                                            </div>
-                                            <div class="u-form-send-message u-form-send-success">look our suggestion
-                                            </div>
-                                            <div class="u-form-send-error u-form-send-message">two rows must be filled
-                                                correctly
-                                            </div>
-                                            <input type="hidden" value="" name="recaptchaResponse">
-                                        </form>
-                                    </div>
-                                    <h4 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-2-light-2 u-text-3">
-                                        Not found, try next step</h4>
-                                    <div class="u-form u-form-2">
-                                        <form action="#step2" method="POST"
-                                              class="u-clearfix u-form-spacing-0 u-form-vertical u-inner-form"
-                                              source="custom" name="step2" style="padding: 26px;">
-                                            <div class="u-form-group u-label-top u-form-group-5">
-                                                <label for="text-331b"
-                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-4">Carbon
-                                                    %</label>
-                                                <input type="text" id="text-331b" name="carbon"
-                                                       class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                                       placeholder="carbon_%" required="required" maxlength="2">
-                                            </div>
-                                            <div class="u-form-group u-label-top u-form-group-6">
-                                                <label for="text-8ff4"
-                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-5">Total
-                                                    of additives (CrMoV) %</label>
-                                                <input type="text" placeholder="total_CrMoV_%" id="text-8ff4"
-                                                       name="additives"
-                                                       class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                                            </div>
-                                            <div class="u-align-center u-form-group u-form-submit u-label-top u-form-group-7">
-                                                <a href="#"
-                                                   class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-4-light-1 u-border-palette-3-light-1 u-btn u-btn-submit u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-hover-palette-4-light-1 u-text-palette-3-light-1 u-btn-2">Enter</a>
-                                                <input type="submit" value="submit" class="u-form-control-hidden">
-                                            </div>
-                                            <div class="u-form-send-message u-form-send-success">look our suggestion
-                                            </div>
-                                            <div class="u-form-send-error u-form-send-message">field Carbon must be
-                                                filled correctly
-                                            </div>
-                                            <input type="hidden" value="" name="recaptchaResponse">
-                                        </form>
-                                    </div>
-                                    <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-4-light-1 u-text-4">
-                                        Step 2<br>
-                                    </h5>
-                                    <h4 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-2-light-2 u-text-5">
-                                        Not found, try next&nbsp; step</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="u-size-30">
-                        <div class="u-layout-col">
-                            <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
-                                <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-2">
-                                    <div class="u-form u-form-3">
-                                        <form action="#step3" method="POST"
-                                              class="u-clearfix u-form-spacing-0 u-form-vertical u-inner-form"
-                                              source="custom" name="step3" style="padding: 26px;">
-                                            <div class="u-form-group u-label-top u-form-group-8">
-                                                <label for="text-1e56"
-                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-6">From
-                                                    category</label>
-                                                <input type="text" placeholder="category" id="text-1e56"
-                                                       name="other_category"
-                                                       class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                                       required="required">
-                                            </div>
-                                            <div class="u-align-center u-form-group u-form-submit u-label-top u-form-group-9">
-                                                <a href="#"
-                                                   class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-4-light-1 u-border-palette-3-light-1 u-btn u-btn-submit u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-hover-palette-4-light-1 u-text-palette-3-light-1 u-btn-3">Enter</a>
-                                                <input type="submit" value="submit" class="u-form-control-hidden">
-                                            </div>
-                                            <div class="u-form-send-message u-form-send-success">look our suggestion
-                                            </div>
-                                            <div class="u-form-send-error u-form-send-message">make a choice</div>
-                                            <input type="hidden" value="" name="recaptchaResponse">
-                                        </form>
-                                    </div>
-                                    <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-4-light-1 u-text-6">
-                                        Step 3</h5><span
-                                        class="u-file-icon u-icon u-text-palette-3-light-1 u-icon-1"><img
-                                        src="{% static 'images/stay_sharp/1828743-b6dbe677.png' %}" alt=""></span>
-                                </div>
-                            </div>
-                            <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-container-style u-layout-cell u-size-20 u-layout-cell-3">
-                                <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-3">
-                                    <h3 class="u-text u-text-palette-3-light-1 u-text-7">
-                                        <span style="font-size: 1.875rem;">Suggestion</span>
-                                    </h3>
-                                    <h4 class="u-text u-text-palette-4-light-1 u-text-8">An<span
-                                            style="font-weight: 700;"></span>gle (double)
-                                    </h4>
-                                    <h4 class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-palette-4-light-1 u-text-9">
-                                        Honing additional&nbsp;<br>for debarring&nbsp;
-                                    </h4>
-                                    <h3 class="u-text u-text-palette-3-light-1 u-text-10" data-animation-name="counter"
-                                        data-animation-event="scroll" data-animation-duration="3000">0</h3>
-                                    <h3 class="u-text u-text-palette-3-light-1 u-text-11" data-animation-name="counter"
-                                        data-animation-event="scroll" data-animation-duration="3000">0</h3>
-                                </div>
-                            </div>
-                            <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-4">
-                                <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-4">
-                                    <div class="u-form u-form-4">
-                                        <form action="# next_step_imput_data" method="POST"
-                                              class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
-                                              source="custom" name="angle_choose" style="padding: 10px;">
-                                            <div class="u-form-group u-form-name u-label-left">
-                                                <label for="name-5321"
-                                                       class="u-custom-font u-heading-font u-label u-text-palette-4-light-1 u-label-7">Angle
-                                                    (double)</label>
-                                                <input type="text" placeholder="angle" id="name-5321" name="angle"
-                                                       class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7"
-                                                       required="">
-                                            </div>
-                                            <div class="u-form-group u-label-left">
-                                                <label for="email-5321"
-                                                       class="u-custom-font u-heading-font u-label u-text-palette-4-light-1 u-label-8">Honing
-                                                    add</label>
-                                                <input type="text" placeholder="honing_add" id="email-5321"
-                                                       name="enter_honing_add"
-                                                       class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-8"
-                                                       required="required">
-                                            </div>
-                                            <div class="u-align-left-xxl u-form-group u-form-submit u-label-left">
-                                                <label class="u-label u-text-palette-4-light-1 u-label-9"></label>
-                                                <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-btn-submit-container">
-                                                    <a href="#"
-                                                       class="u-active-none u-border-4 u-border-active-palette-1-light-1 u-border-hover-palette-4-light-1 u-border-palette-3-light-1 u-btn u-btn-submit u-button-style u-hover-none u-none u-text-active-palette-1-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1 u-btn-4">Submit</a>
-                                                </div>
-                                                <input type="submit" value="submit" class="u-form-control-hidden">
-                                            </div>
-                                            <div class="u-form-send-message u-form-send-success">Thank you!!</div>
-                                            <div class="u-form-send-error u-form-send-message">Please fix errors then
-                                                try again.
-                                            </div>
-                                            <input type="hidden" value="" name="recaptchaResponse">
-                                        </form>
-                                    </div>
-                                    <h3 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-3-light-1 u-text-12">
-                                        Input you choose</h3><span
-                                        class="u-file-icon u-icon u-text-palette-3-light-1 u-icon-2"><img
-                                        src="{% static 'images/stay_sharp/1828743-b00f00f0.png' %}" alt=""></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="skrollable u-clearfix u-lightbox u-palette-1-dark-2 u-section-2" id="carousel_5524">
-    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-sheet-1">
-        <div class="u-clearfix u-expanded-width-xs u-expanded-width-xxl u-gutter-16 u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-                <div class="u-layout-row">
-                    <div class="u-size-30">
-                        <div class="u-layout-col">
-                            <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
-                                <div class="u-border-2 u-border-palette-3-base u-container-layout u-container-layout-1">
-                                    <ul class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-custom-list u-text u-text-1">
-                                        <li>
-                                            <div class="u-list-icon u-text-white u-list-icon-1">
-                                                <svg class="u-svg-content" viewBox="-48 0 448 448" id="svg-7723">
-                                                    <path d="m256 0h-160l-96 224h160l-64 224 256-320h-160zm0 0"
-                                                          fill="currentColor"></path>
-                                                </svg>
-                                            </div>
-                                            <span style="font-style: italic;">Resourse for knife​ steel<br>https://rezat.ru/ref/bladematerial/
-                          </span>
-                                        </li>
-                                        <li>
-                                            <div class="u-list-icon u-text-white u-list-icon-2">
-                                                <svg class="u-svg-content" viewBox="-48 0 448 448" id="svg-7723">
-                                                    <path d="m256 0h-160l-96 224h160l-64 224 256-320h-160zm0 0"
-                                                          fill="currentColor"></path>
-                                                </svg>
-                                            </div>
-                                            <span style="font-style: italic;"> Note: The angle, that we mean, it is whole angle with double-bevel blade.</span>
-                                        </li>
-                                    </ul>
-                                    <h4 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-white u-text-2">
-                                        R​​eference</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="u-size-30">
-                        <div class="u-layout-col">
-                            <div class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-container-style u-layout-cell u-size-60 u-layout-cell-2">
-                                <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-2">
-                                    <h4 class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-3">
-                                        <a class="u-border-3 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-link u-button-style u-none u-radius-0 u-text-hover-palette-4-light-1 u-text-palette-3-light-1 u-top-left-radius-0 u-top-right-radius-0 u-btn-1"
-                                           href="{% url 'drawing' %}" data-page-id="473215428"> See drawing for data
-                                            entry&nbsp;</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="skrollable u-clearfix u-image u-lightbox u-parallax u-shading u-section-3" id="enter_data"
-         data-image-width="1553" data-image-height="1000">
-    <div class="u-clearfix u-sheet u-valign-middle-xxl u-sheet-1">
-        <div class="u-clearfix u-expanded-width-sm u-expanded-width-xs u-expanded-width-xxl u-gutter-16 u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-                <div class="u-layout-row">
-                    <div class="u-container-style u-layout-cell u-size-30-lg u-size-30-md u-size-30-sm u-size-30-xl u-size-30-xs u-layout-cell-1">
-                        <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-1">
-                            <h3 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-palette-3-light-1 u-text-1">
-                                E <span style="font-weight: 700;"></span>nter data for griding
-                            </h3>
-                            <div class="u-form u-form-1">
-                                <form action="#data_griding" method="POST"
-                                      class="u-clearfix u-form-spacing-14 u-form-vertical u-inner-form" source="custom"
-                                      name="grinding_data" style="padding: 29px;">
-                                    <div class="u-form-group u-form-group-1">
-                                        <label for="text-114c"
-                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-1">Enter
-                                            distance between the knife jig stop and the edge in mm</label>
-                                        <input type="text" placeholder="knife_jig" id="text-114c"
-                                               name="knife_jig_grinding"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               required="required" maxlength="3">
-                                    </div>
-                                    <div class="u-form-group u-form-group-2">
-                                        <label for="text-4de5"
-                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-2">Enter
-                                            grinding wheel diameter in mm</label>
-                                        <input type="text" placeholder="wheel_diameter" id="text-4de5"
-                                               name="wheel_diameter_grinding"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               maxlength="3" required="required">
-                                    </div>
-                                    <div class="u-form-group u-form-group-3">
-                                        <label for="text-fcdc"
-                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-3">Blade
-                                            thickness behind the edge in mm</label>
-                                        <input type="text" placeholder="blade_thickness" id="text-fcdc"
-                                               name="blade_thickness"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               required="required">
-                                    </div>
-                                    <div class="u-align-center-xs u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xl u-align-right-xxl u-form-group u-form-submit">
-                                        <a href="#"
-                                           class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-4-dark-1 u-palette-3-light-1 u-radius-23 u-text-hover-white u-btn-1">Submit</a>
-                                        <input type="submit" value="submit" class="u-form-control-hidden">
-                                    </div>
-                                    <div class="u-form-send-message u-form-send-success">Thank you! See result!</div>
-                                    <div class="u-form-send-error u-form-send-message">Please fix errors then try
-                                        again.
-                                    </div>
-                                    <input type="hidden" value="" name="recaptchaResponse">
-                                </form>
-                            </div>
-                            <h3 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-palette-4-light-1 u-text-2">
-                                Calculation result<br>
-                                <span style="font-size: 1rem;">
-                      <span style="font-size: 1.25rem;" class="u-text-white">(​h</span>
-                    </span>
-                                <span class="u-text-white"
-                                      style="font-size: 1.25rem;">eight of the universal support)</span>
-                                <br>
-                            </h3>
-                            <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-container-style u-group u-palette-3-light-3 u-radius-10 u-shape-round u-group-1">
-                                <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-2">
-                                    <h3 class="u-text u-text-black u-text-3" data-animation-name="counter"
-                                        data-animation-event="scroll" data-animation-duration="3000">100<br>
-                                    </h3>
-                                </div>
-                            </div>
-                            <span class="u-file-icon u-icon u-text-palette-4-light-1 u-icon-1"><img
-                                    src="{% static 'images/stay_sharp/1828743-b6dbe677.png' %}" alt=""></span>
-                        </div>
-                    </div>
-                    <div class="u-align-left u-container-style u-layout-cell u-size-30-lg u-size-30-md u-size-30-sm u-size-30-xl u-size-30-xs u-layout-cell-2">
-                        <div class="u-border-2 u-border-palette-3-base u-container-layout u-container-layout-3">
-                            <h3 class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-palette-3-light-1 u-text-4">
-                                Enter data for h​o​ning</h3>
-                            <div class="u-form u-form-2">
-                                <form action="#data_honing" method="POST"
-                                      class="u-clearfix u-form-spacing-14 u-form-vertical u-inner-form" source="custom"
-                                      name="form-3" style="padding: 15px;">
-                                    <div class="u-form-group u-form-group-5">
-                                        <label for="text-114c"
-                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-4">Enter
-                                            distance between the knife jig stop and the edge in mm</label>
-                                        <input type="text" placeholder="knife_jig" id="text-114c" name="knife_jig"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               required="required" maxlength="3">
-                                    </div>
-                                    <div class="u-form-group u-form-group-6">
-                                        <label for="text-4de5"
-                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-5">Enter
-                                            honing wheel diameter in mm</label>
-                                        <input type="text" placeholder="wheel_diameter_honing" id="text-4de5"
-                                               name="wheel_diameter_honing"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               maxlength="3" required="required">
-                                    </div>
-                                    <div class="u-form-group u-form-group-7">
-                                        <label for="text-fcdc"
-                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-6">Blade
-                                            thickness behind the edge in mm</label>
-                                        <input type="text" placeholder="blade_thickness" id="text-fcdc"
-                                               name="blade_thickness"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               required="required">
-                                    </div>
-                                    <div class="u-form-group u-form-group-8">
-                                        <label for="text-779c"
-                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-7">FVB
-                                            rod protrusion in mm</label>
-                                        <input type="text" placeholder="fvb_rod" id="text-779c" name="fvb_rod"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               maxlength="3">
-                                    </div>
-                                    <div class="u-align-center-xs u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xl u-align-right-xxl u-form-group u-form-submit">
-                                        <a href="#"
-                                           class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-4-base u-palette-3-light-1 u-radius-23 u-text-hover-white u-btn-2">Submit</a>
-                                        <input type="submit" value="submit" class="u-form-control-hidden">
-                                    </div>
-                                    <div class="u-form-send-message u-form-send-success">Thank you! See result!</div>
-                                    <div class="u-form-send-error u-form-send-message">Please fix errors then try
-                                        again.
-                                    </div>
-                                    <input type="hidden" value="" name="recaptchaResponse">
-                                </form>
-                            </div>
-                            <h3 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-4-light-1 u-text-5">
-                                Calculation result<br>
-                                <span style="font-size: 1.25rem;" class="u-text-white"> (height of the universal support)</span>
-                            </h3>
-                            <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-container-style u-group u-palette-3-light-3 u-radius-10 u-shape-round u-group-2">
-                                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-container-layout-4">
-                                    <h3 class="u-text u-text-6" data-animation-name="counter"
-                                        data-animation-event="scroll" data-animation-duration="3000">100</h3>
-                                </div>
-                            </div>
-                            <span class="u-file-icon u-icon u-text-palette-4-light-1 u-icon-2"><img
-                                    src="{% static 'images/stay_sharp/1828743-b6dbe677.png' %}" alt=""></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section
-        class="u-clearfix u-palette-4-dark-2 u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-section-4"
-        id="carousel_7650">
-    <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-            <div class="u-layout-row">
-                <div class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xxl u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
-                    <div class="u-container-layout u-container-layout-1">
-                        <h2 class="u-align-left-xs u-text u-text-default u-text-1" data-lang-en="Get in touch">
-                            FeedBack</h2>
-                        <h6 class="u-align-center-xs u-custom-font u-text u-text-font u-text-2"
-                            data-lang-en="We can ensure reliability, low cost fares and most important, with safety and comfort in mind.">
-                            We would be glad to hear your thoughts and suggestions about service for improvement!</h6>
-                    </div>
-                </div>
-                <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2"
-                     data-href="/Calculation.html#carousel_7650" data-page-id="317024594">
-                    <div class="u-container-layout u-valign-top-xxl u-container-layout-2">
-                        <div class="u-form u-form-1">
-                            <form action="#feedback" method="POST"
-                                  class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form"
-                                  style="padding: 10px" source="custom" name="form">
-                                <div class="u-form-email u-form-group u-form-partition-factor-2">
-                                    <label class="u-label u-text-body-alt-color u-label-1"
-                                           data-lang-en="Email">Email</label>
-                                    <input type="email" placeholder="Enter a valid email address" id="email-319a"
-                                           name="email"
-                                           class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"
-                                           required="" data-lang-en="Enter a valid email address">
-                                </div>
-                                <div class="u-form-group u-form-name u-form-partition-factor-2">
-                                    <label class="u-label u-text-body-alt-color u-label-2"
-                                           data-lang-en="Name">Name</label>
-                                    <input type="text" placeholder="Enter your Name" id="name-319a" name="name"
-                                           class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"
-                                           required="" data-lang-en="Enter your Name">
-                                </div>
-                                <div class="u-form-group u-form-message">
-                                    <label class="u-label u-text-body-alt-color u-label-3" data-lang-en="Message">Message</label>
-                                    <textarea placeholder="Enter your message" id="message-319a" name="message"
-                                              class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"
-                                              required="" data-lang-en="Enter your message"></textarea>
-                                </div>
-                                <div class="u-align-left u-form-group u-form-submit">
-                                    <a href="#" class="u-btn u-btn-submit u-button-style u-white u-btn-1"
-                                       data-lang-en="{&quot;content&quot;:&quot;Submit&quot;,&quot;href&quot;:&quot;#&quot;}">Submit</a>
-                                    <input type="submit" value="submit" class="u-form-control-hidden">
-                                </div>
-                                <div class="u-form-send-message u-form-send-success" data-lang-en="
-            Thank you! Your message has been sent.
-        "> Thank you! Your message has been sent.
-                                </div>
-                                <div class="u-form-send-error u-form-send-message" data-lang-en="
-            Unable to send your message. Please fix errors then try again.
-        "> Unable to send your message. Please fix errors then try again.
-                                </div>
-                                <input type="hidden" value="" name="recaptchaResponse">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<footer class="u-clearfix u-footer u-image u-shading u-sticky u-sticky-0046 u-footer" id="sec-2fed"
-        data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""
-        data-image-width="1553" data-image-height="1000">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
-            <div class="menu-collapse"
-                 style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
-                <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                   href="#section1"
-                   data-lang-en="{&quot;content&quot;:&quot;<svg class=\&quot;u-svg-link\&quot; viewBox=\&quot;0 0 24 24\&quot;><use xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xlink:href=\&quot;#menu-hamburger\&quot;></use></svg><svg class=\&quot;u-svg-content\&quot; version=\&quot;1.1\&quot; id=\&quot;menu-hamburger\&quot; viewBox=\&quot;0 0 16 16\&quot; x=\&quot;0px\&quot; y=\&quot;0px\&quot; xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;>    <g>        <rect y=\&quot;1\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;7\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;13\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>    </g></svg>&quot;,&quot;href&quot;:&quot;#section1&quot;}">
-                    <svg class="u-svg-link" viewBox="0 0 24 24">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4336"></use>
-                    </svg>
-                    <svg class="u-svg-content" version="1.1" id="svg-4336" viewBox="0 0 16 16" x="0px" y="0px"
-                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                        <g>
-                            <rect y="1" width="16" height="2"></rect>
-                            <rect y="7" width="16" height="2"></rect>
-                            <rect y="13" width="16" height="2"></rect>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-            <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'main' %}"
-                            data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}"
-                            style="padding: 10px 0px;">Main</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'calculation' %}#carousel_7650" data-page-id="317024594"
-                            data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}"
-                            style="padding: 10px 0px;">FeedBack</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'calculation' %}"
-                            data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}"
-                            style="padding: 10px 0px;">Calculation</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'login' %}"
-                            data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}"
-                            style="padding: 10px 0px;">Login</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'account_table' %}" style="padding: 10px 0px;">Account table</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'drawing' %}" style="padding: 10px 0px;">Drawing</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="u-custom-menu u-nav-container-collapse">
-                <div class="u-container-style u-hover-feature u-inner-container-layout u-opacity u-opacity-90 u-palette-3-light-2 u-shape-round u-sidenav u-sidenav-1">
-                    <div class="u-inner-container-layout u-sidenav-overflow">
-                        <ul class="u-align-center-xxl u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-menu-one-level u-nav u-popupmenu-items u-spacing-0 u-text-active-palette-4-light-2 u-unstyled u-nav-2">
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'main' %}"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}">Main</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="{% url 'calculation' %}#carousel_7650"
-                                                      data-page-id="317024594"
-                                                      data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'calculation' %}"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}">Calculation</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="{% url 'account_table' %}">Account
-                                table</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'drawing' %}">Drawing</a>
-                            </li>
-                        </ul>
-                        <div class="u-menu-close u-menu-close-1"></div>
-                    </div>
-                </div>
-                <div class="u-menu-overlay u-opacity u-opacity-45 u-palette-1-base"></div>
-            </div>
-        </nav>
-        <p class="u-align-center u-small-text u-text u-text-variant u-text-1">2022</p>
-    </div>
-</footer>
-<span style="height: 43px; width: 43px; margin-left: 0px; margin-right: auto; margin-top: 0px; right: 20px; bottom: 25px;"
-      class="u-back-to-top u-icon u-opacity u-opacity-85 u-text-white" data-href="#">
-        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use
-                xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg>
-        <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13"
-             xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path
-                d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>
-    </span>
-
-</body>
-</html>
+{% load static %}<!DOCTYPE html><html style="font-size: 16px;" lang="ru"><head>    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta charset="utf-8">    <meta name="keywords" content="">    <meta name="description" content="">    <title>Calculation</title>    <link rel="stylesheet" href="{% static 'css/stay_sharp/nicepage.css' %}" media="screen">    <link rel="stylesheet" href="{% static 'css/stay_sharp/Calculation.css' %}" media="screen">    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/jquery.js' %}"    "="" defer=""></script>    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/nicepage.js' %}"    "="" defer=""></script>    <meta name="generator" content="Nicepage 4.16.0, nicepage.com">    <link id="u-theme-google-font" rel="stylesheet"          href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">    <script type="application/ld+json">{		"@context": "http://schema.org",		"@type": "Organization",		"name": "Site1",		"logo": "/images/default-logo.png"}</script>    <meta name="theme-color" content="#478ac9">    <meta property="og:title" content="Calculation">    <meta property="og:description" content="">    <meta property="og:type" content="website"></head><body class="u-body u-overlap u-overlap-contrast u-stick-footer u-xxl-mode" data-lang="ru"><header class="u-clearfix u-header u-sticky u-sticky-0046 u-header" id="section1-1">    <div class="u-clearfix u-sheet u-sheet-1">        <a href="https://nicepage.com" class="u-image u-logo u-image-1">            <img src="{% static 'images/stay_sharp/default-logo.png' %}" class="u-logo-image u-logo-image-1">        </a>        <nav class="u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xl u-align-right-xs u-menu u-menu-one-level u-offcanvas u-menu-1"             data-responsive-from="LG">            <div class="menu-collapse"                 style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">                <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"                   href="#section1"                   data-lang-en="{&quot;content&quot;:&quot;<svg class=\&quot;u-svg-link\&quot; viewBox=\&quot;0 0 24 24\&quot;><use xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xlink:href=\&quot;#menu-hamburger\&quot;></use></svg><svg class=\&quot;u-svg-content\&quot; version=\&quot;1.1\&quot; id=\&quot;menu-hamburger\&quot; viewBox=\&quot;0 0 16 16\&quot; x=\&quot;0px\&quot; y=\&quot;0px\&quot; xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;>    <g>        <rect y=\&quot;1\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;7\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;13\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>    </g></svg>&quot;,&quot;href&quot;:&quot;#section1&quot;}">                    <svg class="u-svg-link" viewBox="0 0 24 24">                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>                    </svg>                    <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">                        <g>                            <rect y="1" width="16" height="2"></rect>                            <rect y="7" width="16" height="2"></rect>                            <rect y="13" width="16" height="2"></rect>                        </g>                    </svg>                </a>            </div>            <div class="u-custom-menu u-nav-container">                <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">                    <li class="u-nav-item"><a                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"                            href="{% url 'main' %}"                            data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}"                            style="padding: 10px 0px;">Main</a>                    </li>                    <li class="u-nav-item"><a                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"                            href="{% url 'calculation' %}#carousel_7650" data-page-id="317024594"                            data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}"                            style="padding: 10px 0px;">FeedBack</a>                    </li>                    <li class="u-nav-item"><a                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"                            href="{% url 'calculation' %}"                            data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}"                            style="padding: 10px 0px;">Calculation</a>                    </li>                    <li class="u-nav-item"><a                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"                            href="{% url 'drawing' %}" style="padding: 10px 0px;">Drawing</a>                    </li>                    <li class="u-nav-item"><a                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"                            href="{% url 'login' %}"                            data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}"                            style="padding: 10px 0px;">Login</a>                    </li>                </ul>            </div>            <div class="u-custom-menu u-nav-container-collapse">                <div class="u-container-style u-hover-feature u-inner-container-layout u-opacity u-opacity-90 u-palette-3-light-2 u-shape-round u-sidenav u-sidenav-1">                    <div class="u-inner-container-layout u-sidenav-overflow">                        <ul class="u-align-center-xxl u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-menu-dropdown u-nav u-popupmenu-items u-spacing-0 u-text-active-palette-1-base u-unstyled u-nav-2">                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'main' %}"                                                      data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}">Main</a>                            </li>                            <li class="u-nav-item"><a class="u-button-style u-nav-link"                                                      href="{% url 'calculation' %}l#carousel_7650"                                                      data-page-id="317024594"                                                      data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>                            </li>                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'calculation' %}"                                                      data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}">Calculation</a>                            </li>                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'drawing' %}">Drawing</a>                            </li>                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}"                                                      data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>                            </li>                        </ul>                        <div class="u-menu-close u-menu-close-1"></div>                    </div>                </div>                <div class="u-menu-overlay u-opacity u-opacity-45 u-palette-1-base"></div>            </div>        </nav>    </div></header><section class="skrollable u-border-2 u-border-palette-3-base u-clearfix u-image u-parallax u-shading u-section-1"         id="sec-5637" data-image-width="1553" data-image-height="1000">    <div class="u-clearfix u-sheet u-sheet-1">        <div class="u-clearfix u-expanded-width-xs u-expanded-width-xxl u-gutter-14 u-layout-wrap u-layout-wrap-1">            <div class="u-layout">                <div class="u-layout-row">                    <div class="u-size-30">                        <div class="u-layout-col">                            <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">                                <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-1">                                    <h4 class="u-align-center u-text u-text-palette-3-light-1 u-text-1">                        <span style="font-weight: 700;">For proposing an optimal grinding angle, we need to <span                                style="font-weight: 700;"></span>kn​​ow something about your kni​fe<span                                style="font-weight: 400;"></span>                        </span>                                    </h4>                                    <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-4-light-1 u-text-2">                                        Step 1</h5>                                    <div class="u-form u-form-1">                                        <form action="#step1" method="POST"                                              class="u-clearfix u-form-spacing-0 u-form-vertical u-inner-form"                                              source="custom" name="step1" style="padding: 26px;">                                            <div class="u-form-group u-form-select u-label-top u-form-group-1">                                                <label for="select-0ded"                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-1">Brend</label>                                                <div class="u-form-select-wrapper">                                                    <select id="select-0ded" name="brend"                                                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">                                                        <option value="Item 1">Item 1</option>                                                        <option value="Item 2">Item 2</option>                                                        <option value="Item 3">Item 3</option>                                                    </select>                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"                                                         version="1" class="u-caret">                                                        <path fill="currentColor" d="M4 8L0 4h8z"></path>                                                    </svg>                                                </div>                                            </div>                                            <div class="u-form-group u-form-select u-label-top u-form-group-2">                                                <label for="select-fc7c"                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-2">Series</label>                                                <div class="u-form-select-wrapper">                                                    <select id="select-fc7c" name="series"                                                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">                                                        <option value="Item 1">Item 1</option>                                                        <option value="Item 2">Item 2</option>                                                        <option value="Item 3">Item 3</option>                                                    </select>                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"                                                         version="1" class="u-caret">                                                        <path fill="currentColor" d="M4 8L0 4h8z"></path>                                                    </svg>                                                </div>                                            </div>                                            <div class="u-form-group u-form-select u-label-top u-form-group-3">                                                <label for="select-5a8a"                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-3">Steel                                                    grade</label>                                                <div class="u-form-select-wrapper">                                                    <select id="select-5a8a" name="steel"                                                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">                                                        <option value="Item 1">Item 1</option>                                                        <option value="Item 2">Item 2</option>                                                        <option value="Item 3">Item 3</option>                                                    </select>                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"                                                         version="1" class="u-caret">                                                        <path fill="currentColor" d="M4 8L0 4h8z"></path>                                                    </svg>                                                </div>                                            </div>                                            <div class="u-align-center u-form-group u-form-submit u-label-top u-form-group-4">                                                <a href="#"                                                   class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-4-light-1 u-border-palette-3-light-1 u-btn u-btn-submit u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-hover-palette-4-light-1 u-text-palette-3-light-1 u-btn-1">Enter</a>                                                <input type="submit" value="submit" class="u-form-control-hidden">                                            </div>                                            <div class="u-form-send-message u-form-send-success">look our suggestion                                            </div>                                            <div class="u-form-send-error u-form-send-message">two rows must be filled                                                correctly                                            </div>                                            <input type="hidden" value="" name="recaptchaResponse">                                        </form>                                    </div>                                    <h4 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-2-light-2 u-text-3">                                        Not found, try next step</h4>                                    <div class="u-form u-form-2">                                        <form action="#step2" method="POST"                                              class="u-clearfix u-form-spacing-0 u-form-vertical u-inner-form"                                              source="custom" name="step2" style="padding: 26px;">                                            <div class="u-form-group u-label-top u-form-group-5">                                                <label for="text-331b"                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-4">Carbon                                                    %</label>                                                <input type="text" id="text-331b" name="carbon"                                                       class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"                                                       placeholder="carbon_%" required="required" maxlength="2">                                            </div>                                            <div class="u-form-group u-label-top u-form-group-6">                                                <label for="text-8ff4"                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-5">Total                                                    of additives (CrMoV) %</label>                                                <input type="text" placeholder="total_CrMoV_%" id="text-8ff4"                                                       name="additives"                                                       class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">                                            </div>                                            <div class="u-align-center u-form-group u-form-submit u-label-top u-form-group-7">                                                <a href="#"                                                   class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-4-light-1 u-border-palette-3-light-1 u-btn u-btn-submit u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-hover-palette-4-light-1 u-text-palette-3-light-1 u-btn-2">Enter</a>                                                <input type="submit" value="submit" class="u-form-control-hidden">                                            </div>                                            <div class="u-form-send-message u-form-send-success">look our suggestion                                            </div>                                            <div class="u-form-send-error u-form-send-message">field Carbon must be                                                filled correctly                                            </div>                                            <input type="hidden" value="" name="recaptchaResponse">                                        </form>                                    </div>                                    <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-4-light-1 u-text-4">                                        Step 2<br>                                    </h5>                                    <h4 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-2-light-2 u-text-5">                                        Not found, try next&nbsp; step</h4>                                </div>                            </div>                        </div>                    </div>                    <div class="u-size-30">                        <div class="u-layout-col">                            <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">                                <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-2">                                    <div class="u-form u-form-3">                                        <form action="#step3" method="POST"                                              class="u-clearfix u-form-spacing-0 u-form-vertical u-inner-form"                                              source="custom" name="step3" style="padding: 26px;">                                            <div class="u-form-group u-label-top u-form-group-8">                                                <label for="text-1e56"                                                       class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-6">From                                                    category</label>                                                <input type="text" placeholder="category" id="text-1e56"                                                       name="other_category"                                                       class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"                                                       required="required">                                            </div>                                            <div class="u-align-center u-form-group u-form-submit u-label-top u-form-group-9">                                                <a href="#"                                                   class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-4-light-1 u-border-palette-3-light-1 u-btn u-btn-submit u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-hover-palette-4-light-1 u-text-palette-3-light-1 u-btn-3">Enter</a>                                                <input type="submit" value="submit" class="u-form-control-hidden">                                            </div>                                            <div class="u-form-send-message u-form-send-success">look our suggestion                                            </div>                                            <div class="u-form-send-error u-form-send-message">make a choice</div>                                            <input type="hidden" value="" name="recaptchaResponse">                                        </form>                                    </div>                                    <h5 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-4-light-1 u-text-6">                                        Step 3</h5><span                                        class="u-file-icon u-icon u-text-palette-3-light-1 u-icon-1"><img                                        src="{% static 'images/stay_sharp/1828743-b6dbe677.png' %}" alt=""></span>                                </div>                            </div>                            <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-container-style u-layout-cell u-size-20 u-layout-cell-3">                                <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-3">                                    <h3 class="u-text u-text-palette-3-light-1 u-text-7">                                        <span style="font-size: 1.875rem;">Suggestion</span>                                    </h3>                                    <h4 class="u-text u-text-palette-4-light-1 u-text-8">An<span                                            style="font-weight: 700;"></span>gle (double)                                    </h4>                                    <h4 class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-palette-4-light-1 u-text-9">                                        Honing additional&nbsp;<br>for debarring&nbsp;                                    </h4>                                    <h3 class="u-text u-text-palette-3-light-1 u-text-10" data-animation-name="counter"                                        data-animation-event="scroll" data-animation-duration="3000">0</h3>                                    <h3 class="u-text u-text-palette-3-light-1 u-text-11" data-animation-name="counter"                                        data-animation-event="scroll" data-animation-duration="3000">0</h3>                                </div>                            </div>                            <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-4">                                <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-4">                                    <div class="u-form u-form-4">                                        <form action="# next_step_imput_data" method="POST"                                              class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"                                              source="custom" name="angle_choose" style="padding: 10px;">                                            <div class="u-form-group u-form-name u-label-left">                                                <label for="name-5321"                                                       class="u-custom-font u-heading-font u-label u-text-palette-4-light-1 u-label-7">Angle                                                    (double)</label>                                                <input type="text" placeholder="angle" id="name-5321" name="angle"                                                       class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7"                                                       required="">                                            </div>                                            <div class="u-form-group u-label-left">                                                <label for="email-5321"                                                       class="u-custom-font u-heading-font u-label u-text-palette-4-light-1 u-label-8">Honing                                                    add</label>                                                <input type="text" placeholder="honing_add" id="email-5321"                                                       name="enter_honing_add"                                                       class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-8"                                                       required="required">                                            </div>                                            <div class="u-align-left-xxl u-form-group u-form-submit u-label-left">                                                <label class="u-label u-text-palette-4-light-1 u-label-9"></label>                                                <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-btn-submit-container">                                                    <a href="#"                                                       class="u-active-none u-border-4 u-border-active-palette-1-light-1 u-border-hover-palette-4-light-1 u-border-palette-3-light-1 u-btn u-btn-submit u-button-style u-hover-none u-none u-text-active-palette-1-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1 u-btn-4">Submit</a>                                                </div>                                                <input type="submit" value="submit" class="u-form-control-hidden">                                            </div>                                            <div class="u-form-send-message u-form-send-success">Thank you!!</div>                                            <div class="u-form-send-error u-form-send-message">Please fix errors then                                                try again.                                            </div>                                            <input type="hidden" value="" name="recaptchaResponse">                                        </form>                                    </div>                                    <h3 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-3-light-1 u-text-12">                                        Input you choose</h3><span                                        class="u-file-icon u-icon u-text-palette-3-light-1 u-icon-2"><img                                        src="{% static 'images/stay_sharp/1828743-b00f00f0.png' %}" alt=""></span>                                </div>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </div></section><section class="skrollable u-clearfix u-lightbox u-palette-1-dark-2 u-section-2" id="carousel_5524">    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-sheet-1">        <div class="u-clearfix u-expanded-width-xs u-expanded-width-xxl u-gutter-16 u-layout-wrap u-layout-wrap-1">            <div class="u-layout">                <div class="u-layout-row">                    <div class="u-size-30">                        <div class="u-layout-col">                            <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">                                <div class="u-border-2 u-border-palette-3-base u-container-layout u-container-layout-1">                                    <ul class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-custom-list u-text u-text-1">                                        <li>                                            <div class="u-list-icon u-text-white u-list-icon-1">                                                <svg class="u-svg-content" viewBox="-48 0 448 448" id="svg-7723">                                                    <path d="m256 0h-160l-96 224h160l-64 224 256-320h-160zm0 0"                                                          fill="currentColor"></path>                                                </svg>                                            </div>                                            <span style="font-style: italic;">Resourse for knife​ steel<br>https://rezat.ru/ref/bladematerial/                          </span>                                        </li>                                        <li>                                            <div class="u-list-icon u-text-white u-list-icon-2">                                                <svg class="u-svg-content" viewBox="-48 0 448 448" id="svg-7723">                                                    <path d="m256 0h-160l-96 224h160l-64 224 256-320h-160zm0 0"                                                          fill="currentColor"></path>                                                </svg>                                            </div>                                            <span style="font-style: italic;"> Note: The angle, that we mean, it is whole angle with double-bevel blade.</span>                                        </li>                                    </ul>                                    <h4 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-white u-text-2">                                        R​​eference</h4>                                </div>                            </div>                        </div>                    </div>                    <div class="u-size-30">                        <div class="u-layout-col">                            <div class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-container-style u-layout-cell u-size-60 u-layout-cell-2">                                <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-2">                                    <h4 class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-3">                                        <a class="u-border-3 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-link u-button-style u-none u-radius-0 u-text-hover-palette-4-light-1 u-text-palette-3-light-1 u-top-left-radius-0 u-top-right-radius-0 u-btn-1"                                           href="{% url 'drawing' %}" data-page-id="473215428"> See drawing for data                                            entry&nbsp;</a>                                    </h4>                                </div>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </div></section><section class="skrollable u-clearfix u-image u-lightbox u-parallax u-shading u-section-3" id="enter_data"         data-image-width="1553" data-image-height="1000">    <div class="u-clearfix u-sheet u-valign-middle-xxl u-sheet-1">        <div class="u-clearfix u-expanded-width-sm u-expanded-width-xs u-expanded-width-xxl u-gutter-16 u-layout-wrap u-layout-wrap-1">            <div class="u-layout">                <div class="u-layout-row">                    <div class="u-container-style u-layout-cell u-size-30-lg u-size-30-md u-size-30-sm u-size-30-xl u-size-30-xs u-layout-cell-1">                        <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-1">                            <h3 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-palette-3-light-1 u-text-1">                                E <span style="font-weight: 700;"></span>nter data for griding                            </h3>                            <div class="u-form u-form-1">                                <form action="#data_griding" method="POST"                                      class="u-clearfix u-form-spacing-14 u-form-vertical u-inner-form" source="custom"                                      name="grinding_data" style="padding: 29px;">                                    <div class="u-form-group u-form-group-1">                                        <label for="text-114c"                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-1">Enter                                            distance between the knife jig stop and the edge in mm</label>                                        <input type="text" placeholder="knife_jig" id="text-114c"                                               name="knife_jig_grinding"                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"                                               required="required" maxlength="3">                                    </div>                                    <div class="u-form-group u-form-group-2">                                        <label for="text-4de5"                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-2">Enter                                            grinding wheel diameter in mm</label>                                        <input type="text" placeholder="wheel_diameter" id="text-4de5"                                               name="wheel_diameter_grinding"                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"                                               maxlength="3" required="required">                                    </div>                                    <div class="u-form-group u-form-group-3">                                        <label for="text-fcdc"                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-3">Blade                                            thickness behind the edge in mm</label>                                        <input type="text" placeholder="blade_thickness" id="text-fcdc"                                               name="blade_thickness"                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"                                               required="required">                                    </div>                                    <div class="u-align-center-xs u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xl u-align-right-xxl u-form-group u-form-submit">                                        <a href="#"                                           class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-4-dark-1 u-palette-3-light-1 u-radius-23 u-text-hover-white u-btn-1">Submit</a>                                        <input type="submit" value="submit" class="u-form-control-hidden">                                    </div>                                    <div class="u-form-send-message u-form-send-success">Thank you! See result!</div>                                    <div class="u-form-send-error u-form-send-message">Please fix errors then try                                        again.                                    </div>                                    <input type="hidden" value="" name="recaptchaResponse">                                </form>                            </div>                            <h3 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-palette-4-light-1 u-text-2">                                Calculation result<br>                                <span style="font-size: 1rem;">                      <span style="font-size: 1.25rem;" class="u-text-white">(​h</span>                    </span>                                <span class="u-text-white"                                      style="font-size: 1.25rem;">eight of the universal support)</span>                                <br>                            </h3>                            <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-container-style u-group u-palette-3-light-3 u-radius-10 u-shape-round u-group-1">                                <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-2">                                    <h3 class="u-text u-text-black u-text-3" data-animation-name="counter"                                        data-animation-event="scroll" data-animation-duration="3000">100<br>                                    </h3>                                </div>                            </div>                            <span class="u-file-icon u-icon u-text-palette-4-light-1 u-icon-1"><img                                    src="{% static 'images/stay_sharp/1828743-b6dbe677.png' %}" alt=""></span>                        </div>                    </div>                    <div class="u-align-left u-container-style u-layout-cell u-size-30-lg u-size-30-md u-size-30-sm u-size-30-xl u-size-30-xs u-layout-cell-2">                        <div class="u-border-2 u-border-palette-3-base u-container-layout u-container-layout-3">                            <h3 class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-palette-3-light-1 u-text-4">                                Enter data for h​o​ning</h3>                            <div class="u-form u-form-2">                                <form action="#data_honing" method="POST"                                      class="u-clearfix u-form-spacing-14 u-form-vertical u-inner-form" source="custom"                                      name="form-3" style="padding: 15px;">                                    <div class="u-form-group u-form-group-5">                                        <label for="text-114c"                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-4">Enter                                            distance between the knife jig stop and the edge in mm</label>                                        <input type="text" placeholder="knife_jig" id="text-114c" name="knife_jig"                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"                                               required="required" maxlength="3">                                    </div>                                    <div class="u-form-group u-form-group-6">                                        <label for="text-4de5"                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-5">Enter                                            honing wheel diameter in mm</label>                                        <input type="text" placeholder="wheel_diameter_honing" id="text-4de5"                                               name="wheel_diameter_honing"                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"                                               maxlength="3" required="required">                                    </div>                                    <div class="u-form-group u-form-group-7">                                        <label for="text-fcdc"                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-6">Blade                                            thickness behind the edge in mm</label>                                        <input type="text" placeholder="blade_thickness" id="text-fcdc"                                               name="blade_thickness"                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"                                               required="required">                                    </div>                                    <div class="u-form-group u-form-group-8">                                        <label for="text-779c"                                               class="u-custom-font u-heading-font u-label u-text-palette-3-light-1 u-label-7">FVB                                            rod protrusion in mm</label>                                        <input type="text" placeholder="fvb_rod" id="text-779c" name="fvb_rod"                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"                                               maxlength="3">                                    </div>                                    <div class="u-align-center-xs u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xl u-align-right-xxl u-form-group u-form-submit">                                        <a href="#"                                           class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-4-base u-palette-3-light-1 u-radius-23 u-text-hover-white u-btn-2">Submit</a>                                        <input type="submit" value="submit" class="u-form-control-hidden">                                    </div>                                    <div class="u-form-send-message u-form-send-success">Thank you! See result!</div>                                    <div class="u-form-send-error u-form-send-message">Please fix errors then try                                        again.                                    </div>                                    <input type="hidden" value="" name="recaptchaResponse">                                </form>                            </div>                            <h3 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-4-light-1 u-text-5">                                Calculation result<br>                                <span style="font-size: 1.25rem;" class="u-text-white"> (height of the universal support)</span>                            </h3>                            <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-container-style u-group u-palette-3-light-3 u-radius-10 u-shape-round u-group-2">                                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-container-layout-4">                                    <h3 class="u-text u-text-6" data-animation-name="counter"                                        data-animation-event="scroll" data-animation-duration="3000">100</h3>                                </div>                            </div>                            <span class="u-file-icon u-icon u-text-palette-4-light-1 u-icon-2"><img                                    src="{% static 'images/stay_sharp/1828743-b6dbe677.png' %}" alt=""></span>                        </div>                    </div>                </div>            </div>        </div>    </div></section><section        class="u-clearfix u-palette-4-dark-2 u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-section-4"        id="carousel_7650">    <div class="u-clearfix u-layout-wrap u-layout-wrap-1">        <div class="u-layout">            <div class="u-layout-row">                <div class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xxl u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">                    <div class="u-container-layout u-container-layout-1">                        <h2 class="u-align-left-xs u-text u-text-default u-text-1" data-lang-en="Get in touch">                            FeedBack</h2>                        <h6 class="u-align-center-xs u-custom-font u-text u-text-font u-text-2"                            data-lang-en="We can ensure reliability, low cost fares and most important, with safety and comfort in mind.">                            We would be glad to hear your thoughts and suggestions about service for improvement!</h6>                    </div>                </div>                <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2"                     data-href="/Calculation.html#carousel_7650" data-page-id="317024594">                    <div class="u-container-layout u-valign-top-xxl u-container-layout-2">                        <div class="u-form u-form-1">                            <form action="#feedback" method="POST"                                  class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form"                                  style="padding: 10px" source="custom" name="form">                                <div class="u-form-email u-form-group u-form-partition-factor-2">                                    <label class="u-label u-text-body-alt-color u-label-1"                                           data-lang-en="Email">Email</label>                                    <input type="email" placeholder="Enter a valid email address" id="email-319a"                                           name="email"                                           class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"                                           required="" data-lang-en="Enter a valid email address">                                </div>                                <div class="u-form-group u-form-name u-form-partition-factor-2">                                    <label class="u-label u-text-body-alt-color u-label-2"                                           data-lang-en="Name">Name</label>                                    <input type="text" placeholder="Enter your Name" id="name-319a" name="name"                                           class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"                                           required="" data-lang-en="Enter your Name">                                </div>                                <div class="u-form-group u-form-message">                                    <label class="u-label u-text-body-alt-color u-label-3" data-lang-en="Message">Message</label>                                    <textarea placeholder="Enter your message" id="message-319a" name="message"                                              class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"                                              required="" data-lang-en="Enter your message"></textarea>                                </div>                                <div class="u-align-left u-form-group u-form-submit">                                    <a href="#" class="u-btn u-btn-submit u-button-style u-white u-btn-1"                                       data-lang-en="{&quot;content&quot;:&quot;Submit&quot;,&quot;href&quot;:&quot;#&quot;}">Submit</a>                                    <input type="submit" value="submit" class="u-form-control-hidden">                                </div>                                <div class="u-form-send-message u-form-send-success" data-lang-en="            Thank you! Your message has been sent.        "> Thank you! Your message has been sent.                                </div>                                <div class="u-form-send-error u-form-send-message" data-lang-en="            Unable to send your message. Please fix errors then try again.        "> Unable to send your message. Please fix errors then try again.                                </div>                                <input type="hidden" value="" name="recaptchaResponse">                            </form>                        </div>                    </div>                </div>            </div>        </div>    </div></section><footer class="u-clearfix u-footer u-image u-shading u-sticky u-sticky-0046 u-footer" id="sec-2fed"        data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""        data-image-width="1553" data-image-height="1000">    <div class="u-clearfix u-sheet u-sheet-1">        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">            <div class="menu-collapse"                 style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">                <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"                   href="#section1"                   data-lang-en="{&quot;content&quot;:&quot;<svg class=\&quot;u-svg-link\&quot; viewBox=\&quot;0 0 24 24\&quot;><use xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xlink:href=\&quot;#menu-hamburger\&quot;></use></svg><svg class=\&quot;u-svg-content\&quot; version=\&quot;1.1\&quot; id=\&quot;menu-hamburger\&quot; viewBox=\&quot;0 0 16 16\&quot; x=\&quot;0px\&quot; y=\&quot;0px\&quot; xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;>    <g>        <rect y=\&quot;1\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;7\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;13\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>    </g></svg>&quot;,&quot;href&quot;:&quot;#section1&quot;}">                    <svg class="u-svg-link" viewBox="0 0 24 24">                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4336"></use>                    </svg>                    <svg class="u-svg-content" version="1.1" id="svg-4336" viewBox="0 0 16 16" x="0px" y="0px"                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">                        <g>                            <rect y="1" width="16" height="2"></rect>                            <rect y="7" width="16" height="2"></rect>                            <rect y="13" width="16" height="2"></rect>                        </g>                    </svg>                </a>            </div>            <div class="u-custom-menu u-nav-container">                <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">                    <li class="u-nav-item"><a                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"                            href="{% url 'main' %}"                            data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}"                            style="padding: 10px 0px;">Main</a>                    </li>                    <li class="u-nav-item"><a                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"                            href="{% url 'calculation' %}#carousel_7650" data-page-id="317024594"                            data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}"                            style="padding: 10px 0px;">FeedBack</a>                    </li>                    <li class="u-nav-item"><a                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"                            href="{% url 'calculation' %}"                            data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}"                            style="padding: 10px 0px;">Calculation</a>                    </li>                    <li class="u-nav-item"><a                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"                            href="{% url 'login' %}"                            data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}"                            style="padding: 10px 0px;">Login</a>                    </li>                    <li class="u-nav-item"><a                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"                            href="{% url 'account_table' %}" style="padding: 10px 0px;">Account table</a>                    </li>                    <li class="u-nav-item"><a                            class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-4-light-1 u-text-palette-3-light-1"                            href="{% url 'drawing' %}" style="padding: 10px 0px;">Drawing</a>                    </li>                </ul>            </div>            <div class="u-custom-menu u-nav-container-collapse">                <div class="u-container-style u-hover-feature u-inner-container-layout u-opacity u-opacity-90 u-palette-3-light-2 u-shape-round u-sidenav u-sidenav-1">                    <div class="u-inner-container-layout u-sidenav-overflow">                        <ul class="u-align-center-xxl u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-menu-one-level u-nav u-popupmenu-items u-spacing-0 u-text-active-palette-4-light-2 u-unstyled u-nav-2">                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'main' %}"                                                      data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}">Main</a>                            </li>                            <li class="u-nav-item"><a class="u-button-style u-nav-link"                                                      href="{% url 'calculation' %}#carousel_7650"                                                      data-page-id="317024594"                                                      data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>                            </li>                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'calculation' %}"                                                      data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}">Calculation</a>                            </li>                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}"                                                      data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>                            </li>                            <li class="u-nav-item"><a class="u-button-style u-nav-link"                                                      href="{% url 'account_table' %}">Account                                table</a>                            </li>                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'drawing' %}">Drawing</a>                            </li>                        </ul>                        <div class="u-menu-close u-menu-close-1"></div>                    </div>                </div>                <div class="u-menu-overlay u-opacity u-opacity-45 u-palette-1-base"></div>            </div>        </nav>        <p class="u-align-center u-small-text u-text u-text-variant u-text-1">2022</p>    </div></footer><span style="height: 43px; width: 43px; margin-left: 0px; margin-right: auto; margin-top: 0px; right: 20px; bottom: 25px;"      class="u-back-to-top u-icon u-opacity u-opacity-85 u-text-white" data-href="#">        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use                xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg>        <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13"             xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path                d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>    </span></body></html>

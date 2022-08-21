@@ -1,20 +1,24 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="ru"><head>
+<html style="font-size: 16px;" lang="ru">
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>Login</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Login.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
+    <link rel="stylesheet" href="{% static 'css/stay_sharp/nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/stay_sharp/Login.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/jquery.js' %}"
+    "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/nicepage.js' %}"
+    "="" defer=""></script>
     <meta name="generator" content="Nicepage 4.16.0, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
-    
+    <link id="u-theme-google-font" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -25,111 +29,187 @@
     <meta property="og:title" content="Login">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  </head>
-  <body class="u-body u-overlap u-overlap-contrast u-overlap-transparent u-xxl-mode" data-lang="ru"><header class="u-clearfix u-header u-sticky u-sticky-0046 u-header" id="section1-1"><div class="u-clearfix u-sheet u-sheet-1">
+</head>
+<body class="u-body u-overlap u-overlap-contrast u-overlap-transparent u-xxl-mode" data-lang="ru">
+<header class="u-clearfix u-header u-sticky u-sticky-0046 u-header" id="section1-1">
+    <div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-          <img src="/images/default-logo.png" class="u-logo-image u-logo-image-1">
+            <img src="{% static 'images/stay_sharp/default-logo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
-        <nav class="u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xl u-align-right-xs u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="LG">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
-            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#section1" data-lang-en="{&quot;content&quot;:&quot;<svg class=\&quot;u-svg-link\&quot; viewBox=\&quot;0 0 24 24\&quot;><use xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xlink:href=\&quot;#menu-hamburger\&quot;></use></svg><svg class=\&quot;u-svg-content\&quot; version=\&quot;1.1\&quot; id=\&quot;menu-hamburger\&quot; viewBox=\&quot;0 0 16 16\&quot; x=\&quot;0px\&quot; y=\&quot;0px\&quot; xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;>    <g>        <rect y=\&quot;1\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;7\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;13\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>    </g></svg>&quot;,&quot;href&quot;:&quot;#section1&quot;}">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1" href="/Main.html" data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}" style="padding: 10px 0px;">Main</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1" href="/Calculation.html#carousel_7650" data-page-id="317024594" data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}" style="padding: 10px 0px;">FeedBack</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1" href="/Calculation.html" data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}" style="padding: 10px 0px;">Calculation</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1" href="/Drawing.html" style="padding: 10px 0px;">Drawing</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1" href="/Login.html" data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}" style="padding: 10px 0px;">Login</a>
-</li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-container-style u-hover-feature u-inner-container-layout u-opacity u-opacity-90 u-palette-3-light-2 u-shape-round u-sidenav u-sidenav-1">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <ul class="u-align-center-xxl u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-menu-dropdown u-nav u-popupmenu-items u-spacing-0 u-text-active-palette-1-base u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Main.html" data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}">Main</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Calculation.html#carousel_7650" data-page-id="317024594" data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Calculation.html" data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}">Calculation</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Drawing.html">Drawing</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Login.html" data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>
-</li></ul>
-                <div class="u-menu-close u-menu-close-1"></div>
-              </div>
+        <nav class="u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xl u-align-right-xs u-menu u-menu-one-level u-offcanvas u-menu-1"
+             data-responsive-from="LG">
+            <div class="menu-collapse"
+                 style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+                <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                   href="#section1"
+                   data-lang-en="{&quot;content&quot;:&quot;<svg class=\&quot;u-svg-link\&quot; viewBox=\&quot;0 0 24 24\&quot;><use xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xlink:href=\&quot;#menu-hamburger\&quot;></use></svg><svg class=\&quot;u-svg-content\&quot; version=\&quot;1.1\&quot; id=\&quot;menu-hamburger\&quot; viewBox=\&quot;0 0 16 16\&quot; x=\&quot;0px\&quot; y=\&quot;0px\&quot; xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;>    <g>        <rect y=\&quot;1\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;7\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;13\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>    </g></svg>&quot;,&quot;href&quot;:&quot;#section1&quot;}">
+                    <svg class="u-svg-link" viewBox="0 0 24 24">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+                    </svg>
+                    <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
+                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <rect y="1" width="16" height="2"></rect>
+                            <rect y="7" width="16" height="2"></rect>
+                            <rect y="13" width="16" height="2"></rect>
+                        </g>
+                    </svg>
+                </a>
             </div>
-            <div class="u-menu-overlay u-opacity u-opacity-45 u-palette-1-base"></div>
-          </div>
+            <div class="u-custom-menu u-nav-container">
+                <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
+                    <li class="u-nav-item"><a
+                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
+                            href="{%  url 'main' %}"
+                            data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}"
+                            style="padding: 10px 0px;">Main</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
+                            href="{%  url 'calculation' %}#carousel_7650" data-page-id="317024594"
+                            data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}"
+                            style="padding: 10px 0px;">FeedBack</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
+                            href="{%  url 'calculation' %}"
+                            data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}"
+                            style="padding: 10px 0px;">Calculation</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
+                            href="{% url 'drawing' %}" style="padding: 10px 0px;">Drawing</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
+                            href="{% url 'login' %}"
+                            data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}"
+                            style="padding: 10px 0px;">Login</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="u-custom-menu u-nav-container-collapse">
+                <div class="u-container-style u-hover-feature u-inner-container-layout u-opacity u-opacity-90 u-palette-3-light-2 u-shape-round u-sidenav u-sidenav-1">
+                    <div class="u-inner-container-layout u-sidenav-overflow">
+                        <ul class="u-align-center-xxl u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-menu-dropdown u-nav u-popupmenu-items u-spacing-0 u-text-active-palette-1-base u-unstyled u-nav-2">
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{%  url 'main' %}"
+                                                      data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}">Main</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                                      href="{%  url 'calculation' %}#carousel_7650" data-page-id="317024594"
+                                                      data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{%  url 'calculation' %}"
+                                                      data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}">Calculation</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'drawing' %}">Drawing</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}"
+                                                      data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>
+                            </li>
+                        </ul>
+                        <div class="u-menu-close u-menu-close-1"></div>
+                    </div>
+                </div>
+                <div class="u-menu-overlay u-opacity u-opacity-45 u-palette-1-base"></div>
+            </div>
         </nav>
-      </div></header>
-    <section class="u-clearfix u-image u-shading u-section-1" id="login" data-image-width="1500" data-image-height="1000">
-      <div class="u-clearfix u-sheet u-sheet-1">
+    </div>
+</header>
+<section class="u-clearfix u-image u-shading u-section-1" id="login" data-image-width="1500" data-image-height="1000">
+    <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-                <div class="u-container-layout u-container-layout-1">
-                  <h3 class="u-text u-text-default u-text-1">Log in</h3>
-                  <div class="u-form u-form-1">
-                    <form action="#enter_account" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="login" style="padding: 10px;" redirect="true">
-                      <div class="u-form-email u-form-group">
-                        <label for="email-ad88" class="u-label u-label-1">Email</label>
-                        <input type="email" placeholder="Enter a valid email address" id="email-ad88" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
-                      </div>
-                      <div class="u-form-group u-form-group-2">
-                        <label for="text-db67" class="u-label u-label-2">Password</label>
-                        <input type="text" id="text-db67" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" placeholder="password" required="required">
-                      </div>
-                      <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-align-left-xxl u-form-group u-form-submit">
-                        <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-hover-palette-4-light-1 u-palette-3-light-1 u-btn-1">Submit</a>
-                        <input type="submit" value="submit" class="u-form-control-hidden">
-                      </div>
-                      <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                      <div class="u-form-send-error u-form-send-message">Please fix errors then try again.</div>
-                      <input type="hidden" value="" name="recaptchaResponse">
-                    </form>
-                  </div>
+            <div class="u-layout">
+                <div class="u-layout-row">
+                    <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+                        <div class="u-container-layout u-container-layout-1">
+                            <h3 class="u-text u-text-default u-text-1">Log in</h3>
+                            <div class="u-form u-form-1">
+                                <form action="#enter_account" method="POST"
+                                      class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form"
+                                      source="custom" name="login" style="padding: 10px;" redirect="true">
+                                    <div class="u-form-email u-form-group">
+                                        <label for="email-ad88" class="u-label u-label-1">Email</label>
+                                        <input type="email" placeholder="Enter a valid email address" id="email-ad88"
+                                               name="email"
+                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                               required="">
+                                    </div>
+                                    <div class="u-form-group u-form-group-2">
+                                        <label for="text-db67" class="u-label u-label-2">Password</label>
+                                        <input type="text" id="text-db67" name="password"
+                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                               placeholder="password" required="required">
+                                    </div>
+                                    <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-align-left-xxl u-form-group u-form-submit">
+                                        <a href="#"
+                                           class="u-border-none u-btn u-btn-submit u-button-style u-hover-palette-4-light-1 u-palette-3-light-1 u-btn-1">Submit</a>
+                                        <input type="submit" value="submit" class="u-form-control-hidden">
+                                    </div>
+                                    <div class="u-form-send-message u-form-send-success"> Thank you! Your message has
+                                        been sent.
+                                    </div>
+                                    <div class="u-form-send-error u-form-send-message">Please fix errors then try
+                                        again.
+                                    </div>
+                                    <input type="hidden" value="" name="recaptchaResponse">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+                        <div class="u-container-layout u-container-layout-2">
+                            <h3 class="u-text u-text-default u-text-2">Sigh up</h3>
+                            <div class="u-form u-form-2">
+                                <form action="#register" method="POST"
+                                      class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form"
+                                      source="custom" name="sighup" style="padding: 10px;" redirect="true">
+                                    <div class="u-form-group u-form-name">
+                                        <label for="name-ad88" class="u-label u-label-3">Name</label>
+                                        <input type="text" placeholder="Enter your Name" id="name-ad88" name="name"
+                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                               required="">
+                                    </div>
+                                    <div class="u-form-email u-form-group">
+                                        <label for="email-ad88" class="u-label u-label-4">Email</label>
+                                        <input type="email" placeholder="Enter a valid email address" id="email-ad88"
+                                               name="email"
+                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                               required="">
+                                    </div>
+                                    <div class="u-form-group u-form-group-6">
+                                        <label for="text-bbe7" class="u-label u-label-5">Password</label>
+                                        <input type="text" placeholder="password" id="text-bbe7" name="password"
+                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                               required="required">
+                                    </div>
+                                    <div class="u-form-group u-form-group-7">
+                                        <label for="text-6ce6" class="u-label u-label-6">Confirm password</label>
+                                        <input type="text" placeholder="confirm_password" id="text-6ce6"
+                                               name="confirm_password"
+                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                               required="required">
+                                    </div>
+                                    <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-align-left-xxl u-form-group u-form-submit">
+                                        <a href="#"
+                                           class="u-border-none u-btn u-btn-submit u-button-style u-hover-palette-4-light-1 u-palette-3-light-1 u-btn-2">Submit</a>
+                                        <input type="submit" value="submit" class="u-form-control-hidden">
+                                    </div>
+                                    <div class="u-form-send-message u-form-send-success">Thank you!</div>
+                                    <div class="u-form-send-error u-form-send-message">Please fix errors then try
+                                        again.
+                                    </div>
+                                    <input type="hidden" value="" name="recaptchaResponse">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-                <div class="u-container-layout u-container-layout-2">
-                  <h3 class="u-text u-text-default u-text-2">Sigh up</h3>
-                  <div class="u-form u-form-2">
-                    <form action="#register" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="sighup" style="padding: 10px;" redirect="true">
-                      <div class="u-form-group u-form-name">
-                        <label for="name-ad88" class="u-label u-label-3">Name</label>
-                        <input type="text" placeholder="Enter your Name" id="name-ad88" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
-                      </div>
-                      <div class="u-form-email u-form-group">
-                        <label for="email-ad88" class="u-label u-label-4">Email</label>
-                        <input type="email" placeholder="Enter a valid email address" id="email-ad88" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
-                      </div>
-                      <div class="u-form-group u-form-group-6">
-                        <label for="text-bbe7" class="u-label u-label-5">Password</label>
-                        <input type="text" placeholder="password" id="text-bbe7" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
-                      </div>
-                      <div class="u-form-group u-form-group-7">
-                        <label for="text-6ce6" class="u-label u-label-6">Confirm password</label>
-                        <input type="text" placeholder="confirm_password" id="text-6ce6" name="confirm_password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
-                      </div>
-                      <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-align-left-xxl u-form-group u-form-submit">
-                        <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-hover-palette-4-light-1 u-palette-3-light-1 u-btn-2">Submit</a>
-                        <input type="submit" value="submit" class="u-form-control-hidden">
-                      </div>
-                      <div class="u-form-send-message u-form-send-success">Thank you!</div>
-                      <div class="u-form-send-error u-form-send-message">Please fix errors then try again.</div>
-                      <input type="hidden" value="" name="recaptchaResponse">
-                    </form>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
-    
-    
-    
-  
-</body></html>
+    </div>
+</section>
+
+
+</body>
+</html>
