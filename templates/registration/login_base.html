@@ -10,11 +10,9 @@
     <title>Login</title>
     <link rel="stylesheet" href="{% static 'css/stay_sharp/nicepage.css' %}" media="screen">
     <link rel="stylesheet" href="{% static 'css/stay_sharp/Login.css' %}" media="screen">
-    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/jquery.js' %}"
-    "="" defer=""></script>
-    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/nicepage.js' %}"
-    "="" defer=""></script>
-    <meta name="generator" content="Nicepage 4.16.0, nicepage.com">
+    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/jquery.js' %}" defer></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/nicepage.js' %}" defer></script>
+    <meta name="generator" content="Nicepage 4.17.7, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 
@@ -60,25 +58,25 @@
                 <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
                     <li class="u-nav-item"><a
                             class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{%  url 'main' %}"
+                            href="{% url 'main' %}"
                             data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}"
                             style="padding: 10px 0px;">Main</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{%  url 'calculation' %}#carousel_7650" data-page-id="317024594"
-                            data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}"
-                            style="padding: 10px 0px;">FeedBack</a>
+                            href="{% url 'choose_the_angle' %}" style="padding: 10px 0px;">Choose the angle</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{%  url 'calculation' %}"
+                            href="{% url 'calculation' %}"
                             data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}"
                             style="padding: 10px 0px;">Calculation</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'drawing' %}" style="padding: 10px 0px;">Drawing</a>
+                            href="{% url 'calculation' %}#feedback" data-page-id="317024594"
+                            data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}"
+                            style="padding: 10px 0px;">FeedBack</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
@@ -92,19 +90,20 @@
                 <div class="u-container-style u-hover-feature u-inner-container-layout u-opacity u-opacity-90 u-palette-3-light-2 u-shape-round u-sidenav u-sidenav-1">
                     <div class="u-inner-container-layout u-sidenav-overflow">
                         <ul class="u-align-center-xxl u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-menu-dropdown u-nav u-popupmenu-items u-spacing-0 u-text-active-palette-1-base u-unstyled u-nav-2">
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{%  url 'main' %}"
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Main.html"
                                                       data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}">Main</a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="{%  url 'calculation' %}#carousel_7650" data-page-id="317024594"
-                                                      data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Choose-the-angle.html">Choose
+                                the angle</a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{%  url 'calculation' %}"
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Calculation.html"
                                                       data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}">Calculation</a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'drawing' %}">Drawing</a>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                                      href="/Calculation.html#carousel_7650" data-page-id="317024594"
+                                                      data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}"
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Login.html"
                                                       data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>
                             </li>
                         </ul>
@@ -116,92 +115,24 @@
         </nav>
     </div>
 </header>
-<section class="u-clearfix u-image u-shading u-section-1" id="login" data-image-width="1500" data-image-height="1000">
+<section class="skrollable u-clearfix u-image u-lightbox u-parallax u-shading u-section-1" id="login"
+         data-image-width="1500" data-image-height="1000">
     <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
             <div class="u-layout">
                 <div class="u-layout-row">
                     <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-                        <div class="u-container-layout u-container-layout-1">
-                            <h3 class="u-text u-text-default u-text-1">Log in</h3>
-                            <div class="u-form u-form-1">
-                                <form action="#enter_account" method="POST"
-                                      class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form"
-                                      source="custom" name="login" style="padding: 10px;" redirect="true">
-                                    <div class="u-form-email u-form-group">
-                                        <label for="email-ad88" class="u-label u-label-1">Email</label>
-                                        <input type="email" placeholder="Enter a valid email address" id="email-ad88"
-                                               name="email"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               required="">
-                                    </div>
-                                    <div class="u-form-group u-form-group-2">
-                                        <label for="text-db67" class="u-label u-label-2">Password</label>
-                                        <input type="text" id="text-db67" name="password"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               placeholder="password" required="required">
-                                    </div>
-                                    <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-align-left-xxl u-form-group u-form-submit">
-                                        <a href="#"
-                                           class="u-border-none u-btn u-btn-submit u-button-style u-hover-palette-4-light-1 u-palette-3-light-1 u-btn-1">Submit</a>
-                                        <input type="submit" value="submit" class="u-form-control-hidden">
-                                    </div>
-                                    <div class="u-form-send-message u-form-send-success"> Thank you! Your message has
-                                        been sent.
-                                    </div>
-                                    <div class="u-form-send-error u-form-send-message">Please fix errors then try
-                                        again.
-                                    </div>
-                                    <input type="hidden" value="" name="recaptchaResponse">
-                                </form>
-                            </div>
+                        <div class="u-container-layout u-valign-bottom-sm u-valign-bottom-xs u-container-layout-1">
+                            {% block form1 %}
+
+                            {% endblock %}
                         </div>
                     </div>
                     <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                         <div class="u-container-layout u-container-layout-2">
-                            <h3 class="u-text u-text-default u-text-2">Sigh up</h3>
-                            <div class="u-form u-form-2">
-                                <form action="#register" method="POST"
-                                      class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form"
-                                      source="custom" name="sighup" style="padding: 10px;" redirect="true">
-                                    <div class="u-form-group u-form-name">
-                                        <label for="name-ad88" class="u-label u-label-3">Name</label>
-                                        <input type="text" placeholder="Enter your Name" id="name-ad88" name="name"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               required="">
-                                    </div>
-                                    <div class="u-form-email u-form-group">
-                                        <label for="email-ad88" class="u-label u-label-4">Email</label>
-                                        <input type="email" placeholder="Enter a valid email address" id="email-ad88"
-                                               name="email"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               required="">
-                                    </div>
-                                    <div class="u-form-group u-form-group-6">
-                                        <label for="text-bbe7" class="u-label u-label-5">Password</label>
-                                        <input type="text" placeholder="password" id="text-bbe7" name="password"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               required="required">
-                                    </div>
-                                    <div class="u-form-group u-form-group-7">
-                                        <label for="text-6ce6" class="u-label u-label-6">Confirm password</label>
-                                        <input type="text" placeholder="confirm_password" id="text-6ce6"
-                                               name="confirm_password"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
-                                               required="required">
-                                    </div>
-                                    <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-align-left-xxl u-form-group u-form-submit">
-                                        <a href="#"
-                                           class="u-border-none u-btn u-btn-submit u-button-style u-hover-palette-4-light-1 u-palette-3-light-1 u-btn-2">Submit</a>
-                                        <input type="submit" value="submit" class="u-form-control-hidden">
-                                    </div>
-                                    <div class="u-form-send-message u-form-send-success">Thank you!</div>
-                                    <div class="u-form-send-error u-form-send-message">Please fix errors then try
-                                        again.
-                                    </div>
-                                    <input type="hidden" value="" name="recaptchaResponse">
-                                </form>
-                            </div>
+                            {% block form2 %}
+
+                            {% endblock %}
                         </div>
                     </div>
                 </div>

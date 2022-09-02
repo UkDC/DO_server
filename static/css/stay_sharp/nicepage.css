@@ -361,6 +361,9 @@ span.fr-img-caption.fr-view {
       margin: 5px 0 5px 5px;
       max-width: calc(100% - 5px); }
 /*end-commonstyles library*/@charset "UTF-8";
+.u-hidden-block {
+  visibility: hidden!important;
+}
 .u-locked-block {
   pointer-events: none!important;
 }
@@ -1890,7 +1893,7 @@ a {
   width: 100%;
   text-align: center;
   color: #fff;
-  padding: 20px 0px 20px 0px;
+  padding: 20px;
   border: none;
 }
 .u-form .u-form-group.u-form-checkbox,
@@ -1924,6 +1927,12 @@ a {
 .u-form .u-form-vertical .u-form-group.u-form-checkbox,
 .u-form .u-form-vertical .u-form-group.u-form-agree {
   align-items: baseline;
+}
+.u-form .u-form-send-message-close {
+  color: white;
+  position: absolute;
+  right: 8px;
+  top: 0;
 }
 .u-form-send-message {
   z-index: 1;
@@ -37583,12 +37592,18 @@ a.u-link.u-text-hover-grey-90:hover {
         
         
         
+        
         --theme-sheet-width-xl: 1140px;
         --theme-sheet-width-lg: 940px;
         --theme-sheet-width-md: 768px;
         --theme-sheet-width-sm: 767px;
         --theme-sheet-width-xs: 375px;
         --theme-sheet-width-xxl: 1220px;
+        
+        
+        
+        
+        
         
         
         
@@ -37645,6 +37660,7 @@ a.u-link.u-text-hover-grey-90:hover {
         line-height: 1.2;
         margin-top: 20px;
         margin-bottom: 20px;
+        font-family: 'Playfair Display',serif;
         }
         h5
         {
@@ -37752,6 +37768,16 @@ a.u-link.u-text-hover-grey-90:hover {
         font-size: 1.5rem;
         }
         }
+        @media (max-width: 1399px) {
+        h4
+        {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        list-icon-spacing: 0.3;
+        list-icon-size: 0.8;
+        font-weight: 700;
+        }
+        }
         /*end-media rules*/
         /** publish-rules **/
 
@@ -37782,6 +37808,36 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-xs h3
         {
         font-size: 1.5rem;
+        }
+        .u-xl h4
+        {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        }
+        .u-lg h4
+        {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        }
+        .u-md h4
+        {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        }
+        .u-sm h4
+        {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        }
+        .u-xs h4
+        {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.2;
         }
         /*end-responsive rules*/
         /** cms-rules **/
@@ -37996,8 +38052,7 @@ a.u-link.u-text-hover-grey-90:hover {
 } 
 
  .u-footer {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("/static/images/stay_sharp/317024594-02.jpeg");
-
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/static/images/stay_sharp/317024594-02.jpeg');
   background-position: 50% 50%;
 }
 
@@ -38082,12 +38137,12 @@ a.u-link.u-text-hover-grey-90:hover {
   .u-footer .u-menu-1 {
     margin-top: 27px;
     margin-right: auto;
-    margin-left: 34px;
+    margin-left: 10px;
   }
 
   .u-footer .u-text-1 {
     width: 89px;
-    margin: -25px auto 27px;
+    margin: -28px auto 30px;
   }
 }
 .u-footer .u-sidenav-1, .u-footer .u-sidenav-1:before, .u-footer .u-sidenav-1 > .u-container-layout:before {

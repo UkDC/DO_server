@@ -9,12 +9,11 @@
     <meta name="description" content="">
     <title>Main</title>
     <link rel="stylesheet" href="{% static 'css/stay_sharp/nicepage.css' %}" media="screen">
-    <link rel="stylesheet" href="{% static 'css/stay_sharp/Main.css' %}" media="screen">
-    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/jquery.js' %}"
-    "="" defer=""></script>
-    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/nicepage.js' %}"
-    "="" defer=""></script>
-    <meta name="generator" content="Nicepage 4.16.0, nicepage.com">
+    <link rel="stylesheet" href="{% static 'css/stay_sharp/Main.css' %}" media=" screen
+    ">
+    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/jquery.js' %}" defer></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/nicepage.js' %}" defer></script>
+    <meta name="generator" content="Nicepage 4.17.10, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 
@@ -66,9 +65,7 @@
                     </li>
                     <li class="u-nav-item"><a
                             class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'calculation' %}#carousel_7650" data-page-id="317024594"
-                            data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}"
-                            style="padding: 10px 0px;">FeedBack</a>
+                            href="{% url 'choose_the_angle' %}" style="padding: 10px 0px;">Choose the angle</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
@@ -78,7 +75,9 @@
                     </li>
                     <li class="u-nav-item"><a
                             class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'drawing' %}" style="padding: 10px 0px;">Drawing</a>
+                            href="{% url 'calculation' %}#feedback" data-page-id="317024594"
+                            data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}"
+                            style="padding: 10px 0px;">FeedBack</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
@@ -96,13 +95,15 @@
                                                       data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}">Main</a>
                             </li>
                             <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="{% url 'calculation' %}#carousel_7650" data-page-id="317024594"
-                                                      data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>
+                                                      href="{% url 'choose_the_angle' %}">Choose
+                                the angle</a>
                             </li>
                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'calculation' %}"
                                                       data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}">Calculation</a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'drawing' %}">Drawing</a>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                                      href="{% url 'calculation' %}#feedback" data-page-id="317024594"
+                                                      data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>
                             </li>
                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}"
                                                       data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>
@@ -116,7 +117,7 @@
         </nav>
     </div>
 </header>
-<section class="skrollable u-clearfix u-image u-parallax u-shading u-section-1" id="sec-391b" data-image-width="625"
+<section class="skrollable u-clearfix u-image u-parallax u-shading u-section-1" id="main" data-image-width="625"
          data-image-height="352">
     <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-3-light-2 u-title u-text-1">
@@ -128,7 +129,7 @@
             (equipment - Tormek T8, VFB of SchleifJunkies, KJ-45)</p>
         <h4 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-text u-text-palette-3-light-2 u-text-4">
             let's start</h4>
-        <a href="{% url 'calculation' %}" data-page-id="317024594"
+        <a href="{% url 'choose_the_angle' %}" data-page-id="317024594"
            class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-4-light-1 u-palette-3-light-1 u-radius-50 u-text-body-color u-btn-1">Go</a>
     </div>
 </section>

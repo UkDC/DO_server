@@ -1,5 +1,6 @@
  .u-section-1 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("/static/images/stay_sharp/317024594-01.jpeg");
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('/static/images/stay_sharp/317024594-01.jpeg');
+  background-position: 50% 50%;
 }
 
 .u-section-1 .u-sheet-1 {
@@ -858,14 +859,8 @@
   padding-bottom: 5px;
 }
 
-@media (max-width: 1399px) {
+@media (max-width: 1199px) {
    .u-section-1 {
     background-position: 50% 50%;
-  }
-}
-
-@media (max-width: 1199px) {
-  .u-section-1 .u-sheet-1 {
-    min-height: 464px;
   }
 }
