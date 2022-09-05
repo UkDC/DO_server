@@ -1,4 +1,4 @@
-{% extends 'Base.html' %}
+{% load static %}
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="ru">
@@ -7,16 +7,24 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Calculation</title>
+    <title>
+        {% block title %}
+            Calculation
+        {% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/stay_sharp/nicepage.css' %}" media="screen">
-    <link rel="stylesheet" href="{% static 'css/stay_sharp/Calculation.css' %}" media=" screen
-    ">
+
+    {% block static_main %}
+        <link rel="stylesheet" href="{% static 'css/stay_sharp/Calculation.css' %}" media=" screen">
+    {% endblock %}
+
     <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/jquery.js' %}" defer></script>
     <script class="u-script" type="text/javascript" src="{% static 'js/stay_sharp/nicepage.js' %}" defer></script>
     <meta name="generator" content="Nicepage 4.17.10, nicepage.com">
-    <link id="u-page-google-font" rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
 
+    {% block font %}
+        <link id="u-page-google-font" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    {% endblock %}
 
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -25,7 +33,7 @@
 		"logo": "/images/default-logo.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Calculation">
+    <meta property="og:title" content={% block content %}"Calculation"{% endblock %}>
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
 </head>
@@ -117,6 +125,8 @@
         </nav>
     </div>
 </header>
+{% block section1 %}
+{% endblock %}
 <section class="skrollable u-clearfix u-image u-lightbox u-parallax u-shading u-section-1" id="enter_data"
          data-image-width="1553" data-image-height="1000">
     <div class="u-clearfix u-gutter-16 u-layout-wrap u-layout-wrap-1">
@@ -451,7 +461,8 @@
     </div>
 </section>
 
-
+{% block footer %}
+{% endblock %}
 <footer class="u-clearfix u-footer u-image u-shading u-sticky u-sticky-0046 u-footer" id="sec-2fed"
         data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""
         data-image-width="1553" data-image-height="1000">
