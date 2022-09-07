@@ -1,15 +1,18 @@
 import math
 
+from django.contrib.auth.models import User
+from django.core.signing import BadSignature
 from django.db.models import Avg
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
+from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic.edit import FormView, CreateView
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.http import HttpResponse
+from django.views.generic.base import TemplateView
+from django.views.generic.edit import CreateView
 
 from .forms import All_knifesForm_step1, All_knifesForm_step2, Grinding_dataForm, Honing_dataForm, RegisterUserForm
 from .models import All_knifes
+from .utilities import signer
 
 
 class CalculationView(View):
@@ -214,42 +217,42 @@ class Choose_the_angleView(View):
         return render(request, 'Choose-the-angle.html', context={'model': model})
 
 
-# class User_loginView(View):
-#     def get(self, request):
-#         return render(request, 'Login.html')
-#
-#     def post(self, request):
-#         form = LoginForm(request.POST)
-#         if form.is_valid():
-#             cd = form.cleaned_data
-#             user = authenticate(username=cd['email'], password=cd['password'])
-#             if user is not None:
-#                 if user.is_active:
-#                     login(request, user)
-#                     return render(request, 'Account-table.html')
-#                 else:
-#                     return HttpResponse('Disabled account')
-#             else:
-#                 return HttpResponse('Invalid login')
-#         else:
-#             form = LoginForm()
-#         return render(request, 'Login.html', {'form': form})
-
-
 class RegisterFormView(CreateView):
+    model = User
     form_class = RegisterUserForm
-    success_url = 'account_table'
-    template_name = 'registration/Login.html'
+    success_url = reverse_lazy('register_done')
+    template_name = 'registration/Sighup.html'
 
-    # def form_valid(self, form):
-    #     form.save()
-    #     return super(RegisterFormView, self).form_valid(form)
-    #
-    # def form_invalid(self, form):
-    #     return print('not')
+    def form_valid(self, form):
+        for user in User.objects.all():
+            if form.cleaned_data['email'] == user.email:
+                form.add_error(None, {'email': 'This email has already been registered'})
+                return render(self.request, 'registration/Sighup.html', context={'form': form})
+        form.save()
+        return HttpResponseRedirect('register_done')
+
+    def form_invalid(self, form):
+        return render(self.request, 'registration/Sighup.html', context={'form': form})
+
+
+class RegisterDoneView(TemplateView):
+    template_name = 'registration/register_done.html'
+
+
+def user_activate(request, sign):
+    try:
+        username = signer.unsign(sign)
+    except BadSignature:
+        return render(request, 'registration/bad_signature.html')
+    user = get_object_or_404(User, username=username)
+    if user.is_active:
+        template = 'registration/user_is_activated.html'
+    else:
+        template = 'registration/activation_done.html'
+        user.is_active = True
+        user.save()
+    return render(request, template)
+
 
 def account_table(request):
     return render(request, 'Account-table.html')
-
-
-
