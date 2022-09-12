@@ -4,7 +4,7 @@ from django.urls import path, include
 from stay_sharp import views
 
 urlpatterns = [
-    path('account_table', views.account_table, name='account_table'),
+    path('account_table', views.Account_tableView.as_view(), name='account_table'),
     path('feedback', views.feedback, name='feedback'),
     path('calculation', views.CalculationView.as_view(), name='calculation'),
     path('', views.main, name='main'),

@@ -11,7 +11,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
 
 from .forms import All_knifesForm_step1, All_knifesForm_step2, Grinding_dataForm, Honing_dataForm, RegisterUserForm
-from .models import All_knifes
+from .models import All_knifes, Account_table
 from .utilities import signer
 
 
@@ -253,6 +253,13 @@ def user_activate(request, sign):
         user.save()
     return render(request, template)
 
+class Account_tableView(TemplateView):
+    template_name = 'Account-table.html'
 
-def account_table(request):
-    return render(request, 'Account-table.html')
+    def get(self, request, *args, **kwargs):
+        user = request.user
+        if user and user.is_active:
+            context = self.get_context_data(**kwargs)
+            context['my_knifes'] = Account_table.objects.filter(user=user)
+            # context['my_knifes'] = All_knifes.objects.filter(user=user)
+            return self.render_to_response(context)

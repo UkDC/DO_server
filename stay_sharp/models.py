@@ -1,10 +1,19 @@
-from django.db import models
+from django.conf import settings
+from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.db import models
+
 
 # Create your models here.
+def get_superuser():
+    su_user = User.objects.filter(
+        is_superuser=True).first()  # if you have more than 1 superuser, this get the first in list.
+    if su_user:
+        return su_user.id
+    # raise DoesNotExist('Please add Super User')
+
 
 class All_knifes(models.Model):
-
     category = [
         ('low_quality', 'low_quality'),
         ('medium_quality', "medium_quality"),
@@ -33,7 +42,6 @@ class All_knifes(models.Model):
 
 
 class Grinding_data(models.Model):
-
     KJ = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(200)])
     GA = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(40)])
     RW = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(130)])
@@ -42,23 +50,18 @@ class Grinding_data(models.Model):
     USH = models.FloatField()
 
 
-
-
-
 class Honing_data(models.Model):
-
     KJ = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(200)])
     GA = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(40)])
     honing_add = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(40)])
     RW = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(130)])
     FVB_S = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(130)])
     C3_C4 = models.FloatField(default=128.1)
-    C5_C6= models.FloatField(default=51.4)
+    C5_C6 = models.FloatField(default=51.4)
     FVB_H = models.FloatField()
 
 
 class Account_table(models.Model):
-
     date = models.DateField()
     brend = models.CharField(max_length=30, blank=True, null=True)
     series = models.CharField(max_length=30, blank=True, null=True)
@@ -69,9 +72,8 @@ class Account_table(models.Model):
     width = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(60)], blank=True, null=True)
     grinding_angle = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(40)], blank=True, null=True)
     honing_add = models.FloatField(blank=True, null=True)
-    comments = models.CharField(max_length=100)
+    comments = models.CharField(max_length=200, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=get_superuser)
 
     def __str__(self):
         return f'Date - {self.date}'
-
-
