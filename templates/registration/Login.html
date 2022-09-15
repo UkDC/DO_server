@@ -1,7 +1,11 @@
 {% extends 'registration/login_base.html' %}
 
-{% block form1 %}
-    <h3 class="u-text u-text-default u-text-2">Log in</h3>
+{% block title %}Login{% endblock %}
+
+{% block form2 %}
+    <br>
+    <h3 class="u-text u-text-default u-text-palette-3-light-2 u-text-1">Log in</h3>
+    <br>
     <div class="u-text u-text-default u-text-4">
         {% if form.errors %}
 {#            <p>Your username and password didn't match. Please try again.</p>#}
@@ -19,11 +23,10 @@
                 <p>Please login to see this page.</p>
             {% endif %}
         {% endif %}
-    </div>
     <div class="u-form u-form-1">
         <form action="" method="POST"
               class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form"
-              source="custom" name="login" style="padding: 10px;" redirect="true">
+              source="custom" name="login" style="padding: 30px;" redirect="true">
             {% csrf_token %}
 
             <div class="u-form-email u-form-group">

@@ -1,20 +1,22 @@
 {% extends 'registration/login_base.html' %}
 
+{% block title %}Logout{% endblock %}
+
 {% block form1 %}
     <br>
     <br>
 
     <h5>Notice:</h5>
     <ul>
-    <li><h6>Name - {{ form.base_fields.username.help_text }}</h6></li>
-    <li><h6>Password - {{ form.base_fields.password1.help_text }}</li>
-    <li><h6>Confirm password - {{ form.base_fields.password2.help_text }}</li>
+        <li><h6>Name - {{ form.base_fields.username.help_text }}</h6></li>
+        <li><h6>Password - {{ form.base_fields.password1.help_text }}</li>
+        <li><h6>Confirm password - {{ form.base_fields.password2.help_text }}</li>
     </ul>
 
 {% endblock %}
 
 {% block form2 %}
-    <h3 class="u-text u-text-default u-text-2">Sigh up</h3>
+    <h3 class="u-text u-text-default u-text-palette-3-light-2 u-text-2">Sigh up</h3>
     <div class="u-form u-form-2">
 
         {% if form.errors %}
@@ -25,7 +27,7 @@
               class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form"
               source="custom" name="sighup" style="padding: 10px;" redirect="true">
             {% csrf_token %}
-{#            {{ form.as_p }}#}
+            {#            {{ form.as_p }}#}
             <div class="u-form-group u-form-name">
                 <label for="name-ad88" class="u-label u-label-3">Name</label>
                 <input type="text" placeholder="Enter username" id="name-ad88" name="username"
@@ -57,11 +59,11 @@
                        class="u-border-none u-btn u-btn-submit u-button-style u-hover-palette-4-light-1 u-palette-3-light-1 u-btn-3">
                 {#                                        <input type="submit" value="submit" class="u-form-control-hidden">#}
             </div>
-{#            <div class="u-form-send-message u-form-send-success">Thank you!</div>#}
-{#            <div class="u-form-send-error u-form-send-message">Please fix errors then try#}
-{#                again.#}
-{#            </div>#}
-{#            <input type="hidden" value="" name="recaptchaResponse">#}
+            {#            <div class="u-form-send-message u-form-send-success">Thank you!</div>#}
+            {#            <div class="u-form-send-error u-form-send-message">Please fix errors then try#}
+            {#                again.#}
+            {#            </div>#}
+            {#            <input type="hidden" value="" name="recaptchaResponse">#}
         </form>
     </div>
 {% endblock %}

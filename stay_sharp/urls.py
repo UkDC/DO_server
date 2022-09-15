@@ -5,6 +5,7 @@ from stay_sharp import views
 
 urlpatterns = [
     path('account_table', views.Account_tableView.as_view(), name='account_table'),
+    path('account_table_edit', views.account_table_edit, name='account_table_edit'),
     path('feedback', views.feedback, name='feedback'),
     path('calculation', views.CalculationView.as_view(), name='calculation'),
     path('', views.main, name='main'),

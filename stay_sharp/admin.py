@@ -2,9 +2,7 @@ from django.contrib import admin
 from import_export import resources
 from import_export import fields
 from import_export.admin import ImportExportModelAdmin
-from import_export.widgets import ForeignKeyWidget
 from .models import All_knifes, Account_table
-from django.contrib.auth.models import User
 
 
 
@@ -25,5 +23,4 @@ class All_knifesAdmin(ImportExportModelAdmin):
 @admin.register(Account_table)
 class Account_tableAdmin(ImportExportModelAdmin):
     resource_class = Account_tableResource
-    list_display = ['date', 'brend', 'series', 'steel', 'carbon', 'CrMoV', 'length', 'width', 'grinding_angle', 'honing_add', 'comments']
-
+    list_display = ['date', 'brend', 'series', 'steel', 'carbon', 'CrMoV', 'length', 'width', 'grinding_angle', 'honing_add', 'comments', 'user']

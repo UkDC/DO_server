@@ -5,7 +5,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="INTUITIVE">
     <meta name="description" content="">
     <title> {% block title %} {% endblock %} </title>
     <link rel="stylesheet" href="{% static 'css/stay_sharp/nicepage.css' %}" media="screen">
@@ -36,10 +36,10 @@
             <img src="{% static 'images/stay_sharp/default-logo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
-          <div class="menu-collapse u-custom-font u-font-merriweather" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+            <div class="menu-collapse u-custom-font u-font-merriweather"
+                 style="font-size: 1.125rem; letter-spacing: 0px; font-weight: 700;">
                 <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-palette-3-light-1"
-                   href="#section1"
-                   data-lang-en="{&quot;content&quot;:&quot;<svg class=\&quot;u-svg-link\&quot; viewBox=\&quot;0 0 24 24\&quot;><use xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xlink:href=\&quot;#menu-hamburger\&quot;></use></svg><svg class=\&quot;u-svg-content\&quot; version=\&quot;1.1\&quot; id=\&quot;menu-hamburger\&quot; viewBox=\&quot;0 0 16 16\&quot; x=\&quot;0px\&quot; y=\&quot;0px\&quot; xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;>    <g>        <rect y=\&quot;1\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;7\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;13\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>    </g></svg>&quot;,&quot;href&quot;:&quot;#section1&quot;}">
+                   href="#section1">
                     <svg class="u-svg-link" viewBox="0 0 24 24">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
                     </svg>
@@ -56,56 +56,51 @@
             <div class="u-custom-menu u-nav-container">
                 <ul class="u-custom-font u-font-merriweather u-nav u-spacing-30 u-unstyled u-nav-1">
                     <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'main' %}"
-                            data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}"
-                            style="padding: 5px 0px;">Main</a>
+                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-2 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-2"
+                            href="{% url 'main' %}" style="padding: 5px 0px;">Main</a>
                     </li>
                     <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
+                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-2 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-2"
                             href="{% url 'choose_the_angle' %}" style="padding: 5px 0px;">Choose the angle</a>
                     </li>
                     <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'calculation' %}"
-                            data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}"
-                            style="padding: 5px 0px;">Calculation</a>
+                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-2 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-2"
+                            href="{% url 'calculation' %}" style="padding: 5px 0px;">Calculation</a>
                     </li>
                     <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            href="{% url 'calculation' %}#feedback" data-page-id="317024594"
-                            data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}"
-                            style="padding: 5px 0px;">FeedBack</a>
+                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-2 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-2"
+                            href="{% url 'calculation' %}#feedback" style="padding: 5px 0px;">FeedBack</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            style="padding: 5px 0px;">My account</a>
-                        <div class="u-nav-popup">
-                            <ul class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-4-light-1 u-custom-font u-font-merriweather u-h-spacing-8 u-nav u-unstyled u-v-spacing-5 u-nav-2">
-                                <li class="u-nav-item"><a
-                                        class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
-                                        href="{% url 'account_table' %}">Table - {{ user.get_username }}</a>
-                                </li>
-                                <li class="u-nav-item"><a
-                                        class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3">Edit
-                                    account</a>
-                                </li>
-                                <li class="u-nav-item"><a
-                                        class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3" href="{% url 'logout' %}">Logout</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                        <li class="u-nav-item"><a
+                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-2 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-2"
+                                style="padding: 5px 0px;">My account</a>
+                            <div class="u-nav-popup">
+                                <ul class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-4-light-1 u-custom-font u-font-merriweather u-h-spacing-8 u-nav u-unstyled u-v-spacing-5 u-nav-2">
+                                    <li class="u-nav-item"><a
+                                            class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
+                                            href="{% url 'account_table' %}">Table - {{ user.get_username }}</a>
+                                    </li>
+                                    <li class="u-nav-item"><a
+                                            class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3">Edit
+                                        account</a>
+                                    </li>
+                                    <li class="u-nav-item"><a
+                                            class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
+                                            href="{% url 'logout' %}">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                     {% else %}
-                    <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            style="padding: 5px 0px;" href="{% url 'login' %}">Login</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                             class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-1 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-1"
-                            style="padding: 5px 0px;" href="{% url 'sighup' %}">Sighup</a>
-                    </li>
+                        <li class="u-nav-item"><a
+                                class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-2 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-2"
+                                style="padding: 5px 0px;" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                                class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-2 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-2"
+                                style="padding: 5px 0px;" href="{% url 'sighup' %}">Sighup</a>
+                        </li>
                     {% endif %}
                 </ul>
             </div>
@@ -130,27 +125,28 @@
                                                       data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>
                             </li>
                             {% if user.is_authenticated %}
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link">My account</a>
-                                <div class="u-nav-popup">
-                                    <ul class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-4-light-1 u-custom-font u-font-merriweather u-h-spacing-8 u-nav u-unstyled u-v-spacing-5 u-nav-4">
-                                        <li class="u-nav-item"><a
-                                                class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
-                                                                  href="{% url 'account_table' %}">Table - {{ user.get_username }}</a>
-                                        </li>
-                                        <li class="u-nav-item"><a
-                                                class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3">Edit
-                                            account</a>
-                                        </li>
-                                        <li class="u-nav-item"><a
-                                                class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3" href="{% url 'logout' %}">Logout</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link">My account</a>
+                                    <div class="u-nav-popup">
+                                        <ul class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-4-light-1 u-custom-font u-font-merriweather u-h-spacing-8 u-nav u-unstyled u-v-spacing-5 u-nav-4">
+                                            <li class="u-nav-item"><a
+                                                    class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
+                                                    href="{% url 'account_table' %}">Table - {{ user.get_username }}</a>
+                                            </li>
+                                            <li class="u-nav-item"><a
+                                                    class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3">Edit
+                                                account</a>
+                                            </li>
+                                            <li class="u-nav-item"><a
+                                                    class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
+                                                    href="{% url 'logout' %}">Logout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
                             {% else %}
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>
-                            </li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}"
+                                                          data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>
+                                </li>
                             {% endif %}
                         </ul>
                         <div class="u-menu-close u-menu-close-1"></div>

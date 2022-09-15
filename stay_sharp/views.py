@@ -3,8 +3,9 @@ import math
 from django.contrib.auth.models import User
 from django.core.signing import BadSignature
 from django.db.models import Avg
+from django.forms import modelformset_factory
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic.base import TemplateView
@@ -253,6 +254,7 @@ def user_activate(request, sign):
         user.save()
     return render(request, template)
 
+
 class Account_tableView(TemplateView):
     template_name = 'Account-table.html'
 
@@ -261,5 +263,22 @@ class Account_tableView(TemplateView):
         if user and user.is_active:
             context = self.get_context_data(**kwargs)
             context['my_knifes'] = Account_table.objects.filter(user=user)
-            # context['my_knifes'] = All_knifes.objects.filter(user=user)
             return self.render_to_response(context)
+
+
+def account_table_edit(request):
+    Account_tableFormSet = modelformset_factory(Account_table, exclude=('date',), can_order=False,
+                                                can_delete=True, extra=1)
+    user = request.user
+    if user and user.is_active:
+        if request.method == 'POST':
+            formset = Account_tableFormSet(request.POST, queryset=Account_table.objects.filter(user=user))
+            if formset.is_valid():
+                formset.save()
+                return redirect('account_table')
+            formset = Account_tableFormSet(queryset=Account_table.objects.filter(user=user))
+            return render(request, 'Account-table_edit.html', context={'formset': formset})
+        else:
+            formset = Account_tableFormSet(queryset=Account_table.objects.filter(user=user))
+            return render(request, 'Account-table_edit.html', context={'formset': formset, 'error_messages': 'Not correct input'})
+    return render(request, 'registration/Login.html')
