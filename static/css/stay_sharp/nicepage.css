@@ -1537,7 +1537,7 @@ a {
   padding-left: 11px;
 }
 .u-form-vertical.u-form-spacing-10 {
-  margin-left: 20px;
+  margin-left: -10px;
   width: calc(100% +  10px);
 }
 .u-form-vertical.u-form-spacing-10 .u-form-group {
@@ -19596,11 +19596,8 @@ a.pswp__share--download:hover {
 }
 .u-table th,
 .u-table td {
-    padding-top: 2px;
-    padding-right: 2px;
-    padding-left: 2px;
-    padding-bottom: 2px;
-    font-weight: inherit;
+  padding: 10px;
+  font-weight: inherit;
   position: inherit;
 }
 .u-table th:empty:before,
@@ -37637,12 +37634,24 @@ a.u-link.u-text-hover-grey-90:hover {
         
         
         
+        
+        
+        
         --theme-sheet-width-xl: 1140px;
         --theme-sheet-width-lg: 940px;
         --theme-sheet-width-md: 768px;
         --theme-sheet-width-sm: 767px;
         --theme-sheet-width-xs: 375px;
         --theme-sheet-width-xxl: 1220px;
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -37716,6 +37725,7 @@ a.u-link.u-text-hover-grey-90:hover {
         line-height: 1.2;
         margin-top: 20px;
         margin-bottom: 20px;
+        font-family: Merriweather,serif;
         }
         h6
         {
@@ -37825,6 +37835,25 @@ a.u-link.u-text-hover-grey-90:hover {
         font-weight: 700;
         }
         }
+        @media (max-width: 1399px) {
+        h5
+        {
+        font-size: 1.25rem;
+        line-height: 1.2;
+        color: #f5d654;
+        list-icon-spacing: 0.3;
+        list-icon-size: 0.8;
+        font-weight: 400;
+        }
+        }
+        @media (max-width: 1399px) {
+        ul:not(.u-unstyled)
+        {
+        color: #f9e79b;
+        list-icon-spacing: 0.3;
+        list-icon-size: 0.8;
+        }
+        }
         /*end-media rules*/
         /** publish-rules **/
 
@@ -37886,6 +37915,36 @@ a.u-link.u-text-hover-grey-90:hover {
         font-size: 1.5rem;
         line-height: 1.2;
         }
+        .u-xl h5
+        {
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        }
+        .u-lg h5
+        {
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        }
+        .u-md h5
+        {
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        }
+        .u-sm h5
+        {
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        }
+        .u-xs h5
+        {
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        }
         /*end-responsive rules*/
         /** cms-rules **/
 
@@ -37896,6 +37955,13 @@ a.u-link.u-text-hover-grey-90:hover {
         h3
         {
         color: #f5d654;
+        }
+        .u-overlap.u-overlap-transparent:not(.u-overlap-contrast) .u-header :not(.u-nav-item) > h5,
+        .u-gradient > .u-container-layout > h5,
+        .u-image:not(.u-shading) > .u-container-layout > h5,
+        h5
+        {
+        color: #f9e79b;
         }
         .u-overlap.u-overlap-transparent:not(.u-overlap-contrast) .u-header :not(.u-nav-item) > a,
         .u-gradient > .u-container-layout > a,
@@ -37957,6 +38023,10 @@ a.u-link.u-text-hover-grey-90:hover {
         {
         color: #72683f;
         }
+        .u-shading h5,.u-overlap-contrast .u-header h5:not(.u-nav-link):not(.u-btn)
+        {
+        color: #72683f;
+        }
         .u-body-color a,.u-palette-1-base a,.u-palette-1-dark-3 a,.u-palette-1-dark-2 a,.u-palette-1-dark-1 a,.u-palette-1 a,.u-palette-1-light-1 a,.u-palette-2-base a,.u-palette-2-dark-3 a,.u-palette-2-dark-2 a,.u-palette-2-dark-1 a,.u-palette-2 a,.u-palette-2-light-1 a,.u-palette-3-dark-3 a,.u-palette-3-dark-2 a,.u-palette-3-dark-1 a,.u-palette-4-base a,.u-palette-4-dark-3 a,.u-palette-4-dark-2 a,.u-palette-4-dark-1 a,.u-palette-5-dark-3 a,.u-palette-5-dark-2 a,.u-palette-5-dark-1 a,.u-grey-40 a,.u-grey-30 a,.u-grey-90 a,.u-grey-80 a,.u-grey-75 a,.u-black a,.u-grey-70 a,.u-grey-60 a,.u-grey-50 a,.u-grey-dark-3 a,.u-grey-dark-2 a,.u-grey-dark-1 a,.u-grey a,.u-shading a,.u-overlap-contrast .u-header a:not(.u-nav-link):not(.u-btn)
         {
         color: #adcce9;
@@ -38009,16 +38079,16 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-nav-1 {
+  font-weight: 400;
   font-size: 1.125rem;
-  font-weight: 700;
   text-transform: none;
   letter-spacing: normal;
 }
 
 .u-header .u-nav-2 {
+  font-weight: 400;
   font-size: 1rem;
   text-transform: none;
-  font-weight: bold;
 }
 
 .u-header .u-sidenav-1 {
@@ -38036,8 +38106,9 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-nav-4 {
+  font-weight: 400;
   font-size: 1rem;
-  font-weight: 700;
+  text-transform: none;
 }
 
 .u-header .u-menu-close-1 {
@@ -38069,8 +38140,27 @@ a.u-link.u-text-hover-grey-90:hover {
     margin-top: -27px;
   }
 }
+@media (max-width: 991px) {
+  .u-header .u-menu-1 {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .u-header .u-sheet-1 {
+    min-height: 90px;
+  }
 
+  .u-header .u-menu-1 {
+    margin-top: -27px;
+    margin-right: 77px;
+    margin-bottom: 28px;
+  }
 
+  .u-header .u-nav-3 {
+    width: 262px;
+    margin-right: -61px;
+  }
+}
 @media (max-width: 575px) {
   .u-header .u-image-1 {
     margin-top: 23px;
@@ -38080,6 +38170,11 @@ a.u-link.u-text-hover-grey-90:hover {
   .u-header .u-menu-1 {
     margin-right: 19px;
     margin-bottom: 26px;
+  }
+
+  .u-header .u-nav-3 {
+    margin-right: -61px;
+    width: 262px;
   }
 }
 .u-header .u-sidenav-1, .u-header .u-sidenav-1:before, .u-header .u-sidenav-1 > .u-container-layout:before {

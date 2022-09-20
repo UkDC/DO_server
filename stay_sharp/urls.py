@@ -13,4 +13,5 @@ urlpatterns = [
     path('sighup', views.RegisterFormView.as_view(), name='sighup'),
     path('register_done', views.RegisterDoneView.as_view(), name='register_done'),
     path('асtivate/<str:sign>', views.user_activate, name='register_activate'),
+    path('edit_account', views.edit_account, name='edit_account'),
 ]

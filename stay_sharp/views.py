@@ -1,9 +1,10 @@
 import math
 
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 from django.core.signing import BadSignature
 from django.db.models import Avg
-from django.forms import modelformset_factory
+from django.forms import modelformset_factory, BaseModelFormSet, modelform_factory
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
@@ -15,7 +16,7 @@ from .forms import All_knifesForm_step1, All_knifesForm_step2, Grinding_dataForm
 from .models import All_knifes, Account_table
 from .utilities import signer
 
-
+# расчет параметров настройки станка для заточки и хонингования
 class CalculationView(View):
     def get(self, request):
         return render(request, 'Calculation.html')
@@ -69,7 +70,7 @@ def main(request):
 def feedback(request):
     return render(request, 'Calculation.html')
 
-
+# выбор оптимального угла
 class Choose_the_angleView(View):
 
     def get(self, request):
@@ -217,7 +218,7 @@ class Choose_the_angleView(View):
 
         return render(request, 'Choose-the-angle.html', context={'model': model})
 
-
+# форма регистрации
 class RegisterFormView(CreateView):
     model = User
     form_class = RegisterUserForm
@@ -233,28 +234,33 @@ class RegisterFormView(CreateView):
         return HttpResponseRedirect('register_done')
 
     def form_invalid(self, form):
-        return render(self.request, 'registration/Sighup.html', context={'form': form})
+        return render(self.request, 'registration/Sighup.html', context={'form': form, "done": False})
 
-
+# вывод - регистрация выполнена
 class RegisterDoneView(TemplateView):
-    template_name = 'registration/register_done.html'
+    template_name = 'registration/Sighup.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['done'] = True
+        return context
 
+# активация пользователя
 def user_activate(request, sign):
     try:
         username = signer.unsign(sign)
     except BadSignature:
-        return render(request, 'registration/bad_signature.html')
+        return render(request, 'registration/activation_done.html', context={'bad_signature': True})
     user = get_object_or_404(User, username=username)
     if user.is_active:
-        template = 'registration/user_is_activated.html'
+        template = 'registration/activation_done.html'
     else:
         template = 'registration/activation_done.html'
         user.is_active = True
         user.save()
     return render(request, template)
 
-
+# вывод таблицы с записями пользователя
 class Account_tableView(TemplateView):
     template_name = 'Account-table.html'
 
@@ -265,20 +271,48 @@ class Account_tableView(TemplateView):
             context['my_knifes'] = Account_table.objects.filter(user=user)
             return self.render_to_response(context)
 
-
+# редактирование форм
 def account_table_edit(request):
-    Account_tableFormSet = modelformset_factory(Account_table, exclude=('date',), can_order=False,
-                                                can_delete=True, extra=1)
+    Account_tableFormSet = modelformset_factory(Account_table, exclude=('date',), can_delete=True)
     user = request.user
     if user and user.is_active:
         if request.method == 'POST':
+            # выборка formset по user
             formset = Account_tableFormSet(request.POST, queryset=Account_table.objects.filter(user=user))
             if formset.is_valid():
+                # удаление дополнительных форм-строк, в таблице,  если они не заполнены
+                if not any([formset.cleaned_data[-1][value] for value in formset.cleaned_data[-1] if value != 'user']):
+                    formset.cleaned_data[-1]['DELETE'] = True
+                # сохранение форм
                 formset.save()
                 return redirect('account_table')
+
             formset = Account_tableFormSet(queryset=Account_table.objects.filter(user=user))
             return render(request, 'Account-table_edit.html', context={'formset': formset})
         else:
             formset = Account_tableFormSet(queryset=Account_table.objects.filter(user=user))
-            return render(request, 'Account-table_edit.html', context={'formset': formset, 'error_messages': 'Not correct input'})
-    return render(request, 'registration/Login.html')
+            return render(request, 'Account-table_edit.html',
+                          context={'formset': formset, 'error_messages': 'Not correct input'})
+    return render(request, 'registration/old/Login.html', context={'error': "You need to login"})
+
+# class Edit_accountView(TemplateView):
+#     template_name = 'registration/Edit_account.html'
+
+
+def edit_account(request):
+    Edit_accountForm = modelform_factory(User, fields=('username', 'first_name', 'last_name', 'email'))
+
+    user = request.user
+    init = User.objects.get(username=user.username)
+
+    if user and user.is_active:
+        if request.method == 'POST':
+            formset = Edit_accountForm(request.POST, instance=init)
+            if formset.is_valid():
+                formset.save()
+                return render(request, 'registration/Edit_account.html', context={'formset': formset, 'done': True})
+            return render(request, 'registration/Edit_account.html', context={'formset': formset, 'done': False})
+        else:
+            formset = Edit_accountForm()
+            return render(request, 'registration/Edit_account.html', context={'formset': formset, 'done': False})
+    return render(request, 'registration/Edit_account.html', context={'error': "You need to login"})
