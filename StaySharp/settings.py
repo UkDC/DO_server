@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -49,13 +50,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'debug_toolbar.middleware.DebugToolbarMiddleware'
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = "StaySharp.urls"
@@ -128,3 +130,16 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Heroku: Обновление конфигурации базы данных из $DATAВASE_URL. import dj_database_url
+dЬ_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(dЬ_from_env)
+
+# Статичные файлы (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
+# Абсолютный путь к каталогу, в котором collectstatic # будет собирать статические файлы для развертывания.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Упрощенная обработка статических файлов.
+# https://warehouse.python.org/project/whitenoise/
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedМanifestStaticFilesStorage'
