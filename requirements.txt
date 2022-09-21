@@ -5,10 +5,10 @@ backcall==0.2.0
 decorator==5.1.1
 defusedxml==0.7.1
 diff-match-patch==20200713
-dj-database-url==1.0.0
-Django==4.1.1
-django-bootstrap5==22.1
-django-bootstrap5-form==5.0.1
+dj-database-url==
+Django==
+django-bootstrap5==
+django-bootstrap5-form==
 django-crispy-forms==1.14.0
 django-debug-toolbar==3.5.0
 django-extensions==3.2.0
