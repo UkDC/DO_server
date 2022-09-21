@@ -81,8 +81,7 @@ class Choose_the_angleView(View):
         angle = 0
         honing_add = 0
         return render(request, 'Choose-the-angle.html',
-                      context={'model': model, 'form1': form1, 'form2': form2, 'angle': angle, 'honing_add': honing_add,
-                               'message_step1': 'make a choose'})
+                      context={'model': model, 'form1': form1, 'form2': form2, 'angle': angle, 'honing_add': honing_add})
 
     def post(self, request):
 

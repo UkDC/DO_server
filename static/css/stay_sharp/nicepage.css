@@ -38141,8 +38141,14 @@ a.u-link.u-text-hover-grey-90:hover {
   }
 }
 @media (max-width: 991px) {
+  .u-header .u-sheet-1 {
+    min-height: 79px;
+  }
+
   .u-header .u-menu-1 {
-    margin-top: 20px;
+    margin-top: -33px;
+    margin-right: 23px;
+    margin-bottom: 23px;
   }
 }
 @media (max-width: 767px) {

@@ -8,10 +8,10 @@
 {% endblock %}
 
 {% block font %}
-    <link id="u-theme-google-font" rel="stylesheet"
+   <link id="u-theme-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Merriweather:300,300i,400,400i,700,700i,900,900i">
+          href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Merriweather:300,300i,400,400i,700,700i,900,900i|Lobster:400">
 {% endblock %}
 
 {% block content %}"Calculation"{% endblock %}
@@ -19,22 +19,22 @@
 {% block section1 %}
 <section class="skrollable u-clearfix u-image u-lightbox u-parallax u-shading u-section-1" id="enter_data"
          data-image-width="1553" data-image-height="1000">
-    <div class="u-clearfix u-gutter-16 u-layout-wrap u-layout-wrap-1">
+    <div class="u-clearfix u-gutter-22 u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
             <div class="u-layout-row">
-                <div class="u-container-style u-layout-cell u-size-30-lg u-size-30-md u-size-30-sm u-size-30-xl u-size-30-xs u-layout-cell-1">
-                    <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-1">
-                        <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-palette-3-light-1 u-text-1">
+                <div class="u-container-style u-layout-cell u-shape-rectangle u-size-30-lg u-size-30-md u-size-30-sm u-size-30-xl u-size-30-xs u-layout-cell-1">
+                    <div class="u-border-2 u-border-palette-3-light-2 u-container-layout u-container-layout-1">
+                        <h3 class="u-align-center u-custom-font u-font-merriweather u-text u-text-default-xl u-text-palette-3-light-2 u-text-1">
                             Enter data&nbsp;<br>for griding (mm)
                         </h3>
                         <div class="u-form u-form-1">
                             <form action="" method="POST"
-                                  class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form"
+                                  class="u-clearfix u-form-custom-backend u-form-spacing-11 u-form-vertical u-inner-form"
                                   source="customphp" name="grinding_data" style="padding: 10px;">
                                 {% csrf_token %}
                                 <div class="u-form-group u-label-left u-form-group-1">
                                     <label for="text-114c"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-1">KJ</label>
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-1">KJ</label>
 
                                     <input type="number" step="0.1" min="0" max="200" placeholder="knife_jig"
                                            id="text-114c" name="KJ"
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="u-form-group u-label-left u-form-group-2">
                                     <label for="text-4de5"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-2">GA
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-2">GA
                                         (angle)</label>
                                     <input type="number" step="0.1" min="0" max="40" placeholder="angle"
                                            id="text-4de5" name="GA"
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="u-form-group u-label-left u-form-group-3">
                                     <label for="text-fcdc"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-3">R
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-3">R
                                         (wheel)</label>
                                     <input type="number" step="0.1" min="0" max="150" placeholder="r_wheel"
                                            id="text-fcdc" name="RW"
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="u-form-group u-label-left u-form-group-4">
                                     <label for="text-cfc6"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-4">C1</label>
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-4">C1</label>
 
                                     <input type="number" step="0.1" min="0" max="70" placeholder="50.0 mm"
                                            id="text-cfc6" name="C1"
@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="u-form-group u-label-left u-form-group-5">
                                     <label for="text-e515"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-5">C2</label>
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-5">C2</label>
 
                                     <input type="number" step="0.1" min="0" max="50" placeholder="28.6 mm"
                                            id="text-e515" name="C2"
@@ -78,19 +78,14 @@
                                            maxlength="3" value="{{ C2|default:28.6 }}">
                                 </div>
                                 <div class="u-align-center-xs u-align-right-xxl u-form-group u-form-submit u-label-left">
-                                    <label class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-label-6"></label>
+                                    <label class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-6"></label>
                                     <div class="u-align-left u-btn-submit-container">
 
                                         <input type="submit" value="submit"
-                                               class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-4-dark-1 u-palette-3-light-1 u-radius-23 u-text-hover-white u-btn-1">
+                                               class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-4-dark-1 u-palette-3-light-2 u-radius-23 u-text-hover-white u-btn-1">
                                     </div>
                                     {#                                        <input type="submit" value="submit" class="u-form-control-hidden">#}
                                 </div>
-                                <div class="u-form-send-message u-form-send-success">Thank you! See result!</div>
-                                <div class="u-form-send-error u-form-send-message">Please fix errors then try
-                                    again.
-                                </div>
-                                <input type="hidden" value="" name="recaptchaResponse">
                             </form>
                         </div>
                         <h3 class="u-align-center u-text u-text-palette-4-light-1 u-text-2"> Calculation
@@ -105,24 +100,25 @@
                                 </h3>
                             </div>
                         </div>
-                        <h3 class="u-custom-font u-font-source-sans-pro u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xs u-text-palette-3-light-1 u-text-4">
+                        <h3 class="u-custom-font u-font-source-sans-pro u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xs u-text-palette-3-light-2 u-text-4">
                             USB_H =</h3>
                     </div>
                 </div>
-                <div class="u-container-style u-layout-cell u-size-30-lg u-size-30-md u-size-30-sm u-size-30-xl u-size-30-xs u-layout-cell-2">
-                    <div class="u-border-2 u-border-palette-3-light-1 u-container-layout u-container-layout-3">
-                        <h3 class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-palette-3-light-1 u-text-5">
+                <div class="u-container-style u-layout-cell u-shape-rectangle u-size-30-lg u-size-30-md u-size-30-sm u-size-30-xl u-size-30-xs u-layout-cell-2">
+                    <div class="u-border-2 u-border-palette-3-light-2 u-container-layout u-container-layout-3">
+                        <h3 class="u-align-center u-custom-font u-font-merriweather u-text u-text-palette-3-light-2 u-text-5">
                             Enter data&nbsp;<br>for honing&nbsp;(mm)
                         </h3>
-                        <div class="u-form u-form-2">
+                        <div class="u-form u-form-2" data-animation-name="" data-animation-duration="0"
+                             data-animation-delay="0" data-animation-direction="">
                             <form action="" method="POST"
-                                  class="u-clearfix u-form-custom-backend u-form-spacing-12 u-form-vertical u-inner-form"
+                                  class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form"
                                   source="custom"
                                   name="grinding_data" style="padding: 10px;">
                                 {% csrf_token %}
                                 <div class="u-form-group u-label-left u-form-group-7">
                                     <label for="text-114c"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-7">KJ</label>
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-7">KJ</label>
 
                                     <input type="number" step="0.1" min="0" max="200" placeholder="knife_jig"
                                            id="text-114c" name="KJ"
@@ -131,7 +127,7 @@
                                 </div>
                                 <div class="u-form-group u-label-left u-form-group-8">
                                     <label for="text-4de5"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-8">GA
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-8">GA
                                         (angle)</label>
                                     <input type="number" step="0.1" min="0" max="40" placeholder="angle"
                                            id="text-4de5" name="GA"
@@ -140,7 +136,7 @@
                                 </div>
                                 <div class="u-form-group u-label-left u-form-group-9">
                                     <label for="text-fcdc"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-9">Honing_add</label>
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-9">Honing_add</label>
 
                                     <input type="number" step="0.1" min="0" max="5" placeholder="honing_add"
                                            id="text-fcdc" name="honing_add"
@@ -149,7 +145,7 @@
                                 </div>
                                 <div class="u-form-group u-label-left u-form-group-10">
                                     <label for="text-cfc6"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-10">R
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-10">R
                                         (wheel)</label>
                                     <input type="number" step="0.1" min="0" max="130" placeholder="r_wheel"
                                            id="text-cfc6" name="RW"
@@ -158,7 +154,7 @@
                                 </div>
                                 <div class="u-form-group u-label-left u-form-group-11">
                                     <label for="text-e515"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-11">FVB_S</label>
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-11">FVB_S</label>
 
                                     <input type="number" step="0.1" min="0" max="130" placeholder="FVB_S"
                                            id="text-e515" name="FVB_S"
@@ -167,7 +163,7 @@
                                 </div>
                                 <div class="u-form-group u-label-left u-form-group-12">
                                     <label for="text-7d7c"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-12">C3
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-12">C3
                                         + C4</label>
                                     <input type="number" step="0.1" min="0" max="200" placeholder="128,1"
                                            id="text-7d7c" name="C3_C4"
@@ -176,39 +172,36 @@
                                 </div>
                                 <div class="u-form-group u-label-left u-form-group-13">
                                     <label for="text-d7e6"
-                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-1 u-label-13">C5
+                                           class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-13">C5
                                         + C6</label>
                                     <input type="number" step="0.1" min="0" max="100" id="text-d7e6" name="C5_C6"
                                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-12"
                                            placeholder="51,4 mm" value="{{ C5_C6|default:51.4 }}">
                                 </div>
                                 <div class="u-align-center-xs u-align-right-xxl u-form-group u-form-submit u-label-left">
-                                    <label class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-label-14"></label>
+                                    <label class="u-custom-font u-font-source-sans-pro u-label u-spacing-0 u-text-palette-3-light-2 u-label-14"></label>
                                     <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-btn-submit-container">
 
                                         <input type="submit" value="submit"
-                                               class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-4-dark-1 u-palette-3-light-1 u-radius-23 u-text-hover-white u-btn-2">
+                                               class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-4-dark-1 u-palette-3-light-2 u-radius-23 u-text-hover-white u-btn-2">
                                     </div>
                                     {#                                        <input type="submit" value="submit" class="u-form-control-hidden">#}
                                 </div>
-                                <div class="u-form-send-message u-form-send-success">Thank you! See result!</div>
-                                <div class="u-form-send-error u-form-send-message">Please fix errors then try
-                                    again.
-                                </div>
-                                <input type="hidden" value="" name="recaptchaResponse">
                             </form>
                         </div>
                         <h3 class="u-align-center u-text u-text-palette-4-light-1 u-text-6"> Calculation result<br>
                         </h3>
-                        <div class="u-align-center u-container-style u-group u-palette-3-light-3 u-radius-10 u-shape-round u-group-2">
-                            <div class="u-container-layout u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-4">
+                        <div class="u-align-center u-container-style u-group u-palette-3-light-3 u-radius-10 u-shape-round u-group-2"
+                             data-animation-name="" data-animation-duration="0" data-animation-delay="0"
+                             data-animation-direction="">
+                            <div class="u-container-layout u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-valign-middle-xxl u-container-layout-4">
                                 <h3 class="u-custom-font u-font-roboto u-text u-text-black u-text-7"
                                     data-animation-name="counter" data-animation-event="scroll"
                                     data-animation-duration="3000">{{ FVB_H|floatformat:1 }}<br>
                                 </h3>
                             </div>
                         </div>
-                        <h3 class="u-align-left u-custom-font u-font-source-sans-pro u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xs u-text-palette-3-light-1 u-text-8">
+                        <h3 class="u-align-left u-custom-font u-font-source-sans-pro u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xs u-text-palette-3-light-2 u-text-8">
                             FVB_H =</h3>
                     </div>
                 </div>
@@ -218,12 +211,13 @@
 </section>
 <section class="skrollable u-clearfix u-image u-lightbox u-parallax u-shading u-section-2" id="drawing"
          data-image-width="1553" data-image-height="1000">
-    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-gutter-18 u-layout-wrap u-layout-wrap-1">
+    <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <div class="u-clearfix u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-gutter-22 u-layout-wrap u-layout-wrap-1"
+             data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
             <div class="u-layout">
                 <div class="u-layout-row">
                     <div class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xs u-container-style u-layout-cell u-size-30-lg u-size-30-md u-size-30-sm u-size-30-xl u-size-30-xs u-layout-cell-1">
-                        <div class="u-border-2 u-border-palette-3-base u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-valign-middle-xxl u-container-layout-1">
+                        <div class="u-border-2 u-border-palette-3-light-2 u-container-layout u-valign-middle-sm u-valign-middle-xs u-container-layout-1">
                             <img class="u-image u-image-default u-opacity u-opacity-80 u-image-1"
                                  src="{% static 'images/stay_sharp/2022-08-3108.21.23.png' %}" alt=""
                                  data-image-width="690"
@@ -231,7 +225,7 @@
                         </div>
                     </div>
                     <div class="u-align-left u-container-style u-layout-cell u-size-30-lg u-size-30-md u-size-30-sm u-size-30-xl u-size-30-xs u-layout-cell-2">
-                        <div class="u-border-2 u-border-palette-3-base u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-valign-top-xxl u-container-layout-2">
+                        <div class="u-border-2 u-border-palette-3-light-2 u-container-layout u-valign-middle-sm u-valign-middle-xs u-container-layout-2">
                             <img class="u-image u-image-default u-opacity u-opacity-80 u-image-2"
                                  src="{% static 'images/stay_sharp/2022-08-3108.16.18.png' %}" alt=""
                                  data-image-width="690"
@@ -244,15 +238,15 @@
     </div>
 </section>
 <section class="skrollable u-clearfix u-lightbox u-palette-1-dark-2 u-section-3" id="reference">
-    <div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+    <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-16 u-layout-wrap u-layout-wrap-1">
             <div class="u-layout">
                 <div class="u-layout-row">
                     <div class="u-size-60">
                         <div class="u-layout-col">
-                            <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
-                                <div class="u-border-2 u-border-palette-3-base u-container-layout u-container-layout-1">
-                                    <h4 class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-default-xs u-text-white u-text-1">
+                            <div class="u-container-style u-layout-cell u-shape-rectangle u-size-60 u-layout-cell-1">
+                                <div class="u-container-layout u-container-layout-1">
+                                    <h4 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-custom-font u-font-merriweather u-text u-text-default-xl u-text-white u-text-1">
                                         R​​eference</h4>
                                     <ul class="u-custom-list u-text u-text-2">
                                         <li>
@@ -264,15 +258,6 @@
                                             </div>
                                             <span style="font-style: italic;">Resourse for knife​ steel<br>https://rezat.ru/ref/bladematerial/
                           </span>
-                                        </li>
-                                        <li>
-                                            <div class="u-list-icon u-text-white u-list-icon-2">
-                                                <svg class="u-svg-content" viewBox="-48 0 448 448" id="svg-7723">
-                                                    <path d="m256 0h-160l-96 224h160l-64 224 256-320h-160zm0 0"
-                                                          fill="currentColor"></path>
-                                                </svg>
-                                            </div>
-                                            <span style="font-style: italic;"> Note: The angle, that we mean, it is half whole angle with double-bevel blade.</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -291,53 +276,46 @@
                 <div class="u-layout-row">
                     <div class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-align-left-xxl u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
                         <div class="u-container-layout u-valign-top-sm u-container-layout-1">
-                            <h2 class="u-text u-text-default u-text-1" data-lang-en="Get in touch">FeedBack</h2>
-                            <h6 class="u-align-center-xs u-custom-font u-text u-text-font u-text-2"
-                                data-lang-en="We can ensure reliability, low cost fares and most important, with safety and comfort in mind.">
-                                We would be glad to hear your thoughts and suggestions about service for
-                                improvement!</h6>
+                            <h2 class="u-text u-text-default u-text-1">FeedBack</h2>
+                            <h6 class="u-align-center-xs u-custom-font u-text u-text-font u-text-2"> We would be glad to
+                                hear your thoughts and suggestions about service for improvement!</h6>
                         </div>
                     </div>
                     <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2"
-                         data-href="/Calculation.html#carousel_7650" data-page-id="317024594">
+                         data-href="/Calculation.html#carousel_7650">
                         <div class="u-container-layout u-container-layout-2">
                             <div class="u-form u-form-1">
                                 <form action="#feedback" method="POST"
                                       class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form"
                                       style="padding: 10px" source="custom" name="form">
                                     <div class="u-form-email u-form-group u-form-partition-factor-2">
-                                        <label class="u-label u-text-body-alt-color u-label-1"
-                                               data-lang-en="Email">Email</label>
+                                        <label class="u-label u-text-body-alt-color u-label-1">Email</label>
                                         <input type="email" placeholder="Enter a valid email address" id="email-319a"
                                                name="email"
                                                class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"
-                                               required="" data-lang-en="Enter a valid email address">
+                                               required="">
                                     </div>
                                     <div class="u-form-group u-form-name u-form-partition-factor-2">
-                                        <label class="u-label u-text-body-alt-color u-label-2"
-                                               data-lang-en="Name">Name</label>
+                                        <label class="u-label u-text-body-alt-color u-label-2">Name</label>
                                         <input type="text" placeholder="Enter your Name" id="name-319a" name="name"
                                                class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"
-                                               required="" data-lang-en="Enter your Name">
+                                               required="">
                                     </div>
                                     <div class="u-form-group u-form-message">
-                                        <label class="u-label u-text-body-alt-color u-label-3" data-lang-en="Message">Message</label>
+                                        <label class="u-label u-text-body-alt-color u-label-3">Message</label>
                                         <textarea placeholder="Enter your message" id="message-319a" name="message"
                                                   class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"
-                                                  required="" data-lang-en="Enter your message"></textarea>
+                                                  required=""></textarea>
                                     </div>
                                     <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-center-xs u-align-left-xxl u-form-group u-form-submit">
-                                        <a href="#" class="u-btn u-btn-submit u-button-style u-white u-btn-1"
-                                           data-lang-en="{&quot;content&quot;:&quot;Submit&quot;,&quot;href&quot;:&quot;#&quot;}">Submit</a>
+                                        <a href="#" class="u-btn u-btn-submit u-button-style u-white u-btn-1">Submit</a>
                                         <input type="submit" value="submit" class="u-form-control-hidden">
                                     </div>
-                                    <div class="u-form-send-message u-form-send-success" data-lang-en="
-            Thank you! Your message has been sent.
-        "> Thank you! Your message has been sent.
+                                    <div class="u-form-send-message u-form-send-success"> Thank you! Your message has
+                                        been sent.
                                     </div>
-                                    <div class="u-form-send-error u-form-send-message" data-lang-en="
-            Unable to send your message. Please fix errors then try again.
-        "> Unable to send your message. Please fix errors then try again.
+                                    <div class="u-form-send-error u-form-send-message"> Unable to send your message.
+                                        Please fix errors then try again.
                                     </div>
                                     <input type="hidden" value="" name="recaptchaResponse">
                                 </form>
