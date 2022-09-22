@@ -9,7 +9,7 @@ signer = Signer()
 
 def send_activation_notification(user):
     if ALLOWED_HOSTS:
-        host = 'http://' + ALLOWED_HOSTS[0]
+        host = 'https://staysharp.herokuapp.com'
     else:
         host = 'http://127.0.0.1:8000'
 
