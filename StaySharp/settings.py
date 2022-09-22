@@ -130,7 +130,17 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'i5205205i@gmail.com'
+EMAIL_HOST_PASSWORD = 'mtnlgzurzbicvqpr'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Heroku: Обновление конфигурации базы данных из $DATAВASE_URL. import dj_database_url
 dЬ_from_env = dj_database_url.config(conn_max_age=500)
