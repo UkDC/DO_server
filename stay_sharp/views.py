@@ -292,7 +292,7 @@ def account_table_edit(request):
             formset = Account_tableFormSet(queryset=Account_table.objects.filter(user=user))
             return render(request, 'Account-table_edit.html',
                           context={'formset': formset, 'error_messages': 'Not correct input'})
-    return render(request, 'registration/old/Login.html', context={'error': "You need to login"})
+    return render(request, 'registration/login.html', context={'error': "You need to login"})
 
 # class Edit_accountView(TemplateView):
 #     template_name = 'registration/Edit_account.html'
