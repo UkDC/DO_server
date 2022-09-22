@@ -133,9 +133,9 @@ LOGOUT_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Heroku: Обновление конфигурации базы данных из $DATAВASE_URL. import dj_database_url
-# dЬ_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(dЬ_from_env)
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+dЬ_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(dЬ_from_env)
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 # DATABASES['default'] = dj_database_url.config(default='sqlite://db.sqlite3')
 
 # Статичные файлы (CSS, JavaScript, Images)
