@@ -17,8 +17,9 @@
 {% block content %}"Login"{% endblock %}
 
 {% block section1 %}
-   <section class="skrollable u-clearfix u-image u-lightbox u-parallax u-shading u-section-3" id="carousel_965f" data-image-width="1500" data-image-height="1000">
-      <div class="u-clearfix u-sheet u-valign-middle-sm u-sheet-1">
+    <section class="skrollable u-clearfix u-image u-lightbox u-parallax u-shading u-section-3" id="carousel_965f"
+             data-image-width="1500" data-image-height="1000">
+        <div class="u-clearfix u-sheet u-valign-middle-sm u-sheet-1">
             <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
                 <div class="u-layout">
                     <div class="u-layout-row">
@@ -33,15 +34,15 @@
                                         {% csrf_token %}
 
                                         <div class="u-form-email u-form-group">
-                                        <label for="email-ad88" class="u-label u-text-palette-3-light-2 u-label-1">Username</label>
-                                        <input type="text" placeholder="username" id="email-ad88" name="username"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1"
+                                            <label for="email-ad88" class="u-label u-text-palette-3-light-2 u-label-1">Username</label>
+                                            <input type="text" placeholder="username" id="email-ad88" name="username"
+                                                   class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1"
                                                    required="">
                                         </div>
                                         <div class="u-form-group u-form-group-2">
-                                        <label for="text-db67" class="u-label u-text-palette-3-light-2 u-label-2">Password</label>
+                                            <label for="text-db67" class="u-label u-text-palette-3-light-2 u-label-2">Password</label>
                                             <input type="text" id="text-db67" name="password"
-                                               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2"
+                                                   class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2"
                                                    placeholder="password" required="required">
                                         </div>
                                         <div class="u-align-right u-form-group u-form-submit">
@@ -56,12 +57,16 @@
                                 </div>
                                 <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-1">
                                     <div class="u-container-layout u-container-layout-2">
-                                        <h5 class="u-align-center u-custom-font u-font-merriweather u-text u-text-palette-3-light-2 u-text-2">
-                                            Messenges:</h5>
-                                        <h5 class="u-align-center u-text u-text-palette-3-light-2 u-text-3">
-                                            -------------<br>
-                                        </h5>
+                                        <a href="{% url 'password_reset' %}"
+                                           class="u-active-none u-border-2 u-border-active-palette-2-base u-border-hover-palette-4-light-2 u-border-palette-3-light-2 u-btn u-button-style u-custom-font u-font-merriweather u-hover-none u-none u-text-active-palette-2-base u-text-hover-palette-4-light-2 u-text-palette-3-light-2 u-btn-2"
+                                           data-animation-name="" data-animation-duration="0" data-animation-delay="0"
+                                           data-animation-direction="">Reset password</a>
                                         {% if form.errors %}
+                                            <h5 class="u-align-center u-custom-font u-font-merriweather u-text u-text-palette-3-light-2 u-text-2">
+                                                Messenges:</h5>
+                                            <h5 class="u-align-center u-text u-text-palette-3-light-2 u-text-3">
+                                                -------------<br>
+                                            </h5>
                                             <ul class="u-align-left u-custom-list u-text u-text-palette-2-light-3 u-text-4"
                                                 data-animation-name="bounceIn" data-animation-duration="1000"
                                                 data-animation-direction="">
@@ -79,15 +84,6 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                                <h3 class="u-align-center u-text u-text-palette-3-light-2 u-text-5"
-                                    data-animation-name=""
-                                    data-animation-duration="0" data-animation-delay="0" data-animation-direction="">If
-                                    you
-                                    forgot password or want to change </h3>
-                                <a href="{% url 'password_reset' %}"
-                                   class="u-active-none u-border-2 u-border-active-palette-2-base u-border-hover-palette-4-light-2 u-border-palette-3-light-2 u-btn u-button-style u-hover-none u-none u-text-active-palette-2-base u-text-hover-palette-4-light-2 u-text-palette-3-light-2 u-btn-2"
-                                   data-animation-name="" data-animation-duration="0" data-animation-delay="0"
-                                   data-animation-direction="">Reset password</a>
                             </div>
                         </div>
                         <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">

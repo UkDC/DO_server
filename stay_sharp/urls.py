@@ -12,6 +12,6 @@ urlpatterns = [
     path('choose_the_angle', views.Choose_the_angleView.as_view(), name='choose_the_angle'),
     path('sighup', views.RegisterFormView.as_view(), name='sighup'),
     path('register_done', views.RegisterDoneView.as_view(), name='register_done'),
-    path('асtivate/<str:sign>', views.user_activate, name='register_activate'),
+    path("verify_email/<uidb64>/<token>/", views.EmailVerify.as_view(),name="verify_email"),
     path('edit_account', views.edit_account, name='edit_account'),
 ]

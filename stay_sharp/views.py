@@ -1,20 +1,26 @@
 import math
 
+from django.contrib.auth import login
 from django.contrib.auth.models import User
+from django.contrib.auth.tokens import default_token_generator as token_generator
 from django.core.exceptions import ValidationError
-from django.core.signing import BadSignature
+from django.core.mail import send_mail
 from django.db.models import Avg
-from django.forms import modelformset_factory, BaseModelFormSet, modelform_factory
+from django.forms import modelformset_factory
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.utils.http import urlsafe_base64_decode
 from django.views import View
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
 
-from .forms import All_knifesForm_step1, All_knifesForm_step2, Grinding_dataForm, Honing_dataForm, RegisterUserForm
+from StaySharp.settings import EMAIL_HOST_USER
+from .forms import All_knifesForm_step1, All_knifesForm_step2, Grinding_dataForm, Honing_dataForm, RegisterUserForm, \
+    MyUserChangeForm
 from .models import All_knifes, Account_table
-from .utilities import signer
+from .utilities import send_email_for_varify
+
 
 # расчет параметров настройки станка для заточки и хонингования
 class CalculationView(View):
@@ -68,7 +74,20 @@ def main(request):
 
 
 def feedback(request):
-    return render(request, 'Calculation.html')
+    if request.method == 'POST':
+        message_name = request.POST['name']
+        message_email = request.POST['email']
+        message = request.POST['message']
+        # send an email
+        send_mail(
+            message_name,  # subject
+            message,  # message
+            message_email,  # from_email
+            [EMAIL_HOST_USER],  # to email
+        )
+        return render(request, 'Feedback.html', context={'message_name': message_name})
+    return render(request, 'Feedback.html')
+
 
 # выбор оптимального угла
 class Choose_the_angleView(View):
@@ -81,7 +100,8 @@ class Choose_the_angleView(View):
         angle = 0
         honing_add = 0
         return render(request, 'Choose-the-angle.html',
-                      context={'model': model, 'form1': form1, 'form2': form2, 'angle': angle, 'honing_add': honing_add})
+                      context={'model': model, 'form1': form1, 'form2': form2, 'angle': angle,
+                               'honing_add': honing_add})
 
     def post(self, request):
 
@@ -217,47 +237,6 @@ class Choose_the_angleView(View):
 
         return render(request, 'Choose-the-angle.html', context={'model': model})
 
-# форма регистрации
-class RegisterFormView(CreateView):
-    model = User
-    form_class = RegisterUserForm
-    success_url = reverse_lazy('register_done')
-    template_name = 'registration/Sighup.html'
-
-    def form_valid(self, form):
-        for user in User.objects.all():
-            if form.cleaned_data['email'] == user.email:
-                form.add_error(None, {'email': 'This email has already been registered'})
-                return render(self.request, 'registration/Sighup.html', context={'form': form})
-        form.save()
-        return HttpResponseRedirect('register_done')
-
-    def form_invalid(self, form):
-        return render(self.request, 'registration/Sighup.html', context={'form': form, "done": False})
-
-# вывод - регистрация выполнена
-class RegisterDoneView(TemplateView):
-    template_name = 'registration/Sighup.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['done'] = True
-        return context
-
-# активация пользователя
-def user_activate(request, sign):
-    try:
-        username = signer.unsign(sign)
-    except BadSignature:
-        return render(request, 'registration/activation_done.html', context={'bad_signature': True})
-    user = get_object_or_404(User, username=username)
-    if user.is_active:
-        template = 'registration/activation_done.html'
-    else:
-        template = 'registration/activation_done.html'
-        user.is_active = True
-        user.save()
-    return render(request, template)
 
 # вывод таблицы с записями пользователя
 class Account_tableView(TemplateView):
@@ -270,7 +249,8 @@ class Account_tableView(TemplateView):
             context['my_knifes'] = Account_table.objects.filter(user=user)
             return self.render_to_response(context)
 
-# редактирование форм
+
+# редактирование фтаблиц с записями пользователя
 def account_table_edit(request):
     Account_tableFormSet = modelformset_factory(Account_table, exclude=('date',), can_delete=True)
     user = request.user
@@ -284,6 +264,8 @@ def account_table_edit(request):
                     formset.cleaned_data[-1]['DELETE'] = True
                 # сохранение форм
                 formset.save()
+                user.is_active = True
+                user.save()
                 return redirect('account_table')
 
             formset = Account_tableFormSet(queryset=Account_table.objects.filter(user=user))
@@ -294,24 +276,89 @@ def account_table_edit(request):
                           context={'formset': formset, 'error_messages': 'Not correct input'})
     return render(request, 'registration/login.html', context={'error': "You need to login"})
 
-# class Edit_accountView(TemplateView):
-#     template_name = 'registration/Edit_account.html'
+
+# форма регистрации
+class RegisterFormView(CreateView):
+    model = User
+    form_class = RegisterUserForm
+    success_url = reverse_lazy('register_done')
+    template_name = 'registration/Sighup.html'
+
+    def form_valid(self, form):
+        for user in User.objects.all():
+            if form.cleaned_data['email'] == user.email:
+                form.add_error(None, {'email': 'This email has already been registered'})
+                return render(self.request, 'registration/Sighup.html', context={'form': form})
+        form.save()
+        # метод save() переопределен в RegisterUserForm, и устанавливает is_active = False
+        username = form.cleaned_data['username']
+        user = User.objects.get(username=username)
+        # отправление письма для подтверждения аутентификации, функция определена в utilities.py
+        send_email_for_varify(self.request, user)
+        return HttpResponseRedirect('register_done')
+
+    def form_invalid(self, form):
+        return render(self.request, 'registration/Sighup.html', context={'form': form, "done": False})
 
 
+# вывод - регистрация выполнена
+class RegisterDoneView(TemplateView):
+    template_name = 'registration/Sighup.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['done'] = True
+        return context
+
+
+# переход по ссылке в email и активация нового пользователя
+class EmailVerify(View):
+    def get(self, request, uidb64, token):
+        user = self.get_user(uidb64)
+
+        if user is not None and token_generator.check_token(user, token):
+            user.is_active = True
+            user.save()
+            # при удачной активации выполняется login пользователя
+            login(request, user)
+            return render(request, 'registration/activation_done.html')
+
+        return render(request, 'registration/activation_done.html', context={'not_match': True})
+
+    def get_user(self, uidb64):
+        try:
+            uid = urlsafe_base64_decode(uidb64).decode()
+            user = User.objects.get(pk=uid)
+        except (TypeError, ValueError, OverflowError, User.DoesNotExist, ValidationError):
+            user = None
+        return user
+
+
+# редактирование аккаунта
 def edit_account(request):
-    Edit_accountForm = modelform_factory(User, fields=('username', 'first_name', 'last_name', 'email'))
-
     user = request.user
     init = User.objects.get(username=user.username)
 
     if user and user.is_active:
         if request.method == 'POST':
-            formset = Edit_accountForm(request.POST, instance=init)
-            if formset.is_valid():
-                formset.save()
-                return render(request, 'registration/Edit_account.html', context={'formset': formset, 'done': True})
-            return render(request, 'registration/Edit_account.html', context={'formset': formset, 'done': False})
+            form = MyUserChangeForm(request.POST, instance=init)
+            if form.is_valid():
+                if 'email' in form.changed_data:
+                    form.save()
+                    # метод save() переопределен в MyUserChangeForm, и устанавливает is_active = False
+                    username = form.cleaned_data['username']
+                    user = User.objects.get(username=username)
+                    # отправление письма для подтверждения аутентификации, функция определена в utilities.py
+                    send_email_for_varify(request, user)
+                    return render(request, 'registration/Edit_account.html', context={'form': form, 'send_email': True})
+                elif form.changed_data:
+                    form.save()
+                    user.is_active = True
+                    user.save()
+                    return render(request, 'registration/Edit_account.html', context={'form': form, 'done': True})
+                return render(request, 'registration/Edit_account.html', context={'form': form, 'done': False})
+            return render(request, 'registration/Edit_account.html', context={'form': form, 'done': False})
         else:
-            formset = Edit_accountForm()
-            return render(request, 'registration/Edit_account.html', context={'formset': formset, 'done': False})
+            form = MyUserChangeForm()
+            return render(request, 'registration/Edit_account.html', context={'form': form, 'done': False})
     return render(request, 'registration/Edit_account.html', context={'error': "You need to login"})

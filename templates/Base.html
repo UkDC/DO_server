@@ -69,7 +69,7 @@
                     </li>
                     <li class="u-nav-item"><a
                             class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-2 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-2"
-                            href="{% url 'calculation' %}#feedback" style="padding: 5px 0px;">FeedBack</a>
+                            href="{% url 'feedback' %}" style="padding: 5px 0px;">FeedBack</a>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="u-nav-item"><a
@@ -121,7 +121,7 @@
                             </li>
 
                             <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="{% url 'calculation' %}#feedback" data-page-id="317024594"
+                                                      href="{% url 'feedback' %}" data-page-id="317024594"
                                                       data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>
                             </li>
                             {% if user.is_authenticated %}

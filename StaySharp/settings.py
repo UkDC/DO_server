@@ -139,8 +139,8 @@ EMAIL_HOST_PASSWORD = 'mtnlgzurzbicvqpr'
 # EMAIL_USE_TLS = True
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
-SERVER_EMAIL = EMAIL_HOST_USER
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# SERVER_EMAIL = EMAIL_HOST_USER
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Heroku: Обновление конфигурации базы данных из $DATAВASE_URL. import dj_database_url
 dЬ_from_env = dj_database_url.config(conn_max_age=500)
