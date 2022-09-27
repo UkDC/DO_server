@@ -38180,7 +38180,8 @@ a.u-link.u-text-hover-grey-90:hover {
   .u-header .u-nav-3 {
     width: 168px;
     margin-top: 19px;
-    margin-right: 10px;
+    margin-right: auto;
+    margin-left: 39px;
   }
 
   .u-header .u-menu-close-1 {
