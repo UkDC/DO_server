@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
@@ -62,18 +62,24 @@ class Honing_data(models.Model):
 
 
 class Account_table(models.Model):
-    date = models.DateField(blank=True, null=True, auto_now_add=True,)
+    date = models.DateField(blank=True, null=True, auto_now_add=True, )
     brend = models.CharField(max_length=30, blank=True, null=True, default='')
     series = models.CharField(max_length=30, blank=True, null=True, default='')
     steel = models.CharField(max_length=20, blank=True, null=True, default='')
-    carbon = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(6)], blank=True, null=True, default='')
-    CrMoV = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(50)], blank=True, null=True, default='')
-    length = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(500)], blank=True, null=True, default='')
-    width = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(60)], blank=True, null=True, default='')
-    grinding_angle = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(40)], blank=True, null=True, default='')
+    carbon = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(6)], blank=True, null=True,
+                               default='')
+    CrMoV = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(50)], blank=True, null=True,
+                              default='')
+    length = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(500)], blank=True, null=True,
+                               default='')
+    width = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(60)], blank=True, null=True,
+                              default='')
+    grinding_angle = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(40)], blank=True, null=True,
+                                       default='')
     honing_add = models.FloatField(blank=True, null=True, default='')
     comments = models.TextField(blank=True, null=True, default='')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=get_superuser)
 
     def __str__(self):
         return f'Date - {self.date}'
+

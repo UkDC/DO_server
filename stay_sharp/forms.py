@@ -1,12 +1,7 @@
 from django import forms
-from django.contrib.auth import password_validation
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
-from django.contrib.auth import password_validation
-from django.core.exceptions import ValidationError
-
 from .models import All_knifes, Grinding_data, Honing_data
-from .utilities import send_email_for_varify
 
 
 
@@ -34,7 +29,7 @@ class Honing_dataForm(forms.ModelForm):
         model = Honing_data
         exclude = ['FVB_H']
 
-
+# форма для регистрации нового пользователя
 class RegisterUserForm(UserCreationForm):
     class Meta:
         model = User
@@ -42,20 +37,13 @@ class RegisterUserForm(UserCreationForm):
 
     def save(self, commit=True, ):
         user = super().save(commit=False)
-        user.is_active = False
+        user.is_active = False # активация устанавливается True после подтверждения верефикации по ссылке
         if commit:
             user.save()
         return user
 
-
+# форма для редактирования аккаунта
 class MyUserChangeForm(UserChangeForm):
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email')
-
-    def save(self, commit=True, ):
-        user = super().save(commit=False)
-        user.is_active = False
-        if commit:
-            user.save()
-        return user

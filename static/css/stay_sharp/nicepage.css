@@ -38101,7 +38101,6 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-header .u-nav-3 {
   font-size: 1.125rem;
-  text-shadow: 2px 2px 8px rgba(128,128,128,1);
   font-weight: 400;
 }
 
@@ -38179,8 +38178,13 @@ a.u-link.u-text-hover-grey-90:hover {
   }
 
   .u-header .u-nav-3 {
-    margin-right: -61px;
-    width: 262px;
+    width: 168px;
+    margin-top: 19px;
+    margin-right: 10px;
+  }
+
+  .u-header .u-menu-close-1 {
+    margin-top: 29px;
   }
 }
 .u-header .u-sidenav-1, .u-header .u-sidenav-1:before, .u-header .u-sidenav-1 > .u-container-layout:before {

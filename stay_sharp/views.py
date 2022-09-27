@@ -1,6 +1,7 @@
 import math
 
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator as token_generator
 from django.core.exceptions import ValidationError
@@ -8,18 +9,20 @@ from django.core.mail import send_mail
 from django.db.models import Avg
 from django.forms import modelformset_factory
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils.http import urlsafe_base64_decode
 from django.views import View
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
-
 from StaySharp.settings import EMAIL_HOST_USER
 from .forms import All_knifesForm_step1, All_knifesForm_step2, Grinding_dataForm, Honing_dataForm, RegisterUserForm, \
     MyUserChangeForm
 from .models import All_knifes, Account_table
 from .utilities import send_email_for_varify
+from django.views.generic.edit import DeleteView
+from django.contrib.auth import logout
+from django.contrib import messages
 
 
 # расчет параметров настройки станка для заточки и хонингования
@@ -73,6 +76,7 @@ def main(request):
     return render(request, 'Main.html')
 
 
+# feedback
 def feedback(request):
     if request.method == 'POST':
         message_name = request.POST['name']
@@ -250,7 +254,7 @@ class Account_tableView(TemplateView):
             return self.render_to_response(context)
 
 
-# редактирование фтаблиц с записями пользователя
+# редактирование таблиц с записями пользователя
 def account_table_edit(request):
     Account_tableFormSet = modelformset_factory(Account_table, exclude=('date',), can_delete=True)
     user = request.user
@@ -277,7 +281,7 @@ def account_table_edit(request):
     return render(request, 'registration/login.html', context={'error': "You need to login"})
 
 
-# форма регистрации
+# регистрации нового пользователя с активацией через email
 class RegisterFormView(CreateView):
     model = User
     form_class = RegisterUserForm
@@ -293,9 +297,10 @@ class RegisterFormView(CreateView):
         # метод save() переопределен в RegisterUserForm, и устанавливает is_active = False
         username = form.cleaned_data['username']
         user = User.objects.get(username=username)
+        email = form.cleaned_data['email']
         # отправление письма для подтверждения аутентификации, функция определена в utilities.py
-        send_email_for_varify(self.request, user)
-        return HttpResponseRedirect('register_done')
+        send_email_for_varify(self.request, user, email)
+        return render(self.request, 'registration/Sighup.html', context={'form': form, 'send_email': True})
 
     def form_invalid(self, form):
         return render(self.request, 'registration/Sighup.html', context={'form': form, "done": False})
@@ -313,11 +318,12 @@ class RegisterDoneView(TemplateView):
 
 # переход по ссылке в email и активация нового пользователя
 class EmailVerify(View):
-    def get(self, request, uidb64, token):
+    def get(self, request, uidb64, token, email):  # email передается через ссылку для активации
         user = self.get_user(uidb64)
 
         if user is not None and token_generator.check_token(user, token):
             user.is_active = True
+            user.email = email  # если верификация прошла успешно, то сохраняем новый email
             user.save()
             # при удачной активации выполняется login пользователя
             login(request, user)
@@ -344,17 +350,18 @@ def edit_account(request):
             form = MyUserChangeForm(request.POST, instance=init)
             if form.is_valid():
                 if 'email' in form.changed_data:
+                    new_email = form.cleaned_data['email']  # получение нового пароля
                     form.save()
-                    # метод save() переопределен в MyUserChangeForm, и устанавливает is_active = False
                     username = form.cleaned_data['username']
                     user = User.objects.get(username=username)
+                    user.email = form.initial['email']  # возвращаем первоначальный email, пока не будет подтверждена
+                    # достоверность нового пароля
+                    user.save()
                     # отправление письма для подтверждения аутентификации, функция определена в utilities.py
-                    send_email_for_varify(request, user)
+                    send_email_for_varify(request, user, new_email)
                     return render(request, 'registration/Edit_account.html', context={'form': form, 'send_email': True})
                 elif form.changed_data:
                     form.save()
-                    user.is_active = True
-                    user.save()
                     return render(request, 'registration/Edit_account.html', context={'form': form, 'done': True})
                 return render(request, 'registration/Edit_account.html', context={'form': form, 'done': False})
             return render(request, 'registration/Edit_account.html', context={'form': form, 'done': False})
@@ -362,3 +369,25 @@ def edit_account(request):
             form = MyUserChangeForm()
             return render(request, 'registration/Edit_account.html', context={'form': form, 'done': False})
     return render(request, 'registration/Edit_account.html', context={'error': "You need to login"})
+
+
+# удаление аккаунта
+class DeleteUserView(LoginRequiredMixin, DeleteView):
+    model = User
+    template_name = 'registration/Edit_account.html'
+    success_url = reverse_lazy('main')
+
+    def setup(self, request, *args, **kwargs):
+        self.user_id = request.user.pk
+        return super().setup(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        info = request.user.username + ' Deleted'
+        logout(request)
+        messages.add_message(request, messages.SUCCESS, info)
+        return super().post(request, *args, **kwargs)
+
+    def get_object(self, queryset=None):
+        if not queryset:
+            queryset = self.get_queryset()
+        return get_object_or_404(queryset, pk=self.user_id)

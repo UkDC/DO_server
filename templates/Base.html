@@ -84,7 +84,6 @@
                                     <li class="u-nav-item"><a href="{% url 'edit_account' %}"
                                             class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3">Edit
                                         account</a>
-                                    </li>
                                     <li class="u-nav-item"><a
                                             class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
                                             href="{% url 'logout' %}">Logout</a>
@@ -140,11 +139,15 @@
                                                     class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
                                                     href="{% url 'logout' %}">Logout</a>
                                             </li>
+
                                         </ul>
                                     </div>
                                 </li>
                             {% else %}
                                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}"
+                                                          data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>
+                                </li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'sighup' %}"
                                                           data-lang-en="{&quot;content&quot;:&quot;Login&quot;,&quot;href&quot;:&quot;Login.html&quot;}">Login</a>
                                 </li>
                             {% endif %}

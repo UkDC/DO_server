@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'import_export',
     'psycopg2',
+    'django_cleanup',
 ]
 
 MIDDLEWARE = [
@@ -123,9 +124,6 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 LOGIN_REDIRECT_URL = '/'
@@ -134,28 +132,21 @@ LOGOUT_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'i5205205i@gmail.com'
-EMAIL_HOST_PASSWORD = 'mtnlgzurzbicvqpr'
+EMAIL_HOST_PASSWORD = 'vfwnsbwguywlhexv'
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
-# SERVER_EMAIL = EMAIL_HOST_USER
-# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Heroku: Обновление конфигурации базы данных из $DATAВASE_URL. import dj_database_url
 dЬ_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(dЬ_from_env)
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-# DATABASES['default'] = dj_database_url.config(default='sqlite://db.sqlite3')
+
 
 # Статичные файлы (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 # Абсолютный путь к каталогу, в котором collectstatic # будет собирать статические файлы для развертывания.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Упрощенная обработка статических файлов.
-# https://warehouse.python.org/project/whitenoise/
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedМanifestStaticFilesStorage'
 
 # new
 django_heroku.settings(locals())

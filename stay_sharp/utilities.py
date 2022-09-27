@@ -8,8 +8,8 @@ from django.utils.http import urlsafe_base64_encode
 
 from StaySharp.settings import ALLOWED_HOSTS
 
-# формирование и отправление на email ссылки для подтверждения регистрации
-def send_email_for_varify(request, user):
+# формирование и отправление на email ссылки для подтверждения регистрации с новым email
+def send_email_for_varify(request, user, new_email):
     current_site = get_current_site(request)
     domain = current_site.domain
     context = {
@@ -17,11 +17,8 @@ def send_email_for_varify(request, user):
         "uid": urlsafe_base64_encode(force_bytes(user.pk)),
         "user": user,
         "token": token_generator.make_token(user),
+        "email": new_email # новый email передается в контроллер верификации
     }
     message = render_to_string('registration/verify_email.html', context=context)
-    email = EmailMessage(
-        'Verify email',
-        message,
-        to=[user.email]
-    )
+    email = EmailMessage('Verify email', message, to=[user.email])
     email.send()

@@ -12,6 +12,7 @@ urlpatterns = [
     path('choose_the_angle', views.Choose_the_angleView.as_view(), name='choose_the_angle'),
     path('sighup', views.RegisterFormView.as_view(), name='sighup'),
     path('register_done', views.RegisterDoneView.as_view(), name='register_done'),
-    path("verify_email/<uidb64>/<token>/", views.EmailVerify.as_view(),name="verify_email"),
+    path("verify_email/<uidb64>/<token>/<email>", views.EmailVerify.as_view(),name="verify_email"), # add
     path('edit_account', views.edit_account, name='edit_account'),
+    path('account/delete', views.DeleteUserView.as_view(), name='account_delete'),
 ]
