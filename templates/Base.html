@@ -9,7 +9,6 @@
     <meta name="description" content="">
     <title> {% block title %} {% endblock %} </title>
     <link rel="stylesheet" href="{% static 'css/stay_sharp/nicepage.css' %}" media="screen">
-    <link rel="stylesheet" href="{% static 'css/stay_sharp/Main.css' %}" media="screen">
 
     {% block static_main %}{% endblock %}
 
@@ -74,19 +73,20 @@
                     </li>
                     {% if user.is_authenticated %}
                         <li class="u-nav-item"><a
-                            class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-2 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-2"
+                                class="u-border-2 u-border-active-palette-4-light-1 u-border-hover-palette-4-light-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-light-2 u-button-style u-nav-link u-text-active-palette-4-light-1 u-text-hover-palette-4-light-1 u-text-palette-3-light-2"
                                 style="padding: 5px 0px;">My account</a>
                             <div class="u-nav-popup">
                                 <ul class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-4-light-1 u-custom-font u-font-merriweather u-h-spacing-8 u-nav u-unstyled u-v-spacing-5 u-nav-2">
                                     <li class="u-nav-item"><a
-                                            class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
+                                            class="u-button-style u-nav-link u-text-active-palette-4-light-2 u-text-body-alt-color u-text-hover-palette-4-light-2"
                                             href="{% url 'account_table' %}">Table - {{ user.get_username }}</a>
                                     </li>
                                     <li class="u-nav-item"><a href="{% url 'edit_account' %}"
-                                            class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3">Edit
+                                                              class="u-button-style u-nav-link u-text-active-palette-4-light-2 u-text-body-alt-color u-text-hover-palette-4-light-2">Edit
                                         account</a>
+                                    </li>
                                     <li class="u-nav-item"><a
-                                            class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
+                                            class="u-button-style u-nav-link u-text-active-palette-4-light-2 u-text-body-alt-color u-text-hover-palette-4-light-2"
                                             href="{% url 'logout' %}">Logout</a>
                                     </li>
                                 </ul>
@@ -105,40 +105,42 @@
                 </ul>
             </div>
             <div class="u-custom-menu u-nav-container-collapse">
-                <div class="u-container-style u-hover-feature u-inner-container-layout u-opacity u-opacity-90 u-palette-3-light-2 u-shape-round u-sidenav u-sidenav-1"
+                <div class="u-container-style u-hover-feature u-inner-container-layout u-opacity u-opacity-90 u-palette-1-dark-1 u-shape-round u-sidenav u-sidenav-1"
                      data-offcanvas-width="251.25">
                     <div class="u-inner-container-layout u-sidenav-overflow">
-                        <ul class="u-align-left u-custom-font u-font-merriweather u-menu-dropdown u-nav u-popupmenu-items u-spacing-0 u-text-active-palette-1-base u-unstyled u-nav-3">
+                        <ul class="u-align-left u-custom-font u-font-merriweather u-menu-dropdown u-nav u-popupmenu-items u-spacing-0 u-text-active-palette-4-base u-text-hover-palette-4-base u-unstyled u-nav-3">
                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'main' %}"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Main&quot;,&quot;href&quot;:&quot;Main.html&quot;}">Main</a>
+                                                      style="padding-top: 8px; padding-bottom: 8px;">Main</a>
                             </li>
                             <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="{% url 'choose_the_angle' %}">Choose
-                                the angle</a>
+                                                      href="{% url 'choose_the_angle' %}"
+                                                      style="padding-top: 8px; padding-bottom: 8px;">Choose the
+                                angle</a>
                             </li>
                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'calculation' %}"
-                                                      data-lang-en="{&quot;content&quot;:&quot;Calculation&quot;,&quot;href&quot;:&quot;#&quot;}">Calculation</a>
+                                                      style="padding-top: 8px; padding-bottom: 8px;">Calculation</a>
                             </li>
 
                             <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="{% url 'feedback' %}" data-page-id="317024594"
-                                                      data-lang-en="{&quot;content&quot;:&quot;FeedBack&quot;,&quot;href&quot;:&quot;#&quot;}">FeedBack</a>
+                                                      href="{% url 'feedback' %}"
+                                                      style="padding-top: 8px; padding-bottom: 8px;">FeedBack</a>
                             </li>
                             {% if user.is_authenticated %}
                                 <li class="u-nav-item"><a class="u-button-style u-nav-link">My account</a>
                                     <div class="u-nav-popup">
                                         <ul class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-4-light-1 u-custom-font u-font-merriweather u-h-spacing-8 u-nav u-unstyled u-v-spacing-5 u-nav-4">
                                             <li class="u-nav-item"><a
-                                                    class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
+                                                    class="u-button-style u-nav-link u-text-active-palette-4-light-2 u-text-body-alt-color u-text-hover-palette-4-light-2"
                                                     href="{% url 'account_table' %}">Table - {{ user.get_username }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{% url 'edit_account' %}"
-                                                    class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3">Edit
+                                                                      class="u-button-style u-nav-link u-text-active-palette-4-light-2 u-text-body-alt-color u-text-hover-palette-4-light-2"
+                                                                      style="">Edit
                                                 account</a>
                                             </li>
                                             <li class="u-nav-item"><a
-                                                    class="u-button-style u-nav-link u-text-active-palette-3-light-2 u-text-hover-palette-4-light-1 u-text-palette-1-light-3"
-                                                    href="{% url 'logout' %}">Logout</a>
+                                                    class="u-button-style u-nav-link u-text-active-palette-4-light-2 u-text-body-alt-color u-text-hover-palette-4-light-2"
+                                                    style="" href="{% url 'logout' %}">Logout</a>
                                             </li>
 
                                         </ul>
