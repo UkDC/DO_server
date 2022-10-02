@@ -52,7 +52,7 @@
                             Date
                         </th>
                         <th class="u-border-1 u-border-grey-30 u-custom-font u-font-roboto-slab u-table-cell u-table-cell-3">
-                            Brend
+                            Brand
                         </th>
                         <th class="u-border-1 u-border-grey-30 u-custom-font u-font-roboto-slab u-table-cell u-table-cell-4">
                             Series
@@ -88,7 +88,7 @@
                         <tr style="height: 31px;">
                             <td class="u-border-1 u-border-grey-30 u-first-column u-palette-1-light-3 u-table-cell">{{ forloop.counter }}</td>
                             <td class="u-border-1 u-border-grey-30 u-table-cell">{{ my_knife.date|date:"j.m.y" }}</td>
-                            <td class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-15">{{ my_knife.brend|default_if_none:'' }}</td>
+                            <td class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-15">{{ my_knife.brand|default_if_none:'' }}</td>
                             <td class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-16">{{ my_knife.series|default_if_none:'' }}</td>
                             <td class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-17">{{ my_knife.steel|default_if_none:'' }}</td>
                             <td class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-18">{{ my_knife.carbon|default_if_none:'' }}</td>

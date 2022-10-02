@@ -15,7 +15,7 @@ class All_knifesForm_step1(forms.ModelForm):
 class All_knifesForm_step2(forms.ModelForm):
     class Meta:
         model = All_knifes
-        exclude = ['brend', 'series', 'steel', 'angle', 'honing_add', 'category']
+        exclude = ['brand', 'series', 'steel', 'angle', 'honing_add', 'category']
 
 
 class Grinding_dataForm(forms.ModelForm):

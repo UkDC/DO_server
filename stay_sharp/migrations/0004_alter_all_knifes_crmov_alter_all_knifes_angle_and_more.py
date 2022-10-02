@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name="all_knifes",
-            name="brend",
+            name="brand",
             field=models.CharField(blank=True, max_length=15, null=True),
         ),
         migrations.AlterField(

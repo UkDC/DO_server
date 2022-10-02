@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("brend", models.CharField(max_length=15)),
+                ("brand", models.CharField(max_length=15)),
                 ("series", models.CharField(max_length=15)),
                 ("steel", models.CharField(max_length=10)),
                 ("carbon", models.FloatField()),

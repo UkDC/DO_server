@@ -20,7 +20,7 @@ class All_knifes(models.Model):
         ('high_quality', 'high_quality'),
         ('premium_quality', 'premium_quality')
     ]
-    brend = models.CharField(max_length=30, blank=True, null=True)
+    brand = models.CharField(max_length=30, blank=True, null=True)
     series = models.CharField(max_length=30, blank=True, null=True)
     steel = models.CharField(max_length=20, blank=True, null=True)
     carbon = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(6)], blank=True, null=True)
@@ -30,15 +30,15 @@ class All_knifes(models.Model):
     category = models.CharField(max_length=20, choices=category, default='low_quality')
 
     class Meta:
-        ordering = ['brend']
+        ordering = ['brand']
 
     def __str__(self):
-        if self.brend and self.steel:
-            return f'Brend -{self.brend}, steel - {self.steel}'
-        elif self.brend and not self.steel:
-            return f'Brend -{self.brend}, category - {self.category}'
+        if self.brand and self.steel:
+            return f'Brand -{self.brand}, steel - {self.steel}'
+        elif self.brand and not self.steel:
+            return f'Brand -{self.brand}, category - {self.category}'
         else:
-            return f'Brend -unknown, steel - {self.steel}'
+            return f'Brand -unknown, steel - {self.steel}'
 
 
 class Grinding_data(models.Model):
@@ -63,7 +63,7 @@ class Honing_data(models.Model):
 
 class Account_table(models.Model):
     date = models.DateField(blank=True, null=True, auto_now_add=True, )
-    brend = models.CharField(max_length=30, blank=True, null=True, default='')
+    brand = models.CharField(max_length=30, blank=True, null=True, default='')
     series = models.CharField(max_length=30, blank=True, null=True, default='')
     steel = models.CharField(max_length=20, blank=True, null=True, default='')
     carbon = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(6)], blank=True, null=True,

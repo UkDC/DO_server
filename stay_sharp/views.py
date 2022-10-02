@@ -122,23 +122,23 @@ class Choose_the_angleView(View):
             model = All_knifes.objects.all()
             form = All_knifesForm_step1(request.POST)
             if form.is_valid():
-                brend = form.cleaned_data['brend']
+                brand = form.cleaned_data['brand']
                 series = form.cleaned_data['series']
                 steel = form.cleaned_data['steel']
 
-                if All_knifes.objects.filter(brend=brend, series=series, steel=steel):
-                    knife = All_knifes.objects.filter(brend=brend, series=series, steel=steel)[
+                if All_knifes.objects.filter(brand=brand, series=series, steel=steel):
+                    knife = All_knifes.objects.filter(brand=brand, series=series, steel=steel)[
                         0]  # отображаем первый элемент из выбранных
                     return render(request, 'Choose-the-angle.html',
                                   context={'model': model, 'knife': knife, 'angle': angle, 'honing_add': honing_add,
                                            'message_step1': 'look our suggestion or'})
 
-                elif All_knifes.objects.filter(brend=brend, brend__isnull=False):
-                    angle = All_knifes.objects.filter(brend=brend).aggregate(Avg('angle'))[
+                elif All_knifes.objects.filter(brand=brand, brand__isnull=False):
+                    angle = All_knifes.objects.filter(brand=brand).aggregate(Avg('angle'))[
                         'angle__avg']  # среднее значение из выбранных
-                    honing_add = All_knifes.objects.filter(brend=brend).aggregate(Avg('honing_add'))[
+                    honing_add = All_knifes.objects.filter(brand=brand).aggregate(Avg('honing_add'))[
                         'honing_add__avg']  # среднее значение из выбранных
-                    knife = All_knifes.objects.filter(brend=brend)[0]  # отображаем первый элемент из выбранных
+                    knife = All_knifes.objects.filter(brand=brand)[0]  # отображаем первый элемент из выбранных
                     return render(request, 'Choose-the-angle.html',
                                   context={'model': model, 'knife': knife, 'angle': angle, 'honing_add': honing_add,
                                            'message_step1': 'look our suggestion or'})

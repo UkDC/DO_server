@@ -56,16 +56,16 @@
                                                 <input type="hidden" value="step1" id="step1" name="step">
                                                 <div class="u-form-group u-form-select u-label-top u-form-group-1">
                                                     <label for="select-0ded"
-                                                           class="u-custom-font u-heading-font u-label u-text-palette-3-light-2 u-label-1">Brend</label>
+                                                           class="u-custom-font u-heading-font u-label u-text-palette-3-light-2 u-label-1">Brand</label>
                                                     <div class="u-form-select-wrapper">
-                                                        <select id="select-0ded" name="brend"
+                                                        <select id="select-0ded" name="brand"
                                                                 class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1">
-                                                            <option value="">breand unknown</option>
+                                                            <option value="">brand unknown</option>
                                                             {% for knife_b in model %}
-                                                                {% if knife_b.brend != None %}
-                                                                    <option value="{{ knife_b.brend }}"
+                                                                {% if knife_b.brand != None %}
+                                                                    <option value="{{ knife_b.brand }}"
                                                                             {% if knife_b == knife %}
-                                                                            selected {% endif %}>{{ knife_b.brend }}</option>
+                                                                            selected {% endif %}>{{ knife_b.brand }}</option>
                                                                 {% endif %}
                                                             {% endfor %}
                                                         </select>

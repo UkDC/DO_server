@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name="account_table",
-            name="brend",
+            name="brand",
             field=models.CharField(blank=True, default="", max_length=30, null=True),
         ),
         migrations.AlterField(

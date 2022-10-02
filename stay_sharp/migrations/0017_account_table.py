@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("date", models.DateField()),
-                ("brend", models.CharField(blank=True, max_length=30, null=True)),
+                ("brand", models.CharField(blank=True, max_length=30, null=True)),
                 ("series", models.CharField(blank=True, max_length=30, null=True)),
                 ("steel", models.CharField(blank=True, max_length=20, null=True)),
                 (
