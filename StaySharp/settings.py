@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'import_export',
     'psycopg2',
     'django_cleanup',
+    'dj_database_url'
 ]
 
 MIDDLEWARE = [
