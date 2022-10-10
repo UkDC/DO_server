@@ -1,2 +1,2 @@
 web: gunicorn StaySharp.wsgi --log-file -
-worker: python manage.py celery worker -B -l info
+celery: celery worker - A forum - l info - c 4
