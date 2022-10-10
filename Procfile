@@ -1,2 +1,2 @@
 web: gunicorn StaySharp.wsgi --log-file -
-celery: celery worker - A StaySharp - l info - c 4
+celery: celery -A StaySharp worker --without-heartbeat --without-gossip --without-mingle
