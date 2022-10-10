@@ -157,3 +157,4 @@ django_heroku.settings(locals())
 CELERY_RESULT_BACKEND = 'django-db'
 BROKER_POOL_LIMIT = 3
 CELERY_BROKER_URL = 'amqps://cpqhujiw:j7WoBS4lDR345rsJmAsfgPP9Y1xbBzdK@woodpecker.rmq.cloudamqp.com/cpqhujiw'
+BROKER_URL = 'amqps://cpqhujiw:j7WoBS4lDR345rsJmAsfgPP9Y1xbBzdK@woodpecker.rmq.cloudamqp.com/cpqhujiw'
