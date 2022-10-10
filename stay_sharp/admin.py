@@ -1,13 +1,8 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 from import_export import resources
-from import_export import fields
 from import_export.admin import ImportExportModelAdmin
 from .models import All_knifes, Account_table
-from .utilities import send_email_for_varify
-import datetime
+
 
 
 class All_knifesResource(resources.ModelResource):

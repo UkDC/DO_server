@@ -30,10 +30,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'm�j9tax!laЭ�l 8оЬt2_+Q�
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['staysharp.herokuapp.com',]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -48,7 +47,11 @@ INSTALLED_APPS = [
     'import_export',
     'psycopg2',
     'django_cleanup',
-    'dj_database_url'
+    'dj_database_url',
+    'social.apps.django_app.default',
+    'social_django',
+    'django_celery_results',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -143,11 +146,14 @@ EMAIL_USE_SSL = True
 dЬ_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(dЬ_from_env)
 
-
 # Статичные файлы (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 # Абсолютный путь к каталогу, в котором collectstatic # будет собирать статические файлы для развертывания.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# new
 django_heroku.settings(locals())
+
+# CELERY_BROKER_URL = 'amqp://guest:guest@localhost'
+CELERY_RESULT_BACKEND = 'django-db'
+BROKER_POOL_LIMIT = 3
+CELERY_BROKER_URL = 'amqps://cpqhujiw:j7WoBS4lDR345rsJmAsfgPP9Y1xbBzdK@woodpecker.rmq.cloudamqp.com/cpqhujiw'

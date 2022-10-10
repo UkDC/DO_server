@@ -4,11 +4,11 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator as token_generator
+from django.contrib.sites.shortcuts import get_current_site
 from django.core.exceptions import ValidationError
 from django.core.mail import send_mail
 from django.db.models import Avg
 from django.forms import modelformset_factory
-from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils.http import urlsafe_base64_decode
@@ -19,7 +19,7 @@ from StaySharp.settings import EMAIL_HOST_USER
 from .forms import All_knifesForm_step1, All_knifesForm_step2, Grinding_dataForm, Honing_dataForm, RegisterUserForm, \
     MyUserChangeForm
 from .models import All_knifes, Account_table
-from .utilities import send_email_for_varify
+from .tasks import send_email_for_varify
 from django.views.generic.edit import DeleteView
 from django.contrib.auth import logout
 from django.contrib import messages
@@ -73,7 +73,12 @@ class CalculationView(View):
 
 
 def main(request):
-    return render(request, 'Main.html')
+    if 'num_visits' in request.session:
+        num_visits = request.session['num_visits']
+
+    else:
+        num_visits = ''
+    return render(request, 'Main.html', context={'num_visits': num_visits})
 
 
 # feedback
@@ -100,7 +105,6 @@ class Choose_the_angleView(View):
         model = All_knifes.objects.all()
         form1 = All_knifesForm_step1()
         form2 = All_knifesForm_step2()
-
         angle = 0
         honing_add = 0
         return render(request, 'Choose-the-angle.html',
@@ -109,9 +113,13 @@ class Choose_the_angleView(View):
 
     def post(self, request):
 
-        num_visits = request.session.get('num_visits', 0)
-        request.session['num_visits'] = num_visits + 1
-        print(num_visits)
+        # try:
+        #
+        #     num_visits = request.session.get('num_visits')
+        #     request.session['num_visits'] = num_visits + 1
+        #
+        # except KeyError:
+        #     pass
 
         angle = 0
         honing_add = 0
@@ -121,6 +129,7 @@ class Choose_the_angleView(View):
         if request.POST['step'] == 'step1':
             model = All_knifes.objects.all()
             form = All_knifesForm_step1(request.POST)
+
             if form.is_valid():
                 brand = form.cleaned_data['brand']
                 series = form.cleaned_data['series']
@@ -129,6 +138,7 @@ class Choose_the_angleView(View):
                 if All_knifes.objects.filter(brand=brand, series=series, steel=steel):
                     knife = All_knifes.objects.filter(brand=brand, series=series, steel=steel)[
                         0]  # отображаем первый элемент из выбранных
+
                     return render(request, 'Choose-the-angle.html',
                                   context={'model': model, 'knife': knife, 'angle': angle, 'honing_add': honing_add,
                                            'message_step1': 'look our suggestion or'})
