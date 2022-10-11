@@ -156,14 +156,8 @@ django_heroku.settings(locals())
 # CELERY_BROKER_URL = 'amqp://guest:guest@localhost'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_BROKER_URL = 'amqps://cpqhujiw:j7WoBS4lDR345rsJmAsfgPP9Y1xbBzdK@woodpecker.rmq.cloudamqp.com/cpqhujiw'
-
-
-# BROKER_URL = 'amqps://cpqhujiw:j7WoBS4lDR345rsJmAsfgPP9Y1xbBzdK@woodpecker.rmq.cloudamqp.com/cpqhujiw'
-# BROKER_POOL_LIMIT = 1
-BROKER_HEARTBEAT = None
-BROKER_CONNECTION_TIMEOUT = 30
-# CELERY_ACCEPT_CONTENT = ['json',]
-# CELERY_TASK_SERIALIZER = 'json'
-# CELERY_RESULT_SERIALIZER = 'json'
+CELERY_BROKER_POOL_LIMIT = 1
+CELERY_BROKER_HEARTBEAT = None
+CELERY_BROKER_CONNECTION_TIMEOUT = 30
 CELERY_WORKER_SEND_TASK_EVENTS = True
 CELERY_EVENT_QUEUE_EXPIRES = 60
