@@ -159,7 +159,7 @@ CELERY_BROKER_URL = 'amqps://cpqhujiw:j7WoBS4lDR345rsJmAsfgPP9Y1xbBzdK@woodpecke
 
 
 # BROKER_URL = 'amqps://cpqhujiw:j7WoBS4lDR345rsJmAsfgPP9Y1xbBzdK@woodpecker.rmq.cloudamqp.com/cpqhujiw'
-BROKER_POOL_LIMIT = 1
+# BROKER_POOL_LIMIT = 1
 BROKER_HEARTBEAT = None
 BROKER_CONNECTION_TIMEOUT = 30
 # CELERY_ACCEPT_CONTENT = ['json',]
