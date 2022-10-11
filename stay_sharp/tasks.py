@@ -11,7 +11,7 @@ from time import sleep
 
 @shared_task()
 def send_email_delay(message, email):
-    sleep(20)
+    sleep(120)
     email_delay = EmailMessage('Verify email', message, to=[email])
     email_delay.send()
 
