@@ -75,12 +75,7 @@ class CalculationView(View):
 
 
 def main(request):
-    if 'num_visits' in request.session:
-        num_visits = request.session['num_visits']
-
-    else:
-        num_visits = ''
-    return render(request, 'Main.html', context={'num_visits': num_visits})
+    return render(request, 'Main.html')
 
 
 # feedback
@@ -114,14 +109,6 @@ class Choose_the_angleView(View):
                                'honing_add': honing_add})
 
     def post(self, request):
-
-        # try:
-        #
-        #     num_visits = request.session.get('num_visits')
-        #     request.session['num_visits'] = num_visits + 1
-        #
-        # except KeyError:
-        #     pass
 
         angle = 0
         honing_add = 0
