@@ -15,7 +15,8 @@ app.conf.beat_schedule = {
     # Executes every Monday morning at 7:30 a.m.
     'add-every-monday-morning': {
         'task': 'report_of_week',
-        'schedule': crontab(minute=30, hour=7, day_of_week='monday'),
+        # 'schedule': crontab(minute=30, hour=7, day_of_week='monday'),
+        'schedule': crontab(),
     },
     # Executes every day at 6:00 a.m.
     'every-day': {
