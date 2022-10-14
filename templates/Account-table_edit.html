@@ -139,10 +139,20 @@
                                                    value="{{ field.initial|default_if_none:'' }}"
                                                    type="{{ field.widget_type }}" id="{{ field.id_for_label }}">
                                         </td>
+                                    {% elif field.label == 'Carbon' %}
+                                        <td class="u-border-1 u-border-grey-30 u-table-cell">
+                                            <label for="{{ field.id_for_label }}"></label>
+                                            <input style="width: 56px !important; height: 26px !important;"
+                                                   step="0.01" min="0" max="6"
+                                                   name="{{ field.html_name }}"
+                                                   value="{{ field.initial|default_if_none:'' }}"
+                                                   type="{{ field.widget_type }}" id="{{ field.id_for_label }}">
+                                        </td>
                                     {% else %}
                                         <td class="u-border-1 u-border-grey-30 u-table-cell">
                                             <label for="{{ field.id_for_label }}"></label>
                                             <input style="width: 50px !important; padding-top: 2px !important; height: 26px !important;"
+                                                   step="0.1"
                                                    name="{{ field.html_name }}"
                                                    value="{{ field.initial|default_if_none:'' }}"
                                                    type="{{ field.widget_type }}"

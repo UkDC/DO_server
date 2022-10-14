@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'social_django',
     'django_celery_results',
     'django_celery_beat',
+    'broker',
+    'info_ss',
 ]
 
 MIDDLEWARE = [
@@ -161,3 +163,4 @@ CELERY_BROKER_HEARTBEAT = None
 CELERY_BROKER_CONNECTION_TIMEOUT = 30
 CELERY_WORKER_SEND_TASK_EVENTS = True
 CELERY_EVENT_QUEUE_EXPIRES = 60
+CELERY_BEAT_SCHEDULER='django_celery_beat.schedulers:DatabaseScheduler'

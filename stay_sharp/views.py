@@ -1,12 +1,10 @@
 import math
 
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator as token_generator
-from django.contrib.sites.shortcuts import get_current_site
 from django.core.exceptions import ValidationError
-from django.core.mail import send_mail
 from django.db.models import Avg
 from django.forms import modelformset_factory
 from django.shortcuts import render, redirect, get_object_or_404
@@ -16,10 +14,11 @@ from django.views import View
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
 from StaySharp.settings import EMAIL_HOST_USER
+from info_ss.utilities import info_collect
 from .forms import All_knifesForm_step1, All_knifesForm_step2, Grinding_dataForm, Honing_dataForm, RegisterUserForm, \
     MyUserChangeForm
 from .models import All_knifes, Account_table
-from .tasks import send_email_for_varify
+from .tasks import send_email_for_varify, send_mail_fb
 from django.views.generic.edit import DeleteView
 from django.contrib.auth import logout
 from django.contrib import messages
@@ -33,6 +32,9 @@ class CalculationView(View):
     def post(self, request):
         form_grinding = Grinding_dataForm(request.POST)
         form_honing = Honing_dataForm(request.POST)
+
+        # сбор стат.информации
+        info_collect(request, calculation_visits=True)
 
         if form_honing.is_valid():
             KJ = form_honing.cleaned_data['KJ']
@@ -88,7 +90,7 @@ def feedback(request):
         message_email = request.POST['email']
         message = request.POST['message']
         # send an email
-        send_mail(
+        send_mail_fb.delay(
             message_name,  # subject
             message,  # message
             message_email,  # from_email
@@ -123,6 +125,9 @@ class Choose_the_angleView(View):
 
         angle = 0
         honing_add = 0
+
+        # сбор стат.информации
+        info_collect(request, choose_visits = True)
 
         # проверка на step1
 
@@ -258,6 +263,10 @@ class Account_tableView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         user = request.user
+
+        # сбор стат.информации
+        info_collect(request, account_table_visits=True)
+
         if user and user.is_active:
             context = self.get_context_data(**kwargs)
             context['my_knifes'] = Account_table.objects.filter(user=user)
