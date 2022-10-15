@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from celery import shared_task
 from django.contrib.auth.tokens import default_token_generator as token_generator
 from django.contrib.sites.shortcuts import get_current_site
@@ -5,7 +6,7 @@ from django.core.mail import EmailMessage, send_mail
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
-from StaySharp.celery import app
+from StaySharp.celery_tasks import app
 from time import sleep
 
 
