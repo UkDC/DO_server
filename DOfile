@@ -1,0 +1,2 @@
+celery -A StaySharp worker
+celery -A StaySharp  beat
