@@ -1,2 +1,2 @@
-celery -A StaySharp worker
-celery -A StaySharp  beat
+python manage.py celery &
+uwsgi djangoadmin/wsgi/uwsgi.ini
