@@ -153,7 +153,7 @@ DATABASES['default'].update(dЬ_from_env)
 # Абсолютный путь к каталогу, в котором collectstatic # будет собирать статические файлы для развертывания.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 # CELERY_BROKER_URL = 'amqp://guest:guest@localhost'
 CELERY_RESULT_BACKEND = 'django-db'
