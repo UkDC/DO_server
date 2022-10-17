@@ -23,10 +23,10 @@ app.conf.beat_schedule = {
         'task': 'check_registration',
         'schedule': crontab(minute=30, hour=6),
     },
-    'Test': {
-        'task': 'report_of_week',
-        'schedule': 120
-    },
+    # 'Test': {
+    #     'task': 'report_of_week',
+    #     'schedule': 120
+    # },
 }
 
 app.conf.timezone = "Europe/Kiev"
