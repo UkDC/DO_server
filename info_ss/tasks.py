@@ -21,10 +21,11 @@ def send_email_to_user(message, email):
 def check_registration():
     for user in User.objects.all():
         delta = timezone.now() - user.date_joined
+        today = timezone.now().strftime("%d/%m/%Y, %H:%M")
         date_expired = user.date_joined + timedelta(days=3)
         if not user.is_active:
             context = {'username': user.username, 'date_registration': user.date_joined.date(),
-                       'date_expired': date_expired}
+                       'date_expired': date_expired, 'today': today}
             email = user.email
             if delta.days >= 3:
                 message = render_to_string('email_to_user/email_del.html', context=context)
@@ -44,6 +45,7 @@ def report_of_week():
     choose_visits = Info_table.objects.filter(date_of_visit__gt=timezone.now()-timedelta(days=7)).filter(choose_visits=True).count()
     calculation_visits = Info_table.objects.filter(date_of_visit__gt=timezone.now()-timedelta(days=7)).filter(calculation_visits=True).count()
     account_table_visits = Info_table.objects.filter(date_of_visit__gt=timezone.now()-timedelta(days=7)).filter(account_table_visits=True).count()
+    today = timezone.now().strftime("%d/%m/%Y, %H:%M")
 
     context = {
         'visitors_num': visitors_num,
@@ -52,6 +54,7 @@ def report_of_week():
         'choose_visits': choose_visits,
         'calculation_visits': calculation_visits,
         'account_table_visits': account_table_visits,
+        'today': today
     }
     message = render_to_string('email_info/email_report_week.html', context=context)
     send_email_to_user.delay(message, email=EMAIL_HOST_USER)
