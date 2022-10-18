@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from datetime import date, timedelta, datetime
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
-from StaySharp.celery import app
+from StaySharp.celery_tasks import app
 from StaySharp.settings import EMAIL_HOST_USER
 from .models import Info_table
 from django.db.models import Max, Avg, Min, Sum
