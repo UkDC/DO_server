@@ -1,2 +1,0 @@
-python manage.py celery &
-uwsgi djangoadmin/wsgi/uwsgi.ini
