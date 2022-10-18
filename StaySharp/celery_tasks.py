@@ -25,7 +25,7 @@ app.conf.beat_schedule = {
     },
     # Executes every 2 min
     'Test 2 min ': {
-        'task': 'check_registration',
+        'task': 'report_of_week',
         'schedule': 120,
     },
 }
