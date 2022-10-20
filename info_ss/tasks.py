@@ -36,12 +36,15 @@ def check_registration():
 
             email = user.email
             if delta.days >= 3:
-                message = render_to_string('email_to_user/email_del.html', context=context)
-                send_email_to_user.delay(message, email)
-                user.delete()
+                # message = render_to_string('email_to_user/email_del.html', context=context)
+                # send_email_to_user.delay(message, email)
+                # user.delete()
+                print(f'after 3 day {user.username}')
+
             else:
-                message = render_to_string('email_to_user/emai_reminding.html', context=context)
-                send_email_to_user.delay(message, email)
+                # message = render_to_string('email_to_user/emai_reminding.html', context=context)
+                # send_email_to_user.delay(message, email)
+                print(f'befor 3 day {user.username}')
 
 
 @app.task(name='report_of_week')
