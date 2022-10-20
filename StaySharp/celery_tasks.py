@@ -16,12 +16,13 @@ app.conf.beat_schedule = {
     # Executes every Monday morning at 6:30 a.m.
     'add-every-monday-morning': {
         'task': 'report_of_week',
-        'schedule': crontab(minute=30, hour=6, day_of_week=1),
+        # 'schedule': crontab(minute=30, hour=6, day_of_week=1),
+        'schedule': crontab(minute=15, hour=12),
     },
     # Executes every day at 6:30 a.m.
     'every-day': {
         'task': 'check_registration',
-        'schedule': crontab(minute=30, hour=6),
+        'schedule': crontab(minute=15, hour=12),
     },
     # Executes every 2 min
     'Test 2 min ': {

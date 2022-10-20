@@ -1,13 +1,19 @@
+import zoneinfo
 from django.contrib.auth.models import User
-from datetime import date, timedelta, datetime
+from datetime import date, timedelta, datetime, tzinfo
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
+from django.utils.timezone import localtime, get_current_timezone
+
 from StaySharp.celery_tasks import app
 from StaySharp.settings import EMAIL_HOST_USER
 from .models import Info_table
 from django.db.models import Max, Avg, Min, Sum
 from django.utils import timezone
+import pytz
 
+
+time_now = localtime(timezone=zoneinfo.ZoneInfo(key='Europe/Kiev'))
 
 # отправка писем уведомлений
 @app.task()
@@ -20,12 +26,13 @@ def send_email_to_user(message, email):
 @app.task(name='check_registration')
 def check_registration():
     for user in User.objects.all():
-        delta = timezone.now() - user.date_joined
-        today = timezone.now().strftime("%d/%m/%Y, %H:%M")
+        delta = time_now - user.date_joined
+        today = time_now.strftime("%d/%m/%Y, %H:%M")
         date_expired = user.date_joined + timedelta(days=3)
         if not user.is_active:
             context = {'username': user.username, 'date_registration': user.date_joined.date(),
                        'date_expired': date_expired, 'today': today}
+
             email = user.email
             if delta.days >= 3:
                 message = render_to_string('email_to_user/email_del.html', context=context)
@@ -39,13 +46,13 @@ def check_registration():
 @app.task(name='report_of_week')
 def report_of_week():
 
-    visitors_num = Info_table.objects.filter(date_of_visit__gt=timezone.now()-timedelta(days=7)).count()
-    most_visitor = Info_table.objects.filter(date_of_visit__gt=timezone.now()-timedelta(days=7)).aggregate(Max('visitor_name'))['visitor_name__max']
-    visits_of_most_visitor = Info_table.objects.filter(date_of_visit__gt=timezone.now()-timedelta(days=7)).filter(visitor_name=most_visitor).count()
-    choose_visits = Info_table.objects.filter(date_of_visit__gt=timezone.now()-timedelta(days=7)).filter(choose_visits=True).count()
-    calculation_visits = Info_table.objects.filter(date_of_visit__gt=timezone.now()-timedelta(days=7)).filter(calculation_visits=True).count()
-    account_table_visits = Info_table.objects.filter(date_of_visit__gt=timezone.now()-timedelta(days=7)).filter(account_table_visits=True).count()
-    today = timezone.now().strftime("%d/%m/%Y, %H:%M")
+    visitors_num = Info_table.objects.filter(date_of_visit__gt=time_now-timedelta(days=7)).count()
+    most_visitor = Info_table.objects.filter(date_of_visit__gt=time_now-timedelta(days=7)).aggregate(Max('visitor_name'))['visitor_name__max']
+    visits_of_most_visitor = Info_table.objects.filter(date_of_visit__gt=time_now-timedelta(days=7)).filter(visitor_name=most_visitor).count()
+    choose_visits = Info_table.objects.filter(date_of_visit__gt=time_now-timedelta(days=7)).filter(choose_visits=True).count()
+    calculation_visits = Info_table.objects.filter(date_of_visit__gt=time_now-timedelta(days=7)).filter(calculation_visits=True).count()
+    account_table_visits = Info_table.objects.filter(date_of_visit__gt=time_now-timedelta(days=7)).filter(account_table_visits=True).count()
+    today = time_now.strftime("%d/%m/%Y, %H:%M")
 
     context = {
         'visitors_num': visitors_num,
