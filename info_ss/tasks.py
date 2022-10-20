@@ -13,7 +13,8 @@ from django.utils import timezone
 import pytz
 
 
-time_now = localtime(timezone=zoneinfo.ZoneInfo(key='Europe/Kiev'))
+# time_now = localtime(timezone=zoneinfo.ZoneInfo(key='Europe/Kiev'))
+time_now = localtime()
 
 # отправка писем уведомлений
 @app.task()
