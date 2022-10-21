@@ -14,19 +14,19 @@ app.autodiscover_tasks()
 
 app.conf.beat_schedule = {
     # Executes every Monday morning at 6:30 a.m.
-    'add-every-monday-morning': {
-        'task': 'report_of_week',
+    'every-day-report': {
+        'task': 'report',
         # 'schedule': crontab(minute=30, hour=6, day_of_week=1),
-        'schedule': crontab(minute=15, hour=12),
+        'schedule': crontab(minute=30, hour=6),
     },
     # Executes every day at 6:30 a.m.
-    'every-day': {
+    'check-registration': {
         'task': 'check_registration',
-        'schedule': crontab(minute=15, hour=12),
+        'schedule': crontab(minute=30, hour=6)
     },
     # Executes every 2 min
-    'Test 2 min ': {
-        'task': 'report_of_week',
+    'Test': {
+        'task': 'report',
         'schedule': 120,
     },
 }

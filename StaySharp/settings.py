@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'django_celery_beat',
     'broker',
     'info_ss',
+    'flower',
 ]
 
 MIDDLEWARE = [
@@ -167,3 +168,5 @@ CELERY_WORKER_SEND_TASK_EVENTS = True
 CELERY_EVENT_QUEUE_EXPIRES = 60
 CELERY_BEAT_SCHEDULER='django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_TIMEZONE = "Europe/Kiev"
+CELERY_WORKER_PREFETCH_MULTIPLIER = 1
+CELERY_WORKER_CONCURRENCY = 50

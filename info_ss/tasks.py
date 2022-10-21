@@ -19,7 +19,7 @@ time_now = localtime()
 # отправка писем уведомлений
 @app.task()
 def send_email_to_user(message, email):
-    email = EmailMessage('Notice', message, to=[email])
+    email = EmailMessage('Notification', message, to=[email])
     email.send()
 
 
@@ -36,18 +36,16 @@ def check_registration():
 
             email = user.email
             if delta.days >= 3:
-                # message = render_to_string('email_to_user/email_del.html', context=context)
-                # send_email_to_user.delay(message, email)
-                # user.delete()
-                print(f'after 3 day {user.username}')
+                message = render_to_string('email_to_user/email_del.html', context=context)
+                send_email_to_user.delay(message, email)
+                user.delete()
 
             else:
-                # message = render_to_string('email_to_user/emai_reminding.html', context=context)
-                # send_email_to_user.delay(message, email)
-                print(f'befor 3 day {user.username}')
+                message = render_to_string('email_to_user/emai_reminding.html', context=context)
+                send_email_to_user.delay(message, email)
 
 
-@app.task(name='report_of_week')
+@app.task(name='report')
 def report_of_week():
 
     visitors_num = Info_table.objects.filter(date_of_visit__gt=time_now-timedelta(days=7)).count()
