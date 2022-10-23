@@ -14,6 +14,7 @@ from django.views import View
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
 from StaySharp.settings import EMAIL_HOST_USER
+from info_ss.tasks import check_registration
 from info_ss.utilities import info_collect
 from .forms import All_knifesForm_step1, All_knifesForm_step2, Grinding_dataForm, Honing_dataForm, RegisterUserForm, \
     MyUserChangeForm

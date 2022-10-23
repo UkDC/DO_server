@@ -4,7 +4,6 @@ from datetime import date, timedelta, datetime, tzinfo
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.utils.timezone import localtime, get_current_timezone
-
 from StaySharp.celery_tasks import app
 from StaySharp.settings import EMAIL_HOST_USER
 from .models import Info_table
@@ -26,23 +25,29 @@ def send_email_to_user(message, email):
 # проверка аккаунтов, предупреждение через сутки, удаление через 3 суток
 @app.task(name='check_registration')
 def check_registration():
+    today = time_now.strftime("%d/%m/%Y, %H:%M")
     for user in User.objects.all():
         delta = time_now - user.date_joined
-        today = time_now.strftime("%d/%m/%Y, %H:%M")
         date_expired = user.date_joined + timedelta(days=3)
         if not user.is_active:
-            context = {'username': user.username, 'date_registration': user.date_joined.date(),
+            context = {'username': user.username, 'date_registration': user.date_joined,
                        'date_expired': date_expired, 'today': today}
-
             email = user.email
+
             if delta.days >= 3:
                 message = render_to_string('email_to_user/email_del.html', context=context)
                 send_email_to_user.delay(message, email)
                 user.delete()
 
             else:
-                message = render_to_string('email_to_user/emai_reminding.html', context=context)
+                message = render_to_string('email_to_user/email_reminding.html', context=context)
                 send_email_to_user.delay(message, email)
+
+    users = User.objects.all()
+    users_num = User.objects.all().count()
+    context = {'users': users, 'users_num': users_num, 'today': today}
+    message = render_to_string('email_info/email_report_registration.html', context=context)
+    send_email_to_user.delay(message, email=EMAIL_HOST_USER)
 
 
 @app.task(name='report')

@@ -1,7 +1,5 @@
 
 from django.db import models
-
-
 class Info_table(models.Model):
 
     date_of_visit = models.DateTimeField()
