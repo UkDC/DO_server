@@ -720,9 +720,9 @@
 }
 
 .u-section-2 .u-image-1 {
-  width: 473px;
-  height: 746px;
-  margin: 0 auto;
+  width: 480px;
+  height: 756px;
+  margin: 3px auto 0;
 }
 
 .u-section-2 .u-layout-cell-2 {
@@ -730,13 +730,13 @@
 }
 
 .u-section-2 .u-container-layout-2 {
-  padding: 20px 14px 15px;
+  padding: 13px 14px;
 }
 
 .u-section-2 .u-image-2 {
-  width: 465px;
-  height: 744px;
-  margin: 0 auto;
+  width: 469px;
+  height: 756px;
+  margin: 0 auto 0 26px;
 }
 
 @media (max-width: 1399px) {
@@ -758,8 +758,9 @@
   }
 
   .u-section-2 .u-image-1 {
-    width: 474px;
-    margin-top: 8px;
+    width: 469px;
+    height: 765px;
+    margin-top: 0;
   }
 
   .u-section-2 .u-layout-cell-2 {
@@ -771,8 +772,9 @@
   }
 
   .u-section-2 .u-image-2 {
-    width: 477px;
-    margin-top: 8px;
+    width: 480px;
+    height: 765px;
+    margin-left: auto;
   }
 }
 
@@ -791,8 +793,8 @@
   }
 
   .u-section-2 .u-image-1 {
-    width: 441px;
-    height: 662px;
+    width: 399px;
+    height: 628px;
   }
 
   .u-section-2 .u-layout-cell-2 {
@@ -800,9 +802,8 @@
   }
 
   .u-section-2 .u-image-2 {
-    width: 441px;
-    height: 672px;
-    margin-top: 0;
+    width: 401px;
+    height: 638px;
   }
 }
 
@@ -820,21 +821,24 @@
   }
 
   .u-section-2 .u-layout-cell-1 {
-    min-height: 575px;
+    min-height: 577px;
+    order: 1;
   }
 
   .u-section-2 .u-image-1 {
-    width: 355px;
-    height: 526px;
+    width: 343px;
+    height: 539px;
   }
 
   .u-section-2 .u-layout-cell-2 {
-    min-height: 575px;
+    min-height: 577px;
+    order: 0;
   }
 
   .u-section-2 .u-image-2 {
     width: 357px;
-    height: 534px;
+    height: 539px;
+    margin-top: 6px;
   }
 }
 
@@ -845,10 +849,6 @@
 
   .u-section-2 .u-layout-cell-1 {
     min-height: 580px;
-  }
-
-  .u-section-2 .u-image-1 {
-    margin-top: 0;
   }
 
   .u-section-2 .u-layout-cell-2 {
@@ -874,12 +874,15 @@
   }
 
   .u-section-2 .u-image-1 {
-    width: 357px;
+    width: 353px;
+    height: 542px;
+    margin-top: 5px;
   }
 
   .u-section-2 .u-image-2 {
     width: 353px;
-    margin-top: 7px;
+    height: 552px;
+    margin-top: 0;
   }
 } .u-section-3 {
   background-image: none;
