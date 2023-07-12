@@ -31,17 +31,16 @@ backcall==0.2.0
 billiard==3.6.4.0
     # via
     #   -r requirements.txt
-    #   celery
+    #  celery
 build==0.8.0
     # via
     #   -r requirements.txt
-    #   pip-tools
-celery==5.2.7
+    # pip-tools
     # via
     #   -r requirements.txt
-    #   django-celery-beat
-    #   django-celery-results
-    #   flower
+    # django-celery-beat
+    # django-celery-results
+    # flower
 certifi==2022.12.7
     # via
     #   -r requirements.txt
@@ -424,6 +423,7 @@ zope-interface==5.5.0
     # via
     #   -r requirements.txt
     #   gevent
+celery~=5.2.7
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
