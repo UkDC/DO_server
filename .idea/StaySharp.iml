@@ -23,9 +23,6 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="punycode" level="application" />
   </component>
-  <component name="PackageRequirementsSettings">
-    <option name="versionSpecifier" value="Strong equality (==x.y.z)" />
-  </component>
   <component name="PyNamespacePackagesService">
     <option name="namespacePackageFolders">
       <list>
