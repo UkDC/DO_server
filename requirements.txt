@@ -28,7 +28,7 @@ backcall==0.2.0
     # via
     #   -r requirements.txt
     #   ipython
-billiard==3.6.4.0
+billiard==4.1.0
     # via
     #   -r requirements.txt
     #   celery
@@ -36,7 +36,7 @@ build==0.8.0
     # via
     #   -r requirements.txt
     #   pip-tools
-celery==5.2.7
+celery==5.3.1
     # via
     #   -r requirements.txt
     #   django-celery-beat
@@ -167,7 +167,7 @@ idna==3.4
     # via
     #   -r requirements.txt
     #   requests
-ipython==8.5.0
+ipython==8.14.0
     # via -r requirements.txt
 itsdangerous==2.1.2
     # via
@@ -210,7 +210,7 @@ numpy==1.23.3
     #   numba
     #   pandas
     #   scipy
-oauthlib==3.2.1
+oauthlib==3.2.2
     # via
     #   -r requirements.txt
     #   requests-oauthlib
