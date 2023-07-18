@@ -5,7 +5,7 @@ from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from StaySharp.celery_tasks import app
 from StaySharp.settings import EMAIL_HOST_USER
-from models import Info_table
+from .models import Info_table
 from django.db.models import Max, Avg, Min, Sum
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
