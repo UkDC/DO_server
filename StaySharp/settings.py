@@ -23,20 +23,6 @@ TIME_ZONE = "Europe/Kiev"
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = "django-insecure-mm7+ac%ujk@w#l_&j+zf5nmb^0ms(^k*&s)_y%bo6*ntwpm5*f"
-
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'm�j9tax!laЭ�l 8оЬt2_+QЭ�)5%a;jбyjpkaq')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-# DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
-DEBUG = False
-
-ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -99,13 +85,6 @@ WSGI_APPLICATION = "StaySharp.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-        'TIME_ZONE': TIME_ZONE,
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -130,9 +109,7 @@ USE_I18N = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
+
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
@@ -148,14 +125,6 @@ EMAIL_HOST_PASSWORD = "czpmthctlaiqrkth"
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 
-# Heroku: Обновление конфигурации базы данных из $DATAВASE_URL. import dj_database_url
-dЬ_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(dЬ_from_env)
-
-# Статичные файлы (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-# Абсолютный путь к каталогу, в котором collectstatic # будет собирать статические файлы для развертывания.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # django_heroku.settings(locals())
 
@@ -169,3 +138,13 @@ CELERY_WORKER_SEND_TASK_EVENTS = True
 CELERY_EVENT_QUEUE_EXPIRES = 60
 CELERY_BEAT_SCHEDULER='django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_TIMEZONE = "Europe/Kiev"
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    from .prod_settings import *
+
+# Heroku: Обновление конфигурации базы данных из $DATAВASE_URL. import dj_database_url
+dЬ_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(dЬ_from_env)
