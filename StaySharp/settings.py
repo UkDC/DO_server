@@ -146,5 +146,5 @@ except ImportError:
     from .prod_settings import *
 
 # Heroku: Обновление конфигурации базы данных из $DATAВASE_URL. import dj_database_url
-dЬ_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(dЬ_from_env)
+#dЬ_from_env = dj_database_url.config(conn_max_age=500)
+#DATABASES['default'].update(dЬ_from_env)
