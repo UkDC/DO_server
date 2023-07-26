@@ -260,10 +260,6 @@ prompt-toolkit==3.0.31
     #   -r requirements.txt
     #   click-repl
     #   ipython
-psycopg2~=2.9.6
-    # via
-    #   -r requirements.txt
-    #   django-heroku
 psycopg2-binary==2.9.3
     # via
     #   -r requirements.txt
