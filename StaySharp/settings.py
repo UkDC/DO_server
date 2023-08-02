@@ -130,9 +130,7 @@ EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 
 
-# django_heroku.settings(locals())
 
-# CELERY_BROKER_URL = 'amqp://guest:guest@localhost'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_BROKER_URL = 'amqps://cpqhujiw:j7WoBS4lDR345rsJmAsfgPP9Y1xbBzdK@woodpecker.rmq.cloudamqp.com/cpqhujiw'
 CELERY_BROKER_POOL_LIMIT = 1

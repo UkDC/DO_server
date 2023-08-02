@@ -18,6 +18,8 @@
       <sourceFolder url="file://$MODULE_DIR$/static" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/info_ss/migrations" />
+      <excludeFolder url="file://$MODULE_DIR$/stay_sharp/migrations" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.10 (DO_server)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
