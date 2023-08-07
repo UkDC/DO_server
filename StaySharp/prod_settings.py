@@ -15,7 +15,7 @@ SECRET_KEY = "server-insecure-mm7+ac%ujk@w#l_&jhtytytm^0ms(^k*&s)_y%bo6*ntwpm5*f
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "138.197.183.100", 'stay-sharp.co', 'www.stay-sharp.co', 'https://stay-sharp.co']
+ALLOWED_HOSTS = ["127.0.0.1", "138.197.183.100", 'stay-sharp.co', 'www.stay-sharp.co', 'https://stay-sharp.co', 'http://stay-sharp.co']
 
 
 
