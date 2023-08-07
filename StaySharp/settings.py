@@ -45,9 +45,11 @@ INSTALLED_APPS = [
     'broker',
     'info_ss',
     'flower',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -140,6 +142,21 @@ SESSION_COOKIE_SECURE = True
 
 # Включить защищенные куки для CSRF-токена
 CSRF_COOKIE_SECURE = True
+
+CORS_ALLOWED_ORIGINS = [
+    "https://stay-sharp.co",
+    # Добавьте сюда другие доверенные домены, если есть
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+# Если вы хотите разрешить доступ к определенным методам (например, GET, POST, OPTIONS), то укажите их здесь.
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'OPTIONS',
+]
+
 
 try:
     from .local_settings import *
