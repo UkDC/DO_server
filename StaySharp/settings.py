@@ -19,10 +19,8 @@ USE_TZ = True
 
 TIME_ZONE = "Europe/Kiev"
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Application definition
 INSTALLED_APPS = [
@@ -109,11 +107,9 @@ USE_I18N = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 
-
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/static')
-
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
@@ -128,8 +124,6 @@ EMAIL_HOST_PASSWORD = "czpmthctlaiqrkth"
 # EMAIL_USE_TLS = True
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
-
-
 
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_BROKER_URL = 'amqps://cpqhujiw:j7WoBS4lDR345rsJmAsfgPP9Y1xbBzdK@woodpecker.rmq.cloudamqp.com/cpqhujiw'
