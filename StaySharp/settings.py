@@ -45,11 +45,11 @@ INSTALLED_APPS = [
     'broker',
     'info_ss',
     'flower',
-    'corsheaders',
+    #'corsheaders',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    #'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -138,24 +138,17 @@ CELERY_BEAT_SCHEDULER='django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_TIMEZONE = "Europe/Kiev"
 
 # Включить защищенные куки сессии
-SESSION_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
 
 # Включить защищенные куки для CSRF-токена
-CSRF_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
-CORS_ALLOWED_ORIGINS = [
-    "https://stay-sharp.co",
-    # Добавьте сюда другие доверенные домены, если есть
-]
+#CORS_ALLOWED_ORIGINS = [ "https://stay-sharp.co",]
 
-CORS_ALLOW_CREDENTIALS = True
+#CORS_ALLOW_CREDENTIALS = True
 
 # Если вы хотите разрешить доступ к определенным методам (например, GET, POST, OPTIONS), то укажите их здесь.
-CORS_ALLOW_METHODS = [
-    'GET',
-    'POST',
-    'OPTIONS',
-]
+#CORS_ALLOW_METHODS = ['GET', 'POST', 'OPTIONS',]
 
 
 try:
