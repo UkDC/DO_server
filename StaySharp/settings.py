@@ -135,6 +135,11 @@ CELERY_EVENT_QUEUE_EXPIRES = 60
 CELERY_BEAT_SCHEDULER='django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_TIMEZONE = "Europe/Kiev"
 
+# Включить защищенные куки сессии
+SESSION_COOKIE_SECURE = True
+
+# Включить защищенные куки для CSRF-токена
+CSRF_COOKIE_SECURE = True
 
 try:
     from .local_settings import *
