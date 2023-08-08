@@ -45,11 +45,9 @@ INSTALLED_APPS = [
     'broker',
     'info_ss',
     'flower',
-    #'corsheaders',
 ]
 
 MIDDLEWARE = [
-    #'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -134,11 +132,8 @@ CELERY_BROKER_HEARTBEAT = None
 CELERY_BROKER_CONNECTION_TIMEOUT = 30
 CELERY_WORKER_SEND_TASK_EVENTS = True
 CELERY_EVENT_QUEUE_EXPIRES = 60
-CELERY_BEAT_SCHEDULER='django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_TIMEZONE = "Europe/Kiev"
-
-
-
 
 try:
     from .local_settings import *
@@ -146,5 +141,5 @@ except ImportError:
     from .prod_settings import *
 
 # Heroku: Обновление конфигурации базы данных из $DATAВASE_URL. import dj_database_url
-#dЬ_from_env = dj_database_url.config(conn_max_age=500)
-#DATABASES['default'].update(dЬ_from_env)
+# dЬ_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(dЬ_from_env)
