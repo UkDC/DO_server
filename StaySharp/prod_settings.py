@@ -21,10 +21,10 @@ CSRF_TRUSTED_ORIGINS = ['https://stay-sharp.co', ]
 #SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTOCOL", "https")
 
 # Включить защищенные куки сессии
-SESSION_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
 
 # Включить защищенные куки для CSRF-токена
-CSRF_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
 # CORS_ALLOWED_ORIGINS = [ "https://stay-sharp.co",]
 
