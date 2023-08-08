@@ -17,7 +17,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "138.197.183.100", 'stay-sharp.co', 'www.stay-sharp.co', 'https://stay-sharp.co', 'http://stay-sharp.co']
 
+CSRF_TRUSTED_ORIGINS = ['https://stay-sharp.co',]
 
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTOCOL", "https")
+
+# Включить защищенные куки сессии
+SESSION_COOKIE_SECURE = True
+
+# Включить защищенные куки для CSRF-токена
+CSRF_COOKIE_SECURE = True
+
+#CORS_ALLOWED_ORIGINS = [ "https://stay-sharp.co",]
+
+#CORS_ALLOW_CREDENTIALS = True
+
+# Если вы хотите разрешить доступ к определенным методам (например, GET, POST, OPTIONS), то укажите их здесь.
+#CORS_ALLOW_METHODS = ['GET', 'POST', 'OPTIONS',]
 
 DATABASES = {
     'default': {
