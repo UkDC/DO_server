@@ -12,7 +12,7 @@ import pytz
 
 
 # time_now = localtime(timezone=zoneinfo.ZoneInfo(key='Europe/Kiev'))
-time_now = localtime()
+
 
 # отправка писем уведомлений
 @app.task()
@@ -24,6 +24,7 @@ def send_email_to_user(message, email):
 # проверка аккаунтов, предупреждение через сутки, удаление через 3 суток
 @app.task(name='check_registration')
 def check_registration():
+    time_now = localtime()  # Вычисляем текущее время внутри задачи
     today = time_now.strftime("%d/%m/%Y, %H:%M")
     for user in User.objects.all():
         delta = time_now - user.date_joined
@@ -51,7 +52,7 @@ def check_registration():
 
 @app.task(name='report')
 def report_of_week():
-
+    time_now = localtime()  # Вычисляем текущее время внутри задачи
     visitors_num = Info_table.objects.filter(date_of_visit__gt=time_now-timedelta(days=7)).count()
     most_visitor = Info_table.objects.filter(date_of_visit__gt=time_now-timedelta(days=7)).aggregate(Max('visitor_name'))['visitor_name__max']
     visits_of_most_visitor = Info_table.objects.filter(date_of_visit__gt=time_now-timedelta(days=7)).filter(visitor_name=most_visitor).count()
